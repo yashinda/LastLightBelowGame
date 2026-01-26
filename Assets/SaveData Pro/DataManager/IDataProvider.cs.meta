@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: a8d9e8feade65e04b9c16066aa930e20
+AssetOrigin:
+  serializedVersion: 1
+  productId: 327720
+  packageName: SaveData Pro
+  packageVersion: 1.1.1
+  assetPath: Assets/SaveData Pro/DataManager/IDataProvider.cs
+  uploadId: 782479

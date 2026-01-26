@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: ce79d8b6eb771b245983840e7f3b2b79
+AssetOrigin:
+  serializedVersion: 1
+  productId: 327720
+  packageName: SaveData Pro
+  packageVersion: 1.1.1
+  assetPath: Assets/SaveData Pro/DataManager/AesEncryptionOption.cs
+  uploadId: 782479

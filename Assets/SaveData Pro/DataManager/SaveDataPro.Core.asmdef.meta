@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e271a02ef87bbc2459a8cb8378297511
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 327720
+  packageName: SaveData Pro
+  packageVersion: 1.1.1
+  assetPath: Assets/SaveData Pro/DataManager/SaveDataPro.Core.asmdef
+  uploadId: 782479

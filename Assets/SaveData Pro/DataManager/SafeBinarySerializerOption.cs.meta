@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 24f5a712ec525734fae5d13c0b92d918
+AssetOrigin:
+  serializedVersion: 1
+  productId: 327720
+  packageName: SaveData Pro
+  packageVersion: 1.1.1
+  assetPath: Assets/SaveData Pro/DataManager/SafeBinarySerializerOption.cs
+  uploadId: 782479

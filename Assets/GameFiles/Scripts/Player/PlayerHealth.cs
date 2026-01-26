@@ -21,6 +21,8 @@ public class PlayerHealth : MonoBehaviour
     public bool PlayerDead => isDead;
     public float CurrentHealth => currentHealth;
     public float MaxHealth => maxHealth;
+
+    public int Armor => armor;
     public bool IsInvincible => invincible;
 
     public void TakeDamage(float damage)
@@ -50,6 +52,17 @@ public class PlayerHealth : MonoBehaviour
     public void SetInvincible(bool value)
     {
         invincible = value;
+    }
+
+    public void IncreaseMaxHP(float amount)
+    {
+        maxHealth += amount;
+        currentHealth = maxHealth;
+    }
+
+    public void GetArmor(int amount)
+    {
+        armor += amount;
     }
 
     private void Die()

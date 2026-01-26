@@ -53,6 +53,12 @@ public class PsySystem : MonoBehaviour
         playerHealth.TakeDamage(damage * Time.deltaTime);
     }
 
+    public void IncreaseMaxPsi(float amount)
+    {
+        maxPsyAmount += amount;
+        psyAmount = maxPsyAmount;
+    }
+
     private bool IsInAnyLight(Vector3 playerPos)
     {
         Light[] lights = FindObjectsOfType<Light>();

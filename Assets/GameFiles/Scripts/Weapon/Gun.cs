@@ -101,6 +101,11 @@ public abstract class Gun : MonoBehaviour
         }
     }
 
+    public void IncreaseDamage(int amount)
+    {
+        damage += amount;
+    }
+
     protected void PlayShotSound()
     {
         if (shotAudioSource == null || shotClip == null)

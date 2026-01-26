@@ -14,6 +14,8 @@ public class Indicators : MonoBehaviour
 
     public TMP_Text healthAmountText;
     public TMP_Text psyAmountText;
+    public TMP_Text armorAmountText;
+    public GameObject armorBar;
 
     private void Update()
     {
@@ -24,6 +26,18 @@ public class Indicators : MonoBehaviour
             svetlesCount.text = svetlesContainer.CurrentSvetles.ToString();
             healthAmountText.text = $"{Mathf.FloorToInt(playerHealth.CurrentHealth)}/{playerHealth.MaxHealth}";
             psyAmountText.text = $"{Mathf.FloorToInt(psySystem.psyAmount)}/{psySystem.maxPsyAmount}";
+            if (armorAmountText != null && armorBar != null)
+            {
+                if (playerHealth.Armor > 0)
+                {
+                    armorBar.SetActive(true);
+                    armorAmountText.text = playerHealth.Armor.ToString();
+                }
+                else
+                {
+                    armorBar.SetActive(false);
+                }
+            }
         }
         else
             indicatorHealth.fillAmount = 0;

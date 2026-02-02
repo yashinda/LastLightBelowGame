@@ -6,11 +6,6 @@ public class GetUpgrade : MonoBehaviour
     [SerializeField] private UpgradeManager upgradeManager;
     [SerializeField] private UpgradeCardUI[] cards;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     public void ShowPanel()
     {
         panelUpgrade.SetActive(true);

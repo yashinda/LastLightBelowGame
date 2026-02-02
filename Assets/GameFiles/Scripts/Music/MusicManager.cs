@@ -26,12 +26,10 @@ public class MusicManager : MonoBehaviour
         if (Instance != null)
         {
             Destroy(gameObject);
+            return;
         }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+
+        Instance = this;
     }
 
     private void Start()
@@ -41,7 +39,6 @@ public class MusicManager : MonoBehaviour
 
     public void PlayMusic(string trackName, float fadeDuration = 0.5f)
     {
-        Debug.Log($"Play music {currentState}");
         StartCoroutine(AnimateMusicCrossfade(musicLibrary.GetClipFromName(trackName)));
     }
 

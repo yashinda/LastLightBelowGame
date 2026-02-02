@@ -7,7 +7,20 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField] private UpgradeDatabase database;
     [SerializeField] private AbilityManager abilityManager;
 
-    private HashSet<string> obtainedUpgrades = new();
+    public HashSet<string> obtainedUpgrades = new();
+
+    public HashSet<string> GetObtainedUpgrades()
+    {
+        return new HashSet<string>(obtainedUpgrades);
+    }
+
+    public void LoadObtainedUpgrades(IEnumerable<string> upgrades)
+    {
+        obtainedUpgrades.Clear();
+
+        foreach (var id in upgrades)
+            obtainedUpgrades.Add(id);
+    }
 
     public List<UpgradeData> GetRandomUpgrades(int count)
     {

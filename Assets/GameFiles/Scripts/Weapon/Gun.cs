@@ -81,6 +81,11 @@ public abstract class Gun : MonoBehaviour
         }
     }
 
+    public void SetDamage(int damageAmount)
+    {
+        damage = damageAmount;
+    }
+
     private void HandleShoot()
     {
         currentAmmo--;

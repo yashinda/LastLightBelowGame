@@ -22,14 +22,6 @@ public class PlayerController : MonoBehaviour
     public Vector2 lookSensitivity = new Vector2(0.1f, 0.1f);
     public float pitchLimit = 75.0f;
 
-    [Header("EvasionParameters")]
-    public float evasionDistance = 3.0f;
-    public float evasionSpeed = 8.0f;
-    public float evasionCooldown = 1.0f;
-    public bool isEvading = false;
-    private float evasionTimer = 0f;
-    private Vector3 evasionDirection;
-
     [SerializeField] float currentPitch = 0.0f;
 
     public float CurrentPitch
@@ -67,8 +59,6 @@ public class PlayerController : MonoBehaviour
     #region Controller Methods
     private void MoveUpdate()
     {
-        if (isEvading) return;
-
         Vector3 motion = transform.forward * moveInput.y + transform.right * moveInput.x;
         motion.Normalize();
         motion *= speed;
@@ -114,56 +104,6 @@ public class PlayerController : MonoBehaviour
         cameraPlayer.transform.localRotation = Quaternion.Euler(CurrentPitch, 0, 0);
         transform.Rotate(Vector3.up * input.x);
     }
-
-    /*private void EvasionUpdate()
-    {
-        if (evasionTimer > 0f)
-        {
-            evasionTimer -= Time.deltaTime;
-        }
-
-        if (evasionPressed && !isEvading && evasionTimer <= 0f && characterController.isGrounded)
-        {
-            StartEvasion();
-        }
-
-        if (isEvading)
-        {
-            ProcessEvasion();
-        }
-    }
-
-    private void StartEvasion()
-    {
-        isEvading = true;
-        evasionTimer = evasionCooldown;
-
-        if (moveInput.magnitude > 0.1f)
-        {
-            evasionDirection = (transform.forward * moveInput.y + transform.right * moveInput.x).normalized;
-        }
-        else
-        {
-            evasionDirection = -transform.forward;
-        }
-
-        playerVelocity = evasionDirection * evasionSpeed;
-        playerVelocity.y = 0;
-    }
-
-    private void ProcessEvasion()
-    {
-        Vector3 motion = evasionDirection * evasionSpeed;
-        characterController.Move((motion + playerVelocity) * Time.deltaTime);
-
-        playerVelocity = Vector3.Lerp(playerVelocity, Vector3.zero, Time.deltaTime * 5f);
-
-        if (playerVelocity.magnitude < 0.5f)
-        {
-            isEvading = false;
-            evasionPressed = false;
-        }
-    }*/
 
     #endregion
 }

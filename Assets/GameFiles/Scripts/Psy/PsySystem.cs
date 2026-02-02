@@ -59,6 +59,12 @@ public class PsySystem : MonoBehaviour
         psyAmount = maxPsyAmount;
     }
 
+    public void SetMaxPsyAmount(float amount)
+    {
+        maxPsyAmount = amount;
+        psyAmount = maxPsyAmount;
+    }
+
     private bool IsInAnyLight(Vector3 playerPos)
     {
         Light[] lights = FindObjectsOfType<Light>();

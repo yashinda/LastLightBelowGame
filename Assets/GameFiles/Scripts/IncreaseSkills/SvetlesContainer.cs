@@ -8,11 +8,6 @@ public class SvetlesContainer : MonoBehaviour
     [SerializeField] private int svetlesCount = 0;
     public int CurrentSvetles => svetlesCount;
 
-    private void Start()
-    {
-        ResetSvetles();
-    }
-
     public void AddSvetles(int svetles)
     {
         svetlesCount += svetles;
@@ -20,13 +15,13 @@ public class SvetlesContainer : MonoBehaviour
             statistic.AddSvetlesToStatictics(svetles);
     }
 
-    public void ResetSvetles()
-    {
-        svetlesCount = 0;
-    }
-
     public void SpendSvetles(int amount)
     {
         svetlesCount = Mathf.Max(0, svetlesCount - amount);
+    }
+
+    public void SetSvetlesAmount(int value)
+    {
+        svetlesCount = value;
     }
 }

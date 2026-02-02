@@ -14,6 +14,15 @@ public class LevelStateController : MonoBehaviour
 {
     public static LevelStateController Instance { get; private set; }
 
+    [Header("References for SaveSystem")]
+    [SerializeField] private SvetlesContainer svetlesContainer;
+    [SerializeField] private UpgradeManager upgradeManager;
+    [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private PsySystem psySystem;
+    [SerializeField] private Shotgun shotgun;
+    [SerializeField] private Revolver revolver;
+    [SerializeField] private AbilityManager abilityManager;
+
     [Header("UI")]
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject deathPanel;
@@ -37,10 +46,11 @@ public class LevelStateController : MonoBehaviour
         Instance = this;
     }
 
-    /*private void Start()
+    private void Start()
     {
+        LoadProgress();
         EnterPlayingState();
-    }*/
+    }
 
     #region Public API
 
@@ -93,9 +103,32 @@ public class LevelStateController : MonoBehaviour
         ShowCursor(false);
     }
 
+    public void SaveProgress()
+    {
+        SaveLoadData.SaveGame(svetlesContainer, upgradeManager, playerHealth, psySystem, shotgun, revolver, abilityManager);
+    }
+
+    public void LoadNextLevel()
+    {
+        Time.timeScale = 1f;
+        SceneController.Instance.LoadNextLevel();
+    }
+
+    private void LoadProgress()
+    {
+        SaveLoadData.LoadGame(svetlesContainer, upgradeManager, playerHealth, psySystem, shotgun, revolver, abilityManager);
+    }
+
+    public void ConfirmNextLevel()
+    {
+        SaveProgress();
+        LoadNextLevel();
+    }
+
     public void RestartLevel()
     {
         Time.timeScale = 1f;
+        LoadProgress();
         SceneController.Instance.ReloadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

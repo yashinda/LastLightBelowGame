@@ -65,6 +65,17 @@ public class PlayerHealth : MonoBehaviour
         armor += amount;
     }
 
+    public void SetMaxHealth(float amount)
+    {
+        maxHealth = amount;
+        currentHealth = maxHealth;
+    }
+
+    public void SetArmor(int amount)
+    {
+        armor = amount;
+    }
+
     private void Die()
     {
         isDead = true;

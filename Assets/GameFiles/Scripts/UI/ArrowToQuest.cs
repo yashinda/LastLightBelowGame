@@ -17,15 +17,7 @@ public class ArrowToQuest : MonoBehaviour
         UpdateTarget();
 
         if (currentTarget == null)
-        {
-            rect.gameObject.SetActive(false);
             return;
-        }
-        else
-        {
-            rect.gameObject.SetActive(true);
-        }
-            
 
         RotateArrow(currentTarget);
     }

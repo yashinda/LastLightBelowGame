@@ -17,7 +17,8 @@ public class AmmoBox : MonoBehaviour
             {
                 if (gun.ammoType == ammoType && gun.CurrentAmmo < gun.MagSize)
                 {
-                    gun.AddAmmo(ammo); 
+                    gun.AddAmmo(ammo);
+                    audioSource.PlayOneShot(clip);
                     Destroy(gameObject);
                     break;
                 }

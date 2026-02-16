@@ -27,6 +27,8 @@ public class ChestInteract : MonoBehaviour, IInteractable
         audioSource.PlayOneShot(clip);
         if (loot != null)
             loot.SetActive(true);
+
+        this.enabled = false;
     }
 
     public InteractionType GetInteractionType()

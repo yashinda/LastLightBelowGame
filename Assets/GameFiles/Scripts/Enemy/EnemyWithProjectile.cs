@@ -8,20 +8,21 @@ public class EnemyWithProjectile : EnemyBase
     [SerializeField] private float projectileForce = 1000.0f;
     private float nextFireTime;
 
-    protected override void Start()
-    {
-        base.Start();
-    }
-
     protected override void Update()
     {
-        base.Update();
-
-        if (currentState == EnemyState.Attack && Time.time >= nextFireTime)
+        if (!isDeath)
         {
-            Attack();
-            nextFireTime = Time.time + fireRate;
+            base.Update();
+            if (currentState == EnemyState.Attack)
+            {
+                RotateTowards(player.position);
+            }    
         }
+        else
+        {
+            animator.SetTrigger("Death");
+        }
+        
     }
 
     protected override void Patrol()
@@ -42,19 +43,19 @@ public class EnemyWithProjectile : EnemyBase
 
         isAttacking = true;
         agent.isStopped = true;
-        RotateTowards(player.position);
-        Invoke(nameof(ShootProjectile), fireRate);
         Invoke(nameof(ResetAttack), attackCooldown);
     }
 
-    private void ShootProjectile()
+    public void ShootProjectile()
     {
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        Quaternion targerRotation = Quaternion.LookRotation(Vector3.right);
+
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, targerRotation);
 
         Rigidbody rb = projectile.GetComponent<Rigidbody>();
-        rb.AddForce(firePoint.forward * projectileForce);
+        rb.AddForce(firePoint.forward * projectileForce, ForceMode.Impulse);
 
-        Destroy(projectile, 5.0f);
+        Destroy(projectile, 5f);
     }
 
     private void ResetAttack()
@@ -62,5 +63,11 @@ public class EnemyWithProjectile : EnemyBase
         isAttacking = false;
         if (currentState == EnemyState.Attack)
             agent.isStopped = false;
+    }
+
+    protected override void Die()
+    {
+        base.Die();
+        animator.SetTrigger("Death");
     }
 }

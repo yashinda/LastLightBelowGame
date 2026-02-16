@@ -37,6 +37,19 @@ public static class SaveLoadData
             playerHealth.SetArmor(data.armor);
             shotgun.SetDamage(data.shotgunDamage);
             revolver.SetDamage(data.revolverDamage);
+
+            if (data.unlockDashAbil)
+                abilityManager.SetUnlockDash();
+
+            if (data.unlockHealAbil)
+                abilityManager.SetUnlockHeal();
+
+            if (data.unlockLightAbil)
+                abilityManager.SetUnlockLight();
+
+            if (data.unlockInvincibilityAbil)
+                abilityManager.SetUnlockInvincibility();
+
             abilityManager.unlockDash = data.unlockDashAbil;
             abilityManager.unlockHeal = data.unlockHealAbil;
             abilityManager.unlockLight = data.unlockLightAbil;

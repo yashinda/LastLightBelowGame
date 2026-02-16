@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerHealingAbility : ActiveAbility
 {
     [SerializeField] private PlayerHealth health;
+    [SerializeField] private GameObject effect;
     private float healAmount;
 
     protected override float CooldownDuration =>
@@ -13,6 +14,7 @@ public class PlayerHealingAbility : ActiveAbility
     {
         healAmount = IncreaseSkills.Instance.GetHealAmount();
         health = GetComponent<PlayerHealth>();
+        effect = GetComponentInChildren<Heal>().gameObject;
     }
 
     protected override bool CanActivate()
@@ -23,7 +25,10 @@ public class PlayerHealingAbility : ActiveAbility
     protected override IEnumerator ActivateRoutine()
     {
         health.Heal(healAmount);
-        yield break;
+        effect.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        effect.SetActive(false);
+        yield break;   
     }
 
     private void OnHeal() => TryActivate();

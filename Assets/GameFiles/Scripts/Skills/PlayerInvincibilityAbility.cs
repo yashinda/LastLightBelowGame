@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerInvincibilityAbility : ActiveAbility
 {
     [SerializeField] private PlayerHealth health;
+    [SerializeField] private GameObject effect;
 
     protected override float CooldownDuration =>
         IncreaseSkills.Instance.GetInvincibilityCooldown();
@@ -14,6 +15,7 @@ public class PlayerInvincibilityAbility : ActiveAbility
     {
         duration = IncreaseSkills.Instance.GetInvincibilityDuration();
         health = GetComponent<PlayerHealth>();
+        effect = GetComponentInChildren<Shield>().gameObject;
     }
 
     protected override bool CanActivate()
@@ -24,8 +26,10 @@ public class PlayerInvincibilityAbility : ActiveAbility
     protected override IEnumerator ActivateRoutine()
     {
         health.SetInvincible(true);
+        effect.SetActive(true);
         yield return new WaitForSeconds(duration);
         health.SetInvincible(false);
+        effect.SetActive(true);
     }
 
     private void OnInvincibility() => TryActivate();

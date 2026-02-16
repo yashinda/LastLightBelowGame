@@ -52,7 +52,6 @@ public class EnemyEncounter : MonoBehaviour
     {
         if (nextEncounter != null)
             nextEncounter.SetActive(true);
-        Debug.Log("Encounter finished");
         Destroy(gameObject);
     }
 }

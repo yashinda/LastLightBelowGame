@@ -20,28 +20,14 @@ public class AbilityManager : MonoBehaviour
     private CreateLight lightAbility;
     private PlayerInvincibilityAbility invincibility;
 
-    public bool unlockDash = false;
-    public bool unlockHeal = false;
-    public bool unlockLight = false;
-    public bool unlockInvincible = false;
-
-    private void Start()
-    {
-        if (unlockDash)
-            UnlockDash();
-
-        if (unlockHeal)
-            UnlockHeal();
-
-        if (unlockLight)
-            UnlockLight();
-
-        if (unlockInvincible)
-            UnlockInvincibility();
-    }
+    public bool unlockDash;
+    public bool unlockHeal;
+    public bool unlockLight;
+    public bool unlockInvincible;
 
     public void UnlockDash()
     {
+        Debug.Log("Dash unlocked");
         if (dash != null) return;
         dash = player.AddComponent<Dash>();
 
@@ -52,6 +38,7 @@ public class AbilityManager : MonoBehaviour
 
     public void UnlockHeal()
     {
+        Debug.Log("Heal unlocked");
         if (heal != null) return;
         heal = player.AddComponent<PlayerHealingAbility>();
         
@@ -78,5 +65,25 @@ public class AbilityManager : MonoBehaviour
         lockInvincibilityImage.SetActive(false);
         invincibilityIcon.Bind(invincibility);
         unlockInvincible = true;
+    }
+
+    public void SetUnlockDash()
+    {
+        UnlockDash();
+    }
+
+    public void SetUnlockHeal()
+    {
+        UnlockHeal();
+    }
+
+    public void SetUnlockLight()
+    {
+        UnlockLight();
+    }
+
+    public void SetUnlockInvincibility()
+    {
+        UnlockInvincibility();
     }
 }

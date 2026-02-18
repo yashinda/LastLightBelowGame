@@ -15,7 +15,7 @@ public class PlayerInvincibilityAbility : ActiveAbility
     {
         duration = IncreaseSkills.Instance.GetInvincibilityDuration();
         health = GetComponent<PlayerHealth>();
-        effect = GetComponentInChildren<Shield>().gameObject;
+        effect = GetComponentInChildren<Shield>(true).gameObject;
     }
 
     protected override bool CanActivate()
@@ -26,10 +26,15 @@ public class PlayerInvincibilityAbility : ActiveAbility
     protected override IEnumerator ActivateRoutine()
     {
         health.SetInvincible(true);
-        effect.SetActive(true);
         yield return new WaitForSeconds(duration);
         health.SetInvincible(false);
+    }
+
+    protected override IEnumerator ShowHideEffect()
+    {
         effect.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        effect.SetActive(false);
     }
 
     private void OnInvincibility() => TryActivate();

@@ -13,13 +13,15 @@ public abstract class ActiveAbility : MonoBehaviour
     protected abstract float CooldownDuration { get; }
     protected abstract bool CanActivate();
     protected abstract IEnumerator ActivateRoutine();
+    protected abstract IEnumerator ShowHideEffect();
 
     public void TryActivate()
     {
-        if (!CanActivate() || inCooldown)
+        if (!CanActivate() || isActive || inCooldown)
             return;
 
         StartCoroutine(AbilityFlow());
+        StartCoroutine(ShowHideEffect());
     }
 
     private IEnumerator AbilityFlow()

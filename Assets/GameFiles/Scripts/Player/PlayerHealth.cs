@@ -31,7 +31,10 @@ public class PlayerHealth : MonoBehaviour
             return;
 
         if (armor > 0)
+        {
             armor -= (int)damage;
+            Debug.Log(armor);
+        }
         else
             currentHealth -= damage;
 

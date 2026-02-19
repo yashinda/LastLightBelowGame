@@ -5,6 +5,7 @@ public class Dash : ActiveAbility
 {
     [SerializeField] private CharacterController controller;
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private GameObject effect;
 
     private float dashDistance;
     private float dashDuration = 0.2f;
@@ -17,6 +18,7 @@ public class Dash : ActiveAbility
         dashDistance = IncreaseSkills.Instance.GetDashDistance();
         controller = GetComponent<CharacterController>();
         playerHealth = GetComponent<PlayerHealth>();
+        effect = GetComponentInChildren<Dashing>(true).gameObject;
     }
 
     protected override bool CanActivate()
@@ -37,6 +39,13 @@ public class Dash : ActiveAbility
             controller.Move(next - transform.position);
             yield return null;
         }
+    }
+
+    protected override IEnumerator ShowHideEffect()
+    {
+        effect.SetActive(true);
+        yield return new WaitForSeconds(dashDuration);
+        effect.SetActive(false);
     }
 
     private void OnDash() => TryActivate();

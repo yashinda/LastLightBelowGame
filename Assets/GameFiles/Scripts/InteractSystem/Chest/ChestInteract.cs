@@ -23,9 +23,13 @@ public class ChestInteract : MonoBehaviour, IInteractable
 
     private void OpenChest()
     {
+        isOpened = true;
         animator.SetBool("Open", true);
         audioSource.PlayOneShot(clip);
-        loot.SetActive(true);
+        if (loot != null)
+            loot.SetActive(true);
+
+        this.enabled = false;
     }
 
     public InteractionType GetInteractionType()
@@ -33,5 +37,8 @@ public class ChestInteract : MonoBehaviour, IInteractable
         return isOpened ? InteractionType.None : InteractionType.Open;
     }
 
-    public string GetInteractionDescription() => "открыть сундук";
+    public string GetInteractionDescription()
+    {
+        return isOpened ? string.Empty : "открыть сундук";
+    }
 }

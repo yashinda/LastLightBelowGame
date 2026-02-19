@@ -8,6 +8,8 @@ TagManager:
   - EnemyProjectile
   - Barrel
   - Env
+  - Shield
+  - Heal
   layers:
   - Default
   - TransparentFX

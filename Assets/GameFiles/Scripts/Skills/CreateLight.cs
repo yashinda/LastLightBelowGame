@@ -5,6 +5,7 @@ public class CreateLight : ActiveAbility
 {
     [SerializeField] private Light pointLight;
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private GameObject effect;
 
     private float duration;
 
@@ -16,6 +17,7 @@ public class CreateLight : ActiveAbility
         duration = IncreaseSkills.Instance.GetLightDuration();
         playerHealth = GetComponent<PlayerHealth>();
         pointLight = GetComponentInChildren<Light>();
+        effect = GetComponentInChildren<Lightning>(true).gameObject;
     }
 
     protected override bool CanActivate()
@@ -28,6 +30,13 @@ public class CreateLight : ActiveAbility
         pointLight.enabled = true;
         yield return new WaitForSeconds(duration);
         pointLight.enabled = false;
+    }
+
+    protected override IEnumerator ShowHideEffect()
+    {
+        effect.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        effect.SetActive(false);
     }
 
     private void OnLight() => TryActivate();

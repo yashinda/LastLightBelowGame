@@ -16,9 +16,17 @@ public class ShopCardUI : MonoBehaviour
     [SerializeField] private GameObject textCountSvetles;
     [SerializeField] private GameObject textPurchased;
     [SerializeField] private int price;
+
+    [Header("References")]
     [SerializeField] private SvetlesContainer svetlesContainer;
     [SerializeField] private PurchaseType purchaseType;
     [SerializeField] private Shop shop;
+
+    [Header("ButtonSound")]
+    [SerializeField] private AudioClip HPandPsiClip;
+    [SerializeField] private AudioClip armorClip;
+    [SerializeField] private AudioClip weaponClip;
+    [SerializeField] private AudioSource audioSource;
     private Button button;
 
     private void Start()
@@ -31,27 +39,29 @@ public class ShopCardUI : MonoBehaviour
     public void Purchase()
     {
         if (!CanPurchased())
-        {
-            Debug.Log("Не хватает денег");
             return;
-        }
 
         switch(purchaseType)
         {
             case PurchaseType.IncreaseMaxHP:
                 shop.PurchaseMaxHP(price);
+                audioSource.PlayOneShot(HPandPsiClip);
                 break;
             case PurchaseType.IncreaseMaxPsi:
                 shop.PurchaseMaxPsi(price);
+                audioSource.PlayOneShot(HPandPsiClip);
                 break;
             case PurchaseType.GetArmor:
                 shop.PurchaseArmor(price);
+                audioSource.PlayOneShot(armorClip);
                 break;
             case PurchaseType.IncreaseShotgun:
                 shop.IncreaseShotgun(price);
+                audioSource.PlayOneShot(weaponClip);
                 break;
             case PurchaseType.IncreaseRevolver:
                 shop.IncreaseRevolver(price);
+                audioSource.PlayOneShot(weaponClip);
                 break;
         }
 

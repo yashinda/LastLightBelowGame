@@ -1235,7 +1235,7 @@ MonoBehaviour:
   currentHealth: 0
   damage: 10
   soulsOnDeath: 70
-  deathByTime: 0
+  deathByTime: 1
   chaseDistance: 20
   patrolDistance: 25
   attackDistance: 15

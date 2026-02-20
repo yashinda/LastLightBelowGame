@@ -3263,6 +3263,7 @@ GameObject:
   - component: {fileID: 182623689}
   - component: {fileID: 182623688}
   - component: {fileID: 182623691}
+  - component: {fileID: 182623692}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3391,6 +3392,30 @@ MonoBehaviour:
   svetlesContainer: {fileID: 6696862777823150072}
   purchaseType: 4
   shop: {fileID: 1321518077}
+  HPandPsiClip: {fileID: 0}
+  armorClip: {fileID: 0}
+  weaponClip: {fileID: 8300000, guid: 04ec0216e865d452a9faa8b617f56e9d, type: 3}
+  audioSource: {fileID: 6967423161754714887}
+--- !u!114 &182623692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182623686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f250ab46329d5e4aad86fe9049b7343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
+  uiAudioSource: {fileID: 6967423161754714887}
+  soundType: 1
+  systemHover: {fileID: 0}
+  abilityHover: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
+  confirmHover: {fileID: 0}
+  systemClick: {fileID: 0}
+  abilityClick: {fileID: 0}
+  confirmClick: {fileID: 0}
 --- !u!1 &187250120
 GameObject:
   m_ObjectHideFlags: 0
@@ -5094,6 +5119,7 @@ GameObject:
   - component: {fileID: 535148646}
   - component: {fileID: 535148645}
   - component: {fileID: 535148648}
+  - component: {fileID: 535148649}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -5222,6 +5248,30 @@ MonoBehaviour:
   svetlesContainer: {fileID: 6696862777823150072}
   purchaseType: 1
   shop: {fileID: 1321518077}
+  HPandPsiClip: {fileID: 8300000, guid: 93d02d444f3964944a6158ad2d305af7, type: 3}
+  armorClip: {fileID: 0}
+  weaponClip: {fileID: 0}
+  audioSource: {fileID: 6967423161754714887}
+--- !u!114 &535148649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535148643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f250ab46329d5e4aad86fe9049b7343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
+  uiAudioSource: {fileID: 6967423161754714887}
+  soundType: 1
+  systemHover: {fileID: 0}
+  abilityHover: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
+  confirmHover: {fileID: 0}
+  systemClick: {fileID: 0}
+  abilityClick: {fileID: 0}
+  confirmClick: {fileID: 0}
 --- !u!1 &536499748
 GameObject:
   m_ObjectHideFlags: 0
@@ -5482,12 +5532,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
   uiAudioSource: {fileID: 6967423161754714887}
-  soundType: 0
+  soundType: 1
   systemHover: {fileID: 0}
-  abilityHover: {fileID: 8300000, guid: 171cbf7786001483b9e633a0a5610e19, type: 3}
+  abilityHover: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
   confirmHover: {fileID: 0}
   systemClick: {fileID: 0}
-  abilityClick: {fileID: 8300000, guid: 6a5d9ecfe1ef24db09d9ec42a0e9fafe, type: 3}
+  abilityClick: {fileID: 0}
   confirmClick: {fileID: 0}
 --- !u!1 &626700906
 GameObject:
@@ -7378,6 +7428,7 @@ GameObject:
   - component: {fileID: 1022446468}
   - component: {fileID: 1022446467}
   - component: {fileID: 1022446470}
+  - component: {fileID: 1022446471}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -7506,6 +7557,30 @@ MonoBehaviour:
   svetlesContainer: {fileID: 6696862777823150072}
   purchaseType: 0
   shop: {fileID: 1321518077}
+  HPandPsiClip: {fileID: 8300000, guid: 93d02d444f3964944a6158ad2d305af7, type: 3}
+  armorClip: {fileID: 0}
+  weaponClip: {fileID: 0}
+  audioSource: {fileID: 6967423161754714887}
+--- !u!114 &1022446471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022446465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f250ab46329d5e4aad86fe9049b7343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
+  uiAudioSource: {fileID: 6967423161754714887}
+  soundType: 1
+  systemHover: {fileID: 0}
+  abilityHover: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
+  confirmHover: {fileID: 0}
+  systemClick: {fileID: 0}
+  abilityClick: {fileID: 0}
+  confirmClick: {fileID: 0}
 --- !u!1 &1028382885
 GameObject:
   m_ObjectHideFlags: 0
@@ -8240,6 +8315,7 @@ GameObject:
   - component: {fileID: 1234195349}
   - component: {fileID: 1234195348}
   - component: {fileID: 1234195351}
+  - component: {fileID: 1234195352}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -8368,6 +8444,30 @@ MonoBehaviour:
   svetlesContainer: {fileID: 6696862777823150072}
   purchaseType: 2
   shop: {fileID: 1321518077}
+  HPandPsiClip: {fileID: 0}
+  armorClip: {fileID: 8300000, guid: f68251ea6f14c47908352c5f30f3a7fc, type: 3}
+  weaponClip: {fileID: 0}
+  audioSource: {fileID: 6967423161754714887}
+--- !u!114 &1234195352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234195346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f250ab46329d5e4aad86fe9049b7343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
+  uiAudioSource: {fileID: 6967423161754714887}
+  soundType: 1
+  systemHover: {fileID: 0}
+  abilityHover: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
+  confirmHover: {fileID: 0}
+  systemClick: {fileID: 0}
+  abilityClick: {fileID: 0}
+  confirmClick: {fileID: 0}
 --- !u!1 &1265102255
 GameObject:
   m_ObjectHideFlags: 0
@@ -8696,6 +8796,7 @@ GameObject:
   - component: {fileID: 1312752633}
   - component: {fileID: 1312752632}
   - component: {fileID: 1312752635}
+  - component: {fileID: 1312752636}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -8824,6 +8925,30 @@ MonoBehaviour:
   svetlesContainer: {fileID: 6696862777823150072}
   purchaseType: 3
   shop: {fileID: 1321518077}
+  HPandPsiClip: {fileID: 0}
+  armorClip: {fileID: 0}
+  weaponClip: {fileID: 8300000, guid: 04ec0216e865d452a9faa8b617f56e9d, type: 3}
+  audioSource: {fileID: 6967423161754714887}
+--- !u!114 &1312752636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312752630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f250ab46329d5e4aad86fe9049b7343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
+  uiAudioSource: {fileID: 6967423161754714887}
+  soundType: 1
+  systemHover: {fileID: 0}
+  abilityHover: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
+  confirmHover: {fileID: 0}
+  systemClick: {fileID: 0}
+  abilityClick: {fileID: 0}
+  confirmClick: {fileID: 0}
 --- !u!1 &1321518073
 GameObject:
   m_ObjectHideFlags: 0
@@ -18388,6 +18513,7 @@ GameObject:
   - component: {fileID: 7336965692620479082}
   - component: {fileID: 302943758788513301}
   - component: {fileID: 2248408514754653453}
+  - component: {fileID: 7831472017008776922}
   m_Layer: 5
   m_Name: ButtonSettings
   m_TagString: Untagged
@@ -29359,7 +29485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MusicLibrary
   tracks:
   - trackName: Exploration
-    clip: {fileID: 8300000, guid: 6889dc84c9678471d86b1f1b48481073, type: 3}
+    clip: {fileID: 8300000, guid: 3614dece4b0a1b74cbf0e9215776b885, type: 3}
   - trackName: Combat
     clip: {fileID: 8300000, guid: 41fbd855e439de649b07f9df3d21714c, type: 3}
 --- !u!222 &914810240544452562
@@ -43777,6 +43903,7 @@ GameObject:
   - component: {fileID: 3351793170298885156}
   - component: {fileID: 1976659367884256881}
   - component: {fileID: 7763954054323697374}
+  - component: {fileID: 7763954054323697375}
   m_Layer: 5
   m_Name: ButtonToDesktop
   m_TagString: Untagged
@@ -56090,6 +56217,7 @@ GameObject:
   - component: {fileID: 7021680755876824415}
   - component: {fileID: 8693046976801350300}
   - component: {fileID: 3396654524788191847}
+  - component: {fileID: 8693046976801350301}
   m_Layer: 5
   m_Name: ButtonToMenu
   m_TagString: Untagged
@@ -78491,6 +78619,7 @@ GameObject:
   - component: {fileID: 1537444118167213206}
   - component: {fileID: 6854641532176514276}
   - component: {fileID: 7183280616251669063}
+  - component: {fileID: 7183280616251669064}
   m_Layer: 5
   m_Name: ButtonContinue
   m_TagString: Untagged
@@ -107460,6 +107589,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7183280616251669064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5203643122397782320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f250ab46329d5e4aad86fe9049b7343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
+  uiAudioSource: {fileID: 6967423161754714887}
+  soundType: 0
+  systemHover: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
+  abilityHover: {fileID: 0}
+  confirmHover: {fileID: 0}
+  systemClick: {fileID: 8300000, guid: 5b7e4af5e540e4d2f9f4b527012fe9dc, type: 3}
+  abilityClick: {fileID: 0}
+  confirmClick: {fileID: 0}
 --- !u!199 &7184968867187796338
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -127839,6 +127988,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7763954054323697375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829062574194835145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f250ab46329d5e4aad86fe9049b7343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
+  uiAudioSource: {fileID: 6967423161754714887}
+  soundType: 0
+  systemHover: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
+  abilityHover: {fileID: 0}
+  confirmHover: {fileID: 0}
+  systemClick: {fileID: 8300000, guid: 5b7e4af5e540e4d2f9f4b527012fe9dc, type: 3}
+  abilityClick: {fileID: 0}
+  confirmClick: {fileID: 0}
 --- !u!1 &7786420749502002686
 GameObject:
   m_ObjectHideFlags: 0
@@ -132729,6 +132898,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 23.999985}
   m_SizeDelta: {x: 509, y: 84}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7831472017008776922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298695339849997896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f250ab46329d5e4aad86fe9049b7343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
+  uiAudioSource: {fileID: 6967423161754714887}
+  soundType: 0
+  systemHover: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
+  abilityHover: {fileID: 0}
+  confirmHover: {fileID: 0}
+  systemClick: {fileID: 8300000, guid: 5b7e4af5e540e4d2f9f4b527012fe9dc, type: 3}
+  abilityClick: {fileID: 0}
+  confirmClick: {fileID: 0}
 --- !u!4 &7833214676132008589
 Transform:
   m_ObjectHideFlags: 0
@@ -139570,6 +139759,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8693046976801350301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3839847275499682251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f250ab46329d5e4aad86fe9049b7343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSound
+  uiAudioSource: {fileID: 6967423161754714887}
+  soundType: 0
+  systemHover: {fileID: 8300000, guid: 74ade2b8b222d4ecd9dbd0c5a2ec312a, type: 3}
+  abilityHover: {fileID: 0}
+  confirmHover: {fileID: 0}
+  systemClick: {fileID: 8300000, guid: 5b7e4af5e540e4d2f9f4b527012fe9dc, type: 3}
+  abilityClick: {fileID: 0}
+  confirmClick: {fileID: 0}
 --- !u!4 &8705340475132074328
 Transform:
   m_ObjectHideFlags: 0

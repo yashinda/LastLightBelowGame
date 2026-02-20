@@ -29359,7 +29359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MusicLibrary
   tracks:
   - trackName: Exploration
-    clip: {fileID: 8300000, guid: 6889dc84c9678471d86b1f1b48481073, type: 3}
+    clip: {fileID: 8300000, guid: 3614dece4b0a1b74cbf0e9215776b885, type: 3}
   - trackName: Combat
     clip: {fileID: 8300000, guid: 41fbd855e439de649b07f9df3d21714c, type: 3}
 --- !u!222 &914810240544452562

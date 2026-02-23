@@ -104,7 +104,7 @@ TextureImporter:
 AssetOrigin:
   serializedVersion: 1
   productId: 344984
-  packageName: Free Game VFX - Magic Circle
-  packageVersion: 1.0
-  assetPath: Assets/Game VFX - Magic Circle/Textures/S_C_DAVINT_02-3.png
-  uploadId: 819664
+  packageName: Free Game VFX - Magic Circle(URP)
+  packageVersion: 1.01
+  assetPath: Assets/GameFiles/Game VFX - Magic Circle/Textures/S_C_DAVINT_02-3.png
+  uploadId: 844516

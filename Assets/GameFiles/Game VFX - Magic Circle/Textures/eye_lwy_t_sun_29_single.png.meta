@@ -93,7 +93,7 @@ TextureImporter:
 AssetOrigin:
   serializedVersion: 1
   productId: 344984
-  packageName: Free Game VFX - Magic Circle
-  packageVersion: 1.0
-  assetPath: Assets/Game VFX - Magic Circle/Textures/eye_lwy_t_sun_29_single.png
-  uploadId: 819664
+  packageName: Free Game VFX - Magic Circle(URP)
+  packageVersion: 1.01
+  assetPath: Assets/GameFiles/Game VFX - Magic Circle/Textures/eye_lwy_t_sun_29_single.png
+  uploadId: 844516

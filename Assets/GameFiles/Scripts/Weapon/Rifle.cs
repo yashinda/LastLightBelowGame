@@ -36,6 +36,15 @@ public class Rifle : Gun
 
                 enemyBase.TakeDamage(finalDamage);
             }
+
+            if (hit.collider.CompareTag("Barrel"))
+            {
+                var barrel = hit.collider.GetComponent<ExplosiveBarrel>();
+                if (barrel != null)
+                {
+                    barrel.Explode();
+                }
+            }
         }
 
         Debug.DrawRay(spawnBulletTransform.position, shootDirection * shootingRange, Color.red, 0.3f);

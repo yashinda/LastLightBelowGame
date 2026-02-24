@@ -23,7 +23,16 @@ public class PickUpWeapon : MonoBehaviour
             weaponContainer.AddWeapon(gameObject);
             weaponContainer.ActivateWeapon(indexPickUpWeapon);
             ammoboxes.SetActive(true);
-            GetComponent<Revolver>().enabled = true;
+            
+            if (GetComponent<Revolver>() != null)
+                GetComponent<Revolver>().enabled = true;
+
+            if (GetComponent<Rifle>() != null)
+                GetComponent<Rifle>().enabled = true;
+
+            if (GetComponent<RocketLauncher>() != null)
+                GetComponent<RocketLauncher>().enabled = true;
+
             GetComponent<Animator>().enabled = true;
             GetComponent<AudioSource>().enabled = true;
             GetComponent<AudioSource>().PlayOneShot(pickUpClip);

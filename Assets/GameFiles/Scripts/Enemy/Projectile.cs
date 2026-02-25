@@ -13,11 +13,10 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player"))
-            return;
-
-        if (other.CompareTag("Env"))
+        {
             Destroy(gameObject);
-
+        }
+            
         var playerHealth = other.gameObject.GetComponent<PlayerHealth>();
         if (playerHealth != null)
             playerHealth.TakeDamage(damage);

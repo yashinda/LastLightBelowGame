@@ -17,6 +17,11 @@ public static class SaveLoadData
         stream.Close();
     }
 
+    public static void LoadNewGame()
+    {
+         File.Delete(savePath);
+    }
+
     public static void LoadGame(SvetlesContainer svetlesContainer, UpgradeManager upgradeManager, PlayerHealth playerHealth, PsySystem psySystem,
         Shotgun shotgun, Revolver revolver, AbilityManager abilityManager)
     {

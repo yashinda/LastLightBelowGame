@@ -32,16 +32,27 @@ public class PlayerHealth : MonoBehaviour
 
         if (armor > 0)
         {
-            armor -= (int)damage;
-            Debug.Log(armor);
+            armor -= (int)Mathf.Ceil(damage);
         }
         else
+        {
             currentHealth -= damage;
-
+        }
+        
         if (currentHealth <= minHealth)
         {
             Die();
         }
+    }
+
+    public void TakePsyDamage(float damage)
+    {
+        if (invincible || isDead)
+            return;
+
+        currentHealth -= damage;
+        if (currentHealth <= minHealth)
+            Die();
     }
 
     public void Heal(float amount)

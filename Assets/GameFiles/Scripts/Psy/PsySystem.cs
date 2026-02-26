@@ -50,7 +50,7 @@ public class PsySystem : MonoBehaviour
         if (playerHealth.PlayerDead || gameManager.CurrentState != LevelState.Playing)
             return;
 
-        playerHealth.TakeDamage(damage * Time.deltaTime);
+        playerHealth.TakePsyDamage(damage * Time.deltaTime);
     }
 
     public void IncreaseMaxPsi(float amount)

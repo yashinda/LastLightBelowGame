@@ -7,7 +7,6 @@ public class EnemyWithProjectile : EnemyBase
     [SerializeField] private float fireRate = 1.0f;
     [SerializeField] private float projectileForce = 1000.0f;
     private float nextFireTime;
-
     protected override void Update()
     {
         if (!isDeath)
@@ -27,13 +26,12 @@ public class EnemyWithProjectile : EnemyBase
 
     protected override void Patrol()
     {
-        agent.isStopped = true;
+        Attack();
     }
 
     protected override void Chase()
     {
-        agent.isStopped = false;
-        agent.SetDestination(player.position);
+        Attack();
     }
 
     protected override void Attack()
@@ -69,5 +67,9 @@ public class EnemyWithProjectile : EnemyBase
     {
         base.Die();
         animator.SetTrigger("Death");
+        foreach (var mesh in GetComponentsInChildren<SkinnedMeshRenderer>())
+        {
+            mesh.enabled = false;
+        }
     }
 }

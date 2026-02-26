@@ -47,6 +47,7 @@ Material:
     RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
+  - SHADOWCASTER
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -141,7 +142,7 @@ Material:
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
-    - _CastShadows: 1
+    - _CastShadows: 0
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -158,9 +159,9 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _Param_AO: 0.968
+    - _Param_AO: 0
     - _Param_Metalic: 1
-    - _Param_Roughness: 0
+    - _Param_Roughness: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1

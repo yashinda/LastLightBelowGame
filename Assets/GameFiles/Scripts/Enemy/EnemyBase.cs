@@ -186,6 +186,11 @@ public abstract class EnemyBase : MonoBehaviour
         SwitchState(EnemyState.Patrol);
     }
 
+    public void PlayAttackSound()
+    {
+        enemySource.PlayOneShot(attackClip);
+    }
+
     protected abstract void Patrol();
     protected abstract void Chase();
     protected abstract void Attack();

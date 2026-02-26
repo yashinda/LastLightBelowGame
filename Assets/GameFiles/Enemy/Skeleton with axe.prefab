@@ -6607,7 +6607,7 @@ RectTransform:
   m_Father: {fileID: 7779656046014119956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.0001373291, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6815,6 +6815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   healthBar: {fileID: 3993165335973764885}
+  playerCamera: {fileID: 0}
 --- !u!1 &6174585043959509533
 GameObject:
   m_ObjectHideFlags: 0
@@ -7541,7 +7542,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.4446742, z: 0, w: 0.8956924}
   m_LocalPosition: {x: 13.66, y: -0.44009, z: -1.45}
-  m_LocalScale: {x: 0.6144023, y: 0.6144023, z: 0.6144023}
+  m_LocalScale: {x: 0.61440223, y: 0.6144023, z: 0.61440223}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7428179176687058173}
@@ -7597,7 +7598,7 @@ MonoBehaviour:
   attackCooldown: 2
   enemySource: {fileID: 4227988342541233043}
   stepClip: {fileID: 8300000, guid: d43235d1d6e735e4f851c7b6ef69437c, type: 3}
-  attackClip: {fileID: 0}
+  attackClip: {fileID: 8300000, guid: e8695d3a5e4d77d46bbf4b5bb21d6383, type: 3}
   pitchMin: 0.95
   pitchMax: 1.05
   healthBar: {fileID: 7261061895754560051}

@@ -9,11 +9,13 @@ public class Shop : MonoBehaviour
     [SerializeField] private PsySystem psySystem;
     [SerializeField] private Shotgun shotgun;
     [SerializeField] private Revolver revolver;
+    [SerializeField] private Rifle rifle;
     [SerializeField] private float increaseMaxHPamount;
     [SerializeField] private float increaseMaxPsyAmount;
     [SerializeField] private int armorAmount;
     [SerializeField] private int increaseShotgunDamage;
     [SerializeField] private int inreaseRevolverDamage;
+    [SerializeField] private int increaseRifleDamage;
     [SerializeField] private GameObject armorIndicator;
 
     private void Start()
@@ -54,6 +56,13 @@ public class Shop : MonoBehaviour
     {
         svetlesContainer.SpendSvetles(price);
         revolver.IncreaseDamage(inreaseRevolverDamage);
+        textSvetlesAmount.text = svetlesContainer.CurrentSvetles.ToString();
+    }
+
+    public void IncreaseRifle(int price)
+    {
+        svetlesContainer.SpendSvetles(price);
+        rifle.IncreaseDamage(increaseRifleDamage);
         textSvetlesAmount.text = svetlesContainer.CurrentSvetles.ToString();
     }
 }

@@ -12,6 +12,7 @@ public class PlayerData
     public int armor;
     public int shotgunDamage;
     public int revolverDamage;
+    public int rifleDamage;
     public bool unlockDashAbil;
     public bool unlockHealAbil;
     public bool unlockLightAbil;
@@ -24,6 +25,7 @@ public class PlayerData
         PsySystem psySystem,
         Shotgun shotgun,
         Revolver revolver,
+        Rifle rifle,
         AbilityManager abilityManager)
     {
         svetlesAmount = svetlesContainer.CurrentSvetles;
@@ -33,6 +35,7 @@ public class PlayerData
         armor = playerHealth.Armor;
         shotgunDamage = shotgun.Damage;
         revolverDamage = revolver.Damage;
+        rifleDamage = rifle.Damage;
         unlockDashAbil = abilityManager.unlockDash;
         unlockHealAbil = abilityManager.unlockHeal;
         unlockLightAbil = abilityManager.unlockLight;

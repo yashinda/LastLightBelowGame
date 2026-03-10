@@ -21,6 +21,7 @@ public class LevelStateController : MonoBehaviour
     [SerializeField] private PsySystem psySystem;
     [SerializeField] private Shotgun shotgun;
     [SerializeField] private Revolver revolver;
+    [SerializeField] private Rifle rifle;
     [SerializeField] private AbilityManager abilityManager;
 
     [Header("UI")]
@@ -105,7 +106,7 @@ public class LevelStateController : MonoBehaviour
 
     public void SaveProgress()
     {
-        SaveLoadData.SaveGame(svetlesContainer, upgradeManager, playerHealth, psySystem, shotgun, revolver, abilityManager);
+        SaveLoadData.SaveGame(svetlesContainer, upgradeManager, playerHealth, psySystem, shotgun, revolver, rifle, abilityManager);
     }
 
     public void LoadNextLevel()
@@ -116,7 +117,7 @@ public class LevelStateController : MonoBehaviour
 
     private void LoadProgress()
     {
-        SaveLoadData.LoadGame(svetlesContainer, upgradeManager, playerHealth, psySystem, shotgun, revolver, abilityManager);
+        SaveLoadData.LoadGame(svetlesContainer, upgradeManager, playerHealth, psySystem, shotgun, revolver, rifle, abilityManager);
     }
 
     public void ConfirmNextLevel()

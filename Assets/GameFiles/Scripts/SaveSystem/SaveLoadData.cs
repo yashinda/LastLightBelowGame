@@ -7,12 +7,12 @@ public static class SaveLoadData
     private static readonly string savePath = Application.persistentDataPath + "/save.b";
 
     public static void SaveGame(SvetlesContainer svetlesContainer, UpgradeManager upgradeManager, PlayerHealth playerHealth, PsySystem psySystem,
-        Shotgun shotgun, Revolver revolver, AbilityManager abilityManager)
+        Shotgun shotgun, Revolver revolver, Rifle rifle, AbilityManager abilityManager)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         FileStream stream = new FileStream(savePath, FileMode.Create);
 
-        PlayerData data = new PlayerData(svetlesContainer, upgradeManager, playerHealth, psySystem, shotgun, revolver, abilityManager);
+        PlayerData data = new PlayerData(svetlesContainer, upgradeManager, playerHealth, psySystem, shotgun, revolver, rifle, abilityManager);
         formatter.Serialize(stream, data);
         stream.Close();
     }
@@ -23,7 +23,7 @@ public static class SaveLoadData
     }
 
     public static void LoadGame(SvetlesContainer svetlesContainer, UpgradeManager upgradeManager, PlayerHealth playerHealth, PsySystem psySystem,
-        Shotgun shotgun, Revolver revolver, AbilityManager abilityManager)
+        Shotgun shotgun, Revolver revolver, Rifle rifle, AbilityManager abilityManager)
     {
         if (File.Exists(savePath))
         {
@@ -42,6 +42,7 @@ public static class SaveLoadData
             playerHealth.SetArmor(data.armor);
             shotgun.SetDamage(data.shotgunDamage);
             revolver.SetDamage(data.revolverDamage);
+            rifle.SetDamage(data.rifleDamage);
 
             if (data.unlockDashAbil)
                 abilityManager.SetUnlockDash();

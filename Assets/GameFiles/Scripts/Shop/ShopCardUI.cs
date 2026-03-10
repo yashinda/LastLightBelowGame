@@ -7,7 +7,8 @@ public enum PurchaseType
     IncreaseMaxPsi,
     GetArmor,
     IncreaseShotgun,
-    IncreaseRevolver
+    IncreaseRevolver,
+    IncreaseRifle
 }
 
 public class ShopCardUI : MonoBehaviour
@@ -46,23 +47,27 @@ public class ShopCardUI : MonoBehaviour
             case PurchaseType.IncreaseMaxHP:
                 shop.PurchaseMaxHP(price);
                 audioSource.PlayOneShot(HPandPsiClip);
-                break;
+            break;
             case PurchaseType.IncreaseMaxPsi:
                 shop.PurchaseMaxPsi(price);
                 audioSource.PlayOneShot(HPandPsiClip);
-                break;
+            break;
             case PurchaseType.GetArmor:
                 shop.PurchaseArmor(price);
                 audioSource.PlayOneShot(armorClip);
-                break;
+            break;
             case PurchaseType.IncreaseShotgun:
                 shop.IncreaseShotgun(price);
                 audioSource.PlayOneShot(weaponClip);
-                break;
+            break;
             case PurchaseType.IncreaseRevolver:
                 shop.IncreaseRevolver(price);
                 audioSource.PlayOneShot(weaponClip);
-                break;
+            break;
+            case PurchaseType.IncreaseRifle:
+                shop.IncreaseRifle(price);
+                audioSource.PlayOneShot(weaponClip);
+            break;
         }
 
         button.gameObject.SetActive(false);

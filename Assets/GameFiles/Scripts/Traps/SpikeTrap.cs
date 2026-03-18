@@ -22,7 +22,7 @@ public class SpikeTrap : MonoBehaviour
             return;
 
         trapIsTriggered = true;
-        ActivateTrap();
+        StartCoroutine(ActivateTrap());
     }
 
     private void OnTriggerExit(Collider other)

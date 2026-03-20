@@ -5,7 +5,8 @@ public enum UpgradeEffect
     UnlockDash,
     UnlockHeal,
     UnlockLight,
-    UnlockInvincibility
+    UnlockInvincibility,
+    UnlockMakeMagicLight
 }
 
 [CreateAssetMenu(fileName = "NewUpgrade", menuName = "Upgrades/Upgrade")]

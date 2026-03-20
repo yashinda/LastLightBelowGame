@@ -10,6 +10,8 @@ TagManager:
   - Env
   - Shield
   - Heal
+  - Torch
+  - PanelMagic
   layers:
   - Default
   - TransparentFX

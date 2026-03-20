@@ -19,11 +19,13 @@ public class AbilityManager : MonoBehaviour
     private PlayerHealingAbility heal;
     private CreateLight lightAbility;
     private PlayerInvincibilityAbility invincibility;
+    private MakeMagicLight makeMagicLight;
 
     public bool unlockDash;
     public bool unlockHeal;
     public bool unlockLight;
     public bool unlockInvincible;
+    public bool unlockMakeMagicLight;
 
     public void UnlockDash()
     {
@@ -67,6 +69,12 @@ public class AbilityManager : MonoBehaviour
         unlockInvincible = true;
     }
 
+    public void UnlockMakeMagicLight()
+    {
+        if (makeMagicLight != null) return;
+        makeMagicLight = player.AddComponent<MakeMagicLight>();
+    }
+
     public void SetUnlockDash()
     {
         UnlockDash();
@@ -85,5 +93,10 @@ public class AbilityManager : MonoBehaviour
     public void SetUnlockInvincibility()
     {
         UnlockInvincibility();
+    }
+
+    public void SetUnlockMakeMagicLight()
+    {
+        UnlockMakeMagicLight();
     }
 }

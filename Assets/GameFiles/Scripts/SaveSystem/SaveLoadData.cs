@@ -56,6 +56,9 @@ public static class SaveLoadData
             if (data.unlockInvincibilityAbil)
                 abilityManager.SetUnlockInvincibility();
 
+            if (data.unlockMakeMagicLightAbil)
+                abilityManager.SetUnlockMakeMagicLight();
+
             abilityManager.unlockDash = data.unlockDashAbil;
             abilityManager.unlockHeal = data.unlockHealAbil;
             abilityManager.unlockLight = data.unlockLightAbil;

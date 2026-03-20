@@ -17,6 +17,7 @@ public class PlayerData
     public bool unlockHealAbil;
     public bool unlockLightAbil;
     public bool unlockInvincibilityAbil;
+    public bool unlockMakeMagicLightAbil;
 
     public PlayerData(
         SvetlesContainer svetlesContainer,
@@ -40,5 +41,6 @@ public class PlayerData
         unlockHealAbil = abilityManager.unlockHeal;
         unlockLightAbil = abilityManager.unlockLight;
         unlockInvincibilityAbil = abilityManager.unlockInvincible;
+        unlockMakeMagicLightAbil = abilityManager.unlockMakeMagicLight;
     }
 }

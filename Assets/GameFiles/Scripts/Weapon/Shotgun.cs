@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Shotgun : Gun
@@ -28,6 +29,8 @@ public class Shotgun : Gun
 
         float spread = Mathf.Tan(spreadAngle * Mathf.Deg2Rad);
 
+        Dictionary<EnemyBase, int> damageMap = new Dictionary<EnemyBase, int>();
+        Dictionary<EnemyBase, Vector3> hitPointMap = new Dictionary<EnemyBase, Vector3>();
         for (int i = 0; i < pelletCount; i++)
         {
             Vector2 rand = Random.insideUnitCircle;
@@ -41,7 +44,7 @@ public class Shotgun : Gun
                 { 
                     var enemyBase = hit.collider.GetComponentInParent<EnemyBase>();
                     if (enemyBase == null)
-                        return;
+                        continue;
 
                     int finalDamage = Damage;
 
@@ -49,6 +52,16 @@ public class Shotgun : Gun
                         finalDamage *= 2;
 
                     enemyBase.TakeDamage(finalDamage);
+
+                    if (!damageMap.ContainsKey(enemyBase))
+                    {
+                        damageMap[enemyBase] = 0;
+                        hitPointMap[enemyBase] = hit.point;
+                    }
+
+                    damageMap[enemyBase] += finalDamage;
+
+                    
                 }
 
                 if (hit.collider.CompareTag("Barrel"))
@@ -62,6 +75,25 @@ public class Shotgun : Gun
             }
 
             Debug.DrawRay(spawnBulletTransform.position, pelletDir * shootingRange, Color.red, 0.3f);
+        }
+
+        foreach (var pair in damageMap)
+        {
+            EnemyBase enemy = pair.Key;
+            int totalDamage = pair.Value;
+
+            Vector3 hitPoint = hitPointMap[enemy];
+
+            DynamicTextData data = enemy.textData;
+
+            Vector3 destination = hitPoint +
+                (playerCamera.transform.position - hitPoint).normalized;
+
+            destination.x += (Random.value - 0.5f) / 3f;
+            destination.y += Random.value;
+            destination.z += (Random.value - 0.5f) / 3f;
+
+            DynamicTextManager.CreateText(destination, totalDamage.ToString(), data);
         }
     }
 }

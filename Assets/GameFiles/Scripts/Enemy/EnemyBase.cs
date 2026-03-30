@@ -35,6 +35,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] protected private EnemyHealthBar healthBar;
+    public DynamicTextData textData;
 
     protected private NavMeshAgent agent;
     protected private Animator animator;

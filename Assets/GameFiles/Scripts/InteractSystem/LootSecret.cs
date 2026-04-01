@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum BuffCharacteristic
 {
@@ -21,12 +23,14 @@ public class LootSecret : MonoBehaviour, IInteractable
     [SerializeField] private Transform player;
     [SerializeField] private BuffCharacteristic characteristic;
     [SerializeField] private int buffCount;
+    [SerializeField] private GameObject imageSecret;
 
     public void Interact()
     {
         statistic.AddSecret();
         svetlesContainer.AddSvetles(svetlesCount);
         audioSource.PlayOneShot(audioClip);
+        imageSecret.SetActive(true);
 
         Destroy(gameObject);
 
@@ -52,7 +56,6 @@ public class LootSecret : MonoBehaviour, IInteractable
                 break;
         }
     }
-
     public string GetInteractionDescription() => "взять секрет";
 
     public InteractionType GetInteractionType() => InteractionType.Take;

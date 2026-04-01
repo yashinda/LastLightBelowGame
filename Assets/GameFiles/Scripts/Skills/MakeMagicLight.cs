@@ -4,7 +4,7 @@ using UnityEngine;
 public class MakeMagicLight : MonoBehaviour
 {
     [SerializeField] private int torchesCount = 2;
-    [SerializeField] private float rayDistance = 3.0f;
+    [SerializeField] private float rayDistance = 5.0f;
     [SerializeField] private GameObject panelAnswer;
     private bool canChangeLight = false;
     private RaycastHit hit;
@@ -36,7 +36,6 @@ public class MakeMagicLight : MonoBehaviour
                     canChangeLight = false;
                     panelAnswer.SetActive(false);
                 }
-                    
             }
             else
             {

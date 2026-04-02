@@ -35,6 +35,16 @@ public class Rifle : Gun
                     finalDamage *= 2;
 
                 enemyBase.TakeDamage(finalDamage);
+
+                DynamicTextData data = enemyBase.textData;
+
+                Vector3 destination = hit.point + (playerCamera.transform.position - hit.point).normalized;
+
+                destination.x += (Random.value - 0.5f) / 3.0f;
+                destination.y += Random.value;
+                destination.z += (Random.value - 0.5f) / 3.0f;
+
+                DynamicTextManager.CreateText(destination, finalDamage.ToString(), data);
             }
 
             if (hit.collider.CompareTag("Barrel"))

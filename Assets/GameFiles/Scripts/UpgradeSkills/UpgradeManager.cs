@@ -62,6 +62,10 @@ public class UpgradeManager : MonoBehaviour
             case UpgradeEffect.UnlockInvincibility:
                 abilityManager.UnlockInvincibility();
                 break;
+
+            case UpgradeEffect.UnlockMakeMagicLight:
+                abilityManager.UnlockMakeMagicLight();
+                break;
         }
 
         obtainedUpgrades.Add(upgrade.upgradeId);

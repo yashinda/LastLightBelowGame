@@ -46,13 +46,13 @@ public class LootSecret : MonoBehaviour, IInteractable
                 player.GetComponent<PlayerHealth>().GetArmor(buffCount);
                 break;
             case BuffCharacteristic.Revolver:
-                player.GetComponentInChildren<Revolver>().IncreaseDamage(buffCount);
+                player.GetComponentInChildren<Revolver>(true).IncreaseDamage(buffCount);
                 break;
             case BuffCharacteristic.Shotgun:
-                player.GetComponentInChildren<Shotgun>().IncreaseDamage(buffCount);
+                player.GetComponentInChildren<Shotgun>(true).IncreaseDamage(buffCount);
                 break;
             case BuffCharacteristic.Rifle:
-                player.GetComponentInChildren<Rifle>().IncreaseDamage(buffCount);
+                player.GetComponentInChildren<Rifle>(true).IncreaseDamage(buffCount);
                 break;
         }
     }

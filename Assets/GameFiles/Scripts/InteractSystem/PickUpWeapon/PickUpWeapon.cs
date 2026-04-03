@@ -30,8 +30,8 @@ public class PickUpWeapon : MonoBehaviour
             if (GetComponent<Rifle>() != null)
                 GetComponent<Rifle>().enabled = true;
 
-            if (GetComponent<RocketLauncher>() != null)
-                GetComponent<RocketLauncher>().enabled = true;
+            if (GetComponent<GunfireController>() != null)
+                GetComponent<GunfireController>().enabled = true;
 
             GetComponent<Animator>().enabled = true;
             GetComponent<AudioSource>().enabled = true;

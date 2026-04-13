@@ -5,6 +5,7 @@ public class PickUpWeapon : MonoBehaviour
     public float rotationSpeed = 3.0f;
     public WeaponChanger weaponContainer;
     public Transform weaponHolder;
+    public Vector3 weaponPosition = new Vector3(-0.109300002f, 0.0909999982f, 0.829699993f);
     public int indexPickUpWeapon = 1;
     public GameObject ammoboxes;
     public AudioClip pickUpClip;
@@ -19,10 +20,12 @@ public class PickUpWeapon : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             transform.parent = weaponHolder;
-            transform.position = new Vector3(-0.109300002f, 0.0909999982f, 0.829699993f);
+            transform.position = weaponPosition;
             weaponContainer.AddWeapon(gameObject);
             weaponContainer.ActivateWeapon(indexPickUpWeapon);
-            ammoboxes.SetActive(true);
+
+            if (ammoboxes != null)
+                ammoboxes.SetActive(true);
             
             if (GetComponent<Revolver>() != null)
                 GetComponent<Revolver>().enabled = true;
@@ -30,8 +33,8 @@ public class PickUpWeapon : MonoBehaviour
             if (GetComponent<Rifle>() != null)
                 GetComponent<Rifle>().enabled = true;
 
-            if (GetComponent<GunfireController>() != null)
-                GetComponent<GunfireController>().enabled = true;
+            if (GetComponent<RocketController>() != null)
+                GetComponent<RocketController>().enabled = true;
 
             GetComponent<Animator>().enabled = true;
             GetComponent<AudioSource>().enabled = true;

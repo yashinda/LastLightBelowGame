@@ -1,49 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
         // --- Config ---
-        public float speed = 100;
-        public LayerMask collisionLayerMask;
+    public float speed = 100;
+    public float radiusExplosion = 4.0f;
+    public RocketController rocket;
+    public LayerMask collisionLayerMask;
 
         // --- Explosion VFX ---
-        public GameObject rocketExplosion;
+    public GameObject rocketExplosion;
 
         // --- Projectile Mesh ---
-        public MeshRenderer projectileMesh;
+    public MeshRenderer projectileMesh;
 
         // --- Script Variables ---
-        private bool targetHit;
+    private bool targetHit;
 
         // --- Audio ---
-        public AudioSource inFlightAudioSource;
+    public AudioSource inFlightAudioSource;
 
         // --- VFX ---
-        public ParticleSystem disableOnHit;
+    public ParticleSystem disableOnHit;
+
+    private Camera playerCamera;
 
 
-        private void Update()
+    private void Start()
+    {
+        rocket = GameObject.FindFirstObjectByType<RocketController>();
+        playerCamera = Camera.main;
+    }
+
+
+    private void Update()
         {
-            // --- Check to see if the target has been hit. We don't want to update the position if the target was hit ---
             if (targetHit) return;
-
-            // --- moves the game object in the forward direction at the defined speed ---
             transform.position += transform.forward * (speed * Time.deltaTime);
         }
 
 
-        /// <summary>
-        /// Explodes on contact.
-        /// </summary>
-        /// <param name="collision"></param>
         private void OnCollisionEnter(Collision collision)
         {
-            // --- return if not enabled because OnCollision is still called if compoenent is disabled ---
-            if (!enabled) return;
-
-            // --- Explode when hitting an object and disable the projectile mesh ---
+            if (!enabled)
+                return;
             Explode();
             projectileMesh.enabled = false;
             targetHit = true;
@@ -53,21 +56,54 @@ public class ProjectileController : MonoBehaviour
                 col.enabled = false;
             }
             disableOnHit.Stop();
-
-
-            // --- Destroy this object after 2 seconds. Using a delay because the particle system needs to finish ---
-            Destroy(gameObject, 5f);
+            Destroy(gameObject, 5.0f);
         }
 
+    private void Explode()
+    {
+        // --- Instantiate new explosion option. I would recommend using an object pool ---
+        GameObject newExplosion = Instantiate(rocketExplosion, transform.position, rocketExplosion.transform.rotation, null);
 
-        /// <summary>
-        /// Instantiates an explode object.
-        /// </summary>
-        private void Explode()
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radiusExplosion);
+
+        Dictionary<EnemyBase, int> damageMap = new Dictionary<EnemyBase, int>();
+        Dictionary<EnemyBase, Vector3> hitPointMap = new Dictionary<EnemyBase, Vector3>();
+
+        foreach (Collider collider in colliders)
         {
-            // --- Instantiate new explosion option. I would recommend using an object pool ---
-            GameObject newExplosion = Instantiate(rocketExplosion, transform.position, rocketExplosion.transform.rotation, null);
+            if (collider.gameObject.CompareTag("Enemy"))
+            {
+                
+                var enemyBase = collider.gameObject.GetComponentInParent<EnemyBase>();
+                enemyBase.TakeDamage(rocket.Damage);
 
+                Vector3 hitPoint = collider.ClosestPoint(transform.position);
 
+                if (!damageMap.ContainsKey(enemyBase))
+                {
+                    damageMap[enemyBase] = 0;
+                    hitPointMap[enemyBase] = hitPoint;
+                }
+
+                damageMap[enemyBase] += rocket.Damage;                
+            } 
         }
+
+        foreach (var pair in damageMap)
+        {
+            EnemyBase enemy = pair.Key;
+
+            Vector3 hitPoint = hitPointMap[enemy];
+            DynamicTextData data = enemy.textData;
+
+            Vector3 destination = hitPoint +
+                (playerCamera.transform.position - hitPoint).normalized;
+
+            destination.x += (Random.value - 0.5f) / 3f;
+            destination.y += Random.value;
+            destination.z += (Random.value - 0.5f) / 3f;
+
+            DynamicTextManager.CreateText(destination, rocket.Damage.ToString(), data);
+        }
+    }
 }

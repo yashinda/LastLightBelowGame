@@ -462,8 +462,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.035642, y: 3.1621652, z: 2.386859}
-  m_Center: {x: 0.6810748, y: 0.9774956, z: -0.6934336}
+  m_Size: {x: 2.035642, y: 0.7691984, z: 2.386859}
+  m_Center: {x: 0.6810748, y: -0.21898802, z: -0.6934336}
 --- !u!23 &12928473
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3708,7 +3708,7 @@ GameObject:
   - component: {fileID: 681867143}
   - component: {fileID: 681867142}
   - component: {fileID: 681867141}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6874,7 +6874,7 @@ GameObject:
   - component: {fileID: 1506341374}
   - component: {fileID: 1506341373}
   - component: {fileID: 1506341372}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112467,7 +112467,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.38
-  m_Speed: 3.5
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -255301,6 +255301,7 @@ MonoBehaviour:
   lungeDuration: 1.5
   lungeDistance: 2
   attackDistance: 2.5
+  decisionCooldown: 2
   pitchMin: 0.9
   pitchMax: 1.1
   knightAudioSource: {fileID: 9119841715693116271}

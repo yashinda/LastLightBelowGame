@@ -1,6 +1,20 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
+public enum AbilityType
+{
+    Attack1,
+    AttackCombo2,
+    AttackCombo3,
+    AttackCombo4,
+    Lightning,
+    GroundSpikes,
+    Shield,
+    Summon,
+    PortalAttack
+}
 
 public class KnightAnimator : MonoBehaviour
 {
@@ -20,6 +34,18 @@ public class KnightAnimator : MonoBehaviour
     [Header("AISettings")]
     private NavMeshAgent agent;
     public float attackDistance = 1.5f;
+
+    private bool isBusy;
+    private float decisionTimer;
+    public float decisionCooldown = 2.0f;
+
+    private float fightTime;
+
+    private Dictionary<AbilityType, float> weights;
+    private Dictionary<AbilityType, float> cooldowns;
+
+    private AbilityType lastAbility;
+    private int repeatCount;
 
     [Header("Audio")]
     [Range(0.9f, 1.1f)] public float pitchMin = 0.95f;
@@ -64,71 +90,182 @@ public class KnightAnimator : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
         agent.isStopped = true;
+        InitAI();
     }
 
     private void Update()
     {
+        fightTime += Time.deltaTime;
+
         RotateTowards(player.position);
         agent.SetDestination(player.position);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.SetTrigger("Shield");
-            SetShield();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            animator.SetTrigger("SpellGround");
-            SetSpellGround();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            animator.SetTrigger("CastLightning");
-            CastLightningSound();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            animator.SetTrigger("Attack1");
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-            animator.SetTrigger("Attack2");
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            animator.SetTrigger("Attack3");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            animator.SetTrigger("Enemies");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-            ActivateAbility();
-
-        if (isLunging)
-        {
-            lungeTimer += Time.deltaTime;
-
-            float t = lungeTimer / lungeDuration;
-            float curveValue = lungeCurve.Evaluate(t);
-
-            float move = curveValue * lungeDistance * Time.deltaTime;
-
-            transform.position += lungeDirection * move;
-
-            if (t >= 1f)
-            {
-                isLunging = false;
-                agent.isStopped = false;
-            }
-        }
-
         float distance = Vector3.Distance(transform.position, player.position);
-        if (distance < attackDistance)
-            agent.isStopped = true;
+        agent.isStopped = distance < attackDistance;
+
+        if (isBusy)
+            return;
+
+        decisionTimer += Time.deltaTime;
+
+        // ускорение боя со временем
+        decisionCooldown = Mathf.Lerp(2.0f, 1.0f, fightTime / 60f);
+
+        if (decisionTimer >= decisionCooldown)
+        {
+            ChooseNextAction();
+            decisionTimer = 0f;
+        }
+    }
+
+    private void InitAI()
+    {
+        weights = new Dictionary<AbilityType, float>()
+        {
+            { AbilityType.Attack1, 30f },
+            { AbilityType.AttackCombo2, 26f },
+            { AbilityType.AttackCombo3, 25f },
+            { AbilityType.AttackCombo4, 25f },
+            { AbilityType.Lightning, 24f },
+            { AbilityType.GroundSpikes, 15f },
+            { AbilityType.Shield, 20f },
+            { AbilityType.Summon, 15f },
+            { AbilityType.PortalAttack, 5f }
+        };
+
+        cooldowns = new Dictionary<AbilityType, float>();
+
+        foreach (var key in weights.Keys)
+            cooldowns[key] = 0f;
+    }
+
+    private void ChooseNextAction()
+    {
+        List<AbilityType> available = GetAvailableAbilities();
+
+        if (available.Count == 0)
+            return;
+
+        AbilityType selected = GetWeightedRandom(available);
+
+        if (selected == lastAbility)
+            repeatCount++;
+        else
+            repeatCount = 0;
+
+        lastAbility = selected;
+
+        ExecuteAbility(selected);
+    }
+
+    private List<AbilityType> GetAvailableAbilities()
+    {
+        List<AbilityType> list = new();
+
+        foreach (var ability in weights.Keys)
+        {
+            if (Time.time < cooldowns[ability])
+                continue;
+
+            if (ability == lastAbility && repeatCount >= 2)
+                continue;
+
+            list.Add(ability);
+        }
+
+        return list;
+    }
+
+    private AbilityType GetWeightedRandom(List<AbilityType> abilities)
+    {
+        float total = 0f;
+
+        foreach (var a in abilities)
+            total += weights[a];
+
+        float random = Random.Range(0, total);
+
+        float current = 0f;
+
+        foreach (var a in abilities)
+        {
+            current += weights[a];
+            if (random <= current)
+                return a;
+        }
+
+        return abilities[0];
+    }
+
+    private void ExecuteAbility(AbilityType ability)
+    {
+        isBusy = true;
+
+        switch (ability)
+        {
+            case AbilityType.Attack1:
+                animator.SetTrigger("Attack1");
+                StartCoroutine(WaitAction(1.2f));
+                break;
+
+            case AbilityType.AttackCombo2:
+                animator.SetTrigger("Attack2");
+                StartCoroutine(WaitAction(1.5f));
+                break;
+
+            case AbilityType.AttackCombo3:
+                animator.SetTrigger("Attack3");
+                StartCoroutine(WaitAction(2.0f));
+                break;
+
+            case AbilityType.AttackCombo4:
+                animator.SetTrigger("Attack3");
+                StartCoroutine(WaitAction(2.2f));
+                break;
+
+            case AbilityType.Lightning:
+                animator.SetTrigger("CastLightning");
+                CastLightningSound();
+                cooldowns[ability] = Time.time + 5f;
+                StartCoroutine(WaitAction(1.8f));
+                break;
+
+            case AbilityType.GroundSpikes:
+                animator.SetTrigger("SpellGround");
+                SetSpellGround();
+                cooldowns[ability] = Time.time + 6f;
+                StartCoroutine(WaitAction(2.0f));
+                break;
+
+            case AbilityType.Shield:
+                animator.SetTrigger("Shield");
+                SetShield();
+                cooldowns[ability] = Time.time + 10f;
+                StartCoroutine(WaitAction(1.5f));
+                break;
+
+            case AbilityType.Summon:
+                animator.SetTrigger("Enemies");
+                SpawnEnemy();
+                cooldowns[ability] = Time.time + 15f;
+                StartCoroutine(WaitAction(2.5f));
+                break;
+
+            case AbilityType.PortalAttack:
+                ActivateAbility();
+                cooldowns[ability] = Time.time + 20f;
+                StartCoroutine(WaitAction(2.0f));
+                break;
+        }
+    }
+
+    private IEnumerator WaitAction(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        yield return new WaitForSeconds(Random.Range(0.5f, 1.2f));
+
+        isBusy = false;
     }
 
     public void StartLunge()

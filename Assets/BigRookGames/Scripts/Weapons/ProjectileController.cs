@@ -86,7 +86,13 @@ public class ProjectileController : MonoBehaviour
                 }
 
                 damageMap[enemyBase] += rocket.Damage;                
-            } 
+            }
+
+            if (collider.CompareTag("Knight"))
+            {
+                var knight = collider.GetComponentInParent<KnightController>();
+                knight.TakeDamage(rocket.Damage);
+            }
         }
 
         foreach (var pair in damageMap)

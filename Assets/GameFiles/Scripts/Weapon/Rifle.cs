@@ -55,6 +55,12 @@ public class Rifle : Gun
                     barrel.Explode();
                 }
             }
+
+            if (hit.collider.CompareTag("Knight"))
+            {
+                var knight = hit.collider.GetComponentInParent<KnightController>();
+                knight.TakeDamage(Damage);
+            }
         }
 
         Debug.DrawRay(spawnBulletTransform.position, shootDirection * shootingRange, Color.red, 0.3f);

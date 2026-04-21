@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public enum AbilityType
 {
@@ -16,12 +17,19 @@ public enum AbilityType
     PortalAttack
 }
 
-public class KnightAnimator : MonoBehaviour
+public class KnightController : MonoBehaviour
 {
-
     [Header("References")]
     public Animator animator;
     private Transform player;
+
+    [Header("HealthSystem")]
+    public float maxHP = 3500.0f;
+    public float minHP = 0.0f;
+    public float currentHP;
+
+    [Header("UI")]
+    public Image sliderHP;
 
     [Header("LungeSettings")]
     [SerializeField] private AnimationCurve lungeCurve;
@@ -32,6 +40,7 @@ public class KnightAnimator : MonoBehaviour
     private Vector3 lungeDirection;
 
     [Header("AISettings")]
+    private bool isAttacking = false;
     private NavMeshAgent agent;
     public float attackDistance = 1.5f;
 
@@ -90,6 +99,7 @@ public class KnightAnimator : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
         agent.isStopped = true;
+        currentHP = maxHP;
         InitAI();
     }
 
@@ -100,21 +110,43 @@ public class KnightAnimator : MonoBehaviour
         RotateTowards(player.position);
         agent.SetDestination(player.position);
 
+        Debug.Log("Выпад" + isLunging);
+        Debug.Log("Атака" + isAttacking);
+
         float distance = Vector3.Distance(transform.position, player.position);
-        agent.isStopped = distance < attackDistance;
+        if (distance < attackDistance || isLunging || isAttacking)
+            agent.isStopped = true;
+        else 
+            agent.isStopped = false;
 
         if (isBusy)
             return;
 
         decisionTimer += Time.deltaTime;
 
-        // ускорение боя со временем
         decisionCooldown = Mathf.Lerp(2.0f, 1.0f, fightTime / 60f);
 
         if (decisionTimer >= decisionCooldown)
         {
             ChooseNextAction();
             decisionTimer = 0f;
+        }
+
+        if (isLunging)
+        {
+            lungeTimer += Time.deltaTime;
+
+            float t = lungeTimer / lungeDuration;
+            float curveValue = lungeCurve.Evaluate(t);
+
+            float move = curveValue * lungeDistance * Time.deltaTime;
+
+            transform.position += lungeDirection * move;
+
+            if (t >= 1f)
+            {
+                isLunging = false;
+            }
         }
     }
 
@@ -259,6 +291,16 @@ public class KnightAnimator : MonoBehaviour
         }
     }
 
+    public void StartAttack()
+    {
+        isAttacking = true;
+    }
+
+    public void EndAttack()
+    {
+        isAttacking = false;
+    }
+
     private IEnumerator WaitAction(float duration)
     {
         yield return new WaitForSeconds(duration);
@@ -268,8 +310,9 @@ public class KnightAnimator : MonoBehaviour
         isBusy = false;
     }
 
-    public void StartLunge()
+    public void StartLunge(float lunge)
     {
+        lungeDistance = lunge;
         agent.isStopped = true;
         float distance = Vector3.Distance(transform.position, player.position);
         if (distance < lungeDistance)
@@ -466,5 +509,19 @@ public class KnightAnimator : MonoBehaviour
 
         // --- 6. Атака ---
         animator.SetTrigger("Attack1");
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if (currentHP <= minHP)
+            return;
+
+        currentHP -= damage * 0.7f;
+        UpdateSlider();
+    }
+
+    private void UpdateSlider()
+    {
+        sliderHP.fillAmount = currentHP / maxHP;
     }
 }

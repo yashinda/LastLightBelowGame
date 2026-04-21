@@ -13,6 +13,7 @@ TagManager:
   - Torch
   - PanelMagic
   - ShieldEnemy
+  - Knight
   layers:
   - Default
   - TransparentFX

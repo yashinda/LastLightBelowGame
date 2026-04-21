@@ -38,7 +38,7 @@ public class Shotgun : Gun
 
             Vector3 pelletDir = (baseDir + spreadOffset).normalized;
 
-            if (Physics.Raycast(spawnBulletTransform.position, pelletDir, out RaycastHit hit, shootingRange))
+            if (Physics.Raycast(spawnBulletTransform.position, pelletDir, out RaycastHit hit, shootingRange, ~ignoreMask))
             {
                 if (hit.collider.CompareTag("Enemy"))
                 { 

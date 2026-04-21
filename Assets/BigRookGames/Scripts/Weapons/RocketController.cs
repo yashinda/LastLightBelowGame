@@ -20,7 +20,7 @@ public class RocketController : Gun
 
         Vector3 targetPoint;
 
-        if (Physics.Raycast(cameraRay, out RaycastHit cameraHit, shootingRange))
+        if (Physics.Raycast(cameraRay, out RaycastHit cameraHit, shootingRange, ~ignoreMask))
         {
             targetPoint = cameraHit.point;
         }

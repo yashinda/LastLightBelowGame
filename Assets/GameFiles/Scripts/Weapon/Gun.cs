@@ -14,6 +14,7 @@ public abstract class Gun : MonoBehaviour
     [Header("References")]
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private LevelStateController gameManager;
+    [SerializeField] protected LayerMask ignoreMask;
 
     [SerializeField] protected private string gunName;
     public AmmoType ammoType;

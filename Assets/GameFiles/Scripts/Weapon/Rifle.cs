@@ -21,7 +21,7 @@ public class Rifle : Gun
 
         Vector3 shootDirection = (targetPoint - spawnBulletTransform.position).normalized;
 
-        if (Physics.Raycast(spawnBulletTransform.position, shootDirection, out hit, shootingRange))
+        if (Physics.Raycast(spawnBulletTransform.position, shootDirection, out hit, shootingRange, ~ignoreMask))
         {
             if (hit.collider.CompareTag("Enemy"))
             {

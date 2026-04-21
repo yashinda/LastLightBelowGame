@@ -73,7 +73,6 @@ public class ProjectileController : MonoBehaviour
         {
             if (collider.gameObject.CompareTag("Enemy"))
             {
-                
                 var enemyBase = collider.gameObject.GetComponentInParent<EnemyBase>();
                 enemyBase.TakeDamage(rocket.Damage);
 

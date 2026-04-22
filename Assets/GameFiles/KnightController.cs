@@ -69,8 +69,14 @@ public class KnightController : MonoBehaviour
     public GameObject spellGroundParticles;
     public ParticleSystem spellLightning;
     public ParticleSystem slashAttack1;
+    public GameObject slash1;
+    public Transform spawnSlash1;
     public ParticleSystem slashAttack2;
+    public GameObject slash2;
+    public Transform spawnSlash2;
     public ParticleSystem slashAttack3;
+    public GameObject slash3;
+    public Transform spawnSlash3;
 
     [Header("DeathMagicCircleSettings")]
     public Transform spawnPointCircle;
@@ -93,6 +99,8 @@ public class KnightController : MonoBehaviour
 
     [Header("Spell Parameters")]
     public float shieldBuffDuration = 5.0f;
+    public float shieldReducedDamage = 0.35f;
+    private bool shieldActive = false;
 
     private void Start()
     {
@@ -106,18 +114,12 @@ public class KnightController : MonoBehaviour
     private void Update()
     {
         fightTime += Time.deltaTime;
+        Debug.DrawRay(spawnSlash1.position, spawnSlash1.forward * 3, Color.red, 2f);
 
         RotateTowards(player.position);
         agent.SetDestination(player.position);
-
-        Debug.Log("Выпад" + isLunging);
-        Debug.Log("Атака" + isAttacking);
-
         float distance = Vector3.Distance(transform.position, player.position);
-        if (distance < attackDistance || isLunging || isAttacking)
-            agent.isStopped = true;
-        else 
-            agent.isStopped = false;
+        agent.isStopped = distance < attackDistance || isLunging || isAttacking;
 
         if (isBusy)
             return;
@@ -154,13 +156,13 @@ public class KnightController : MonoBehaviour
     {
         weights = new Dictionary<AbilityType, float>()
         {
-            { AbilityType.Attack1, 30f },
-            { AbilityType.AttackCombo2, 26f },
-            { AbilityType.AttackCombo3, 25f },
-            { AbilityType.AttackCombo4, 25f },
-            { AbilityType.Lightning, 24f },
-            { AbilityType.GroundSpikes, 15f },
-            { AbilityType.Shield, 20f },
+            { AbilityType.Attack1, 25f },
+            { AbilityType.AttackCombo2, 23f },
+            { AbilityType.AttackCombo3, 20f },
+            { AbilityType.AttackCombo4, 15f },
+            { AbilityType.Lightning, 20f },
+            { AbilityType.GroundSpikes, 25f },
+            { AbilityType.Shield, 17f },
             { AbilityType.Summon, 15f },
             { AbilityType.PortalAttack, 5f }
         };
@@ -313,7 +315,6 @@ public class KnightController : MonoBehaviour
     public void StartLunge(float lunge)
     {
         lungeDistance = lunge;
-        agent.isStopped = true;
         float distance = Vector3.Distance(transform.position, player.position);
         if (distance < lungeDistance)
             return;
@@ -340,10 +341,13 @@ public class KnightController : MonoBehaviour
 
         knightAudioSource.PlayOneShot(shieldBuffClip);
         shieldBuff.SetActive(true);
+        shieldActive = true;
+
 
         yield return new WaitForSeconds(shieldBuffDuration);
 
         shieldBuff.SetActive(false);
+        shieldActive = false;
     }
 
     private void SetSpellGround()
@@ -428,13 +432,26 @@ public class KnightController : MonoBehaviour
     public void ShowSlashAttack1()
     {
         slashAttack1.Play();
+        SpawnSlash1();
         knightAudioSource.pitch = Random.Range(pitchMin, pitchMax);
         knightAudioSource.PlayOneShot(slashSwordClip);
+    }
+
+    public void SpawnSlash1()
+    {
+        Quaternion rotation = Quaternion.Euler(180f, 0f, 0f);
+        Instantiate(slash1, spawnSlash1.position, spawnSlash1.rotation);
+    }
+    public void SpawnSlash3()
+    {
+        Quaternion rotation = Quaternion.Euler(180f, 0f, 0f);
+        Instantiate(slash3, spawnSlash1.position, spawnSlash1.rotation);
     }
 
     public void ShowSlashAttack2()
     {
         slashAttack2.Play();
+        SpawnSlash1();
         knightAudioSource.pitch = Random.Range(pitchMin, pitchMax);
         knightAudioSource.PlayOneShot(slashSwordClip);
     }
@@ -442,6 +459,7 @@ public class KnightController : MonoBehaviour
     public void ShowSlashAttack3()
     {
         slashAttack3.Play();
+        SpawnSlash3();
         knightAudioSource.pitch = Random.Range(pitchMin, pitchMax);
         knightAudioSource.PlayOneShot(slashSwordClip);
     }
@@ -516,8 +534,17 @@ public class KnightController : MonoBehaviour
         if (currentHP <= minHP)
             return;
 
-        currentHP -= damage * 0.7f;
+        if (shieldActive)
+            currentHP -= damage * shieldReducedDamage;
+        else
+            currentHP -= damage * 0.65f;
         UpdateSlider();
+    }
+
+    private void Die()
+    {
+        sliderHP.gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     private void UpdateSlider()

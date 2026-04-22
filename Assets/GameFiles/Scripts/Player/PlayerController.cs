@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 4.0f;
     public float usualSpeed = 6.0f;
     public float shiftSpeed = 10.0f;
+    public float stunSpeed = 0.0f;
+    private bool inStun = false;
     private Vector3 playerVelocity;
     public bool sprintPressed = false;
 
@@ -103,6 +106,21 @@ public class PlayerController : MonoBehaviour
 
         cameraPlayer.transform.localRotation = Quaternion.Euler(CurrentPitch, 0, 0);
         transform.Rotate(Vector3.up * input.x);
+    }
+
+    public void Stun(float duration)
+    {
+        Debug.Log("Оглушение");
+        StartCoroutine(PlayerInStun(duration));
+    }
+
+    private IEnumerator PlayerInStun(float duration)
+    {
+        speed = stunSpeed;
+
+        yield return new WaitForSeconds(duration);
+
+        speed = usualSpeed;
     }
 
     #endregion

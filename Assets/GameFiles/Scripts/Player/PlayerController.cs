@@ -11,11 +11,14 @@ public class PlayerController : MonoBehaviour
     [Header("MovementParameters")]
     public float speed = 4.0f;
     public float usualSpeed = 6.0f;
-    public float shiftSpeed = 10.0f;
-    public float stunSpeed = 0.0f;
-    private bool inStun = false;
+    public float shiftSpeed = 10.0f;  
     private Vector3 playerVelocity;
     public bool sprintPressed = false;
+
+    [Header("Stun")]
+    public float stunSpeed = 0.0f;
+    private bool inStun = false;
+    public GameObject stunPanel;
 
     [Header("Gravity")]
     public float gravity = -9.81f;
@@ -120,10 +123,12 @@ public class PlayerController : MonoBehaviour
     private IEnumerator PlayerInStun(float duration)
     {
         inStun = true;
+        stunPanel.SetActive(true);
 
         yield return new WaitForSeconds(duration);
 
         inStun = false;
+        stunPanel.SetActive(false);
     }
 
     #endregion

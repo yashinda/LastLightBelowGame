@@ -62,6 +62,9 @@ public class PlayerController : MonoBehaviour
     #region Controller Methods
     private void MoveUpdate()
     {
+        if (inStun)
+            return;
+
         Vector3 motion = transform.forward * moveInput.y + transform.right * moveInput.x;
         motion.Normalize();
         motion *= speed;
@@ -116,11 +119,11 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator PlayerInStun(float duration)
     {
-        speed = stunSpeed;
+        inStun = true;
 
         yield return new WaitForSeconds(duration);
 
-        speed = usualSpeed;
+        inStun = false;
     }
 
     #endregion

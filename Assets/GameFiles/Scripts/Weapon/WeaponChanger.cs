@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class WeaponChanger : MonoBehaviour
 {
     public List<GameObject> weapons = new List<GameObject>();
+    public List<GameObject> iconsWeapons = new List<GameObject>();
 
     private int currentWeaponIndex = 0;
 
@@ -14,7 +15,11 @@ public class WeaponChanger : MonoBehaviour
             return;
 
         for (int i = 0; i < weapons.Count; i++)
+        {
             weapons[i].SetActive(i == index);
+            iconsWeapons[i].SetActive(i == index);
+        }
+            
 
         currentWeaponIndex = index;
     }

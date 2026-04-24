@@ -33,6 +33,8 @@ public class PlayerHealth : MonoBehaviour
         if (armor > 0)
         {
             armor -= (int)Mathf.Ceil(damage);
+            if (armor < 0)
+                armor = 0;
         }
         else
         {

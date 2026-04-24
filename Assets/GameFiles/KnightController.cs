@@ -27,6 +27,8 @@ public class KnightController : MonoBehaviour
     public float maxHP = 3500.0f;
     public float minHP = 0.0f;
     public float currentHP;
+    private bool isDeath = false;
+    public GameObject sword;
 
     [Header("UI")]
     public Image sliderHP;
@@ -113,6 +115,9 @@ public class KnightController : MonoBehaviour
 
     private void Update()
     {
+        if (isDeath)
+            return;
+
         fightTime += Time.deltaTime;
         Debug.DrawRay(spawnSlash1.position, spawnSlash1.forward * 3, Color.red, 2f);
 
@@ -261,14 +266,14 @@ public class KnightController : MonoBehaviour
                 animator.SetTrigger("CastLightning");
                 CastLightningSound();
                 cooldowns[ability] = Time.time + 5f;
-                StartCoroutine(WaitAction(1.8f));
+                StartCoroutine(WaitAction(0.2f));
                 break;
 
             case AbilityType.GroundSpikes:
                 animator.SetTrigger("SpellGround");
                 SetSpellGround();
                 cooldowns[ability] = Time.time + 6f;
-                StartCoroutine(WaitAction(2.0f));
+                StartCoroutine(WaitAction(1.5f));
                 break;
 
             case AbilityType.Shield:
@@ -296,6 +301,16 @@ public class KnightController : MonoBehaviour
     public void StartAttack()
     {
         isAttacking = true;
+    }
+
+    public void EnableSwordCollider()
+    {
+        sword.GetComponent<Collider>().enabled = true;
+    }
+
+    public void DisableSwordCollider()
+    {
+        sword.GetComponent<Collider>().enabled = false;
     }
 
     public void EndAttack()
@@ -439,11 +454,13 @@ public class KnightController : MonoBehaviour
 
     public void SpawnSlash1()
     {
+        return;
         Quaternion rotation = Quaternion.Euler(180f, 0f, 0f);
         Instantiate(slash1, spawnSlash1.position, spawnSlash1.rotation);
     }
     public void SpawnSlash3()
     {
+        return;
         Quaternion rotation = Quaternion.Euler(180f, 0f, 0f);
         Instantiate(slash3, spawnSlash1.position, spawnSlash1.rotation);
     }
@@ -532,7 +549,10 @@ public class KnightController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         if (currentHP <= minHP)
+        {
+            Die();
             return;
+        }
 
         if (shieldActive)
             currentHP -= damage * shieldReducedDamage;
@@ -543,8 +563,10 @@ public class KnightController : MonoBehaviour
 
     private void Die()
     {
-        sliderHP.gameObject.SetActive(false);
-        Destroy(gameObject);
+        isDeath = true;
+        agent.isStopped = true;
+        sliderHP.GetComponent<Transform>().parent.gameObject.SetActive(false);
+        animator.SetTrigger("Death");
     }
 
     private void UpdateSlider()

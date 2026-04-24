@@ -176503,6 +176503,8 @@ GameObject:
   - component: {fileID: 3731049626852567221}
   - component: {fileID: 1103230083594018543}
   - component: {fileID: 255287724952474360}
+  - component: {fileID: 3731049626852567222}
+  - component: {fileID: 3731049626852567223}
   m_Layer: 0
   m_Name: SM_DKM_Sword
   m_TagString: Untagged
@@ -258531,9 +258533,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KnightAnimator
   animator: {fileID: 6414531955471992627}
-  maxHP: 3500
+  maxHP: 200
   minHP: 0
   currentHP: 0
+  sword: {fileID: 2305406059553452559}
   sliderHP: {fileID: 25897986}
   lungeCurve:
     serializedVersion: 2
@@ -270466,6 +270469,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2075890014212083336}
   m_LocalEulerAnglesHint: {x: 20.981, y: -14.902, z: 94.509}
+--- !u!65 &3731049626852567222
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2305406059553452559}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.0527272, y: 0.26294628, z: 1.294727}
+  m_Center: {x: 0.000061079416, y: 0.000030414298, z: 0.49504516}
+--- !u!114 &3731049626852567223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2305406059553452559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed9ffee617af6346b7e59f1a23e84bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sword
+  damage: 15
 --- !u!224 &3732795211269596946
 RectTransform:
   m_ObjectHideFlags: 0

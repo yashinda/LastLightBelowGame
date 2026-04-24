@@ -174540,6 +174540,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.46666667
+    functionName: EnableSwordCollider
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.5
     functionName: StartLunge
     data: 
@@ -174549,6 +174556,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.56666666
     functionName: ShowSlashAttack1
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.73333335
+    functionName: DisableSwordCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -174568,8 +174582,22 @@ AnimationClip:
     floatParameter: 1
     intParameter: 0
     messageOptions: 0
+  - time: 1.1666666
+    functionName: EnableSwordCollider
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1.2333333
     functionName: ShowSlashAttack2
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.3666667
+    functionName: DisableSwordCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -174589,6 +174617,13 @@ AnimationClip:
     floatParameter: 1
     intParameter: 0
     messageOptions: 0
+  - time: 2.2333333
+    functionName: EnableSwordCollider
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2.3333333
     functionName: ShowSlashAttack3
     data: 
@@ -174598,6 +174633,13 @@ AnimationClip:
     messageOptions: 0
   - time: 2.5
     functionName: EndLunge
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.6333334
+    functionName: DisableSwordCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

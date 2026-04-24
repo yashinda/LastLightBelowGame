@@ -303,9 +303,10 @@ public class KnightController : MonoBehaviour
         isAttacking = true;
     }
 
-    public void EnableSwordCollider()
+    public void EnableSwordCollider(float damageSword)
     {
         sword.GetComponent<Collider>().enabled = true;
+        sword.GetComponent<Sword>().damage = damageSword;
     }
 
     public void DisableSwordCollider()

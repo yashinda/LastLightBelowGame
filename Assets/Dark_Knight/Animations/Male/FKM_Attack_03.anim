@@ -174544,7 +174544,7 @@ AnimationClip:
     functionName: EnableSwordCollider
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
+    floatParameter: 25
     intParameter: 0
     messageOptions: 0
   - time: 0.5
@@ -174586,7 +174586,7 @@ AnimationClip:
     functionName: EnableSwordCollider
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
+    floatParameter: 25
     intParameter: 0
     messageOptions: 0
   - time: 1.2333333
@@ -174621,7 +174621,7 @@ AnimationClip:
     functionName: EnableSwordCollider
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
+    floatParameter: 40
     intParameter: 0
     messageOptions: 0
   - time: 2.3333333

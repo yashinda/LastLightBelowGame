@@ -580913,6 +580913,7 @@ GameObject:
   - component: {fileID: 7743506353126266141}
   - component: {fileID: 8286805995705182975}
   - component: {fileID: 5952423046637136571}
+  - component: {fileID: 8507631326089882099}
   - component: {fileID: 1436739844583532516}
   - component: {fileID: 1515290952291647759}
   - component: {fileID: 8457300909989331815}
@@ -580929,6 +580930,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8507631326089882099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8507631326089882098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01253c06472c89498d2143ecb3c51bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponAnimatorInput
+  animatorShotgun: {fileID: 6322665208893918508}
+  animatorRevolver: {fileID: 7791770682799812274}
+  animatorRifle: {fileID: 6225550902636281132}
+  animatorRocket: {fileID: 7707977511513922968}
+  playerController: {fileID: 8457300909989331815}
+  animationSpeed: 2
+  defaultAnimationSpeed: 1
 --- !u!1 &8510883928478239491
 GameObject:
   m_ObjectHideFlags: 0

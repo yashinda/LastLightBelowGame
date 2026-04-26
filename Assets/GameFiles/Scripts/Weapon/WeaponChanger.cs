@@ -8,6 +8,12 @@ public class WeaponChanger : MonoBehaviour
     public List<GameObject> iconsWeapons = new List<GameObject>();
 
     private int currentWeaponIndex = 0;
+    public WeaponAnimatorInput weaponAnimator;
+
+    private void Start()
+    {
+        ActivateWeapon(0);
+    }
 
     public void ActivateWeapon(int index)
     {
@@ -18,6 +24,7 @@ public class WeaponChanger : MonoBehaviour
         {
             weapons[i].SetActive(i == index);
             iconsWeapons[i].SetActive(i == index);
+            weaponAnimator.SetCurrentWeaponAnimator(weapons[index].GetComponent<Animator>());
         }
             
 

@@ -564791,6 +564791,7 @@ MonoBehaviour:
   - {fileID: 1235260362}
   - {fileID: 1912431648}
   - {fileID: 2029590602}
+  weaponAnimator: {fileID: 8507631326089882099}
 --- !u!1 &7951872698969068644
 GameObject:
   m_ObjectHideFlags: 0
@@ -580942,10 +580943,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01253c06472c89498d2143ecb3c51bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponAnimatorInput
-  animatorShotgun: {fileID: 6322665208893918508}
-  animatorRevolver: {fileID: 7791770682799812274}
-  animatorRifle: {fileID: 6225550902636281132}
-  animatorRocket: {fileID: 7707977511513922968}
   playerController: {fileID: 8457300909989331815}
   animationSpeed: 2
   defaultAnimationSpeed: 1

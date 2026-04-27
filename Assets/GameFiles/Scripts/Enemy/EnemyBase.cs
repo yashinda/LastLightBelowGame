@@ -137,6 +137,11 @@ public abstract class EnemyBase : MonoBehaviour
         Destroy(gameObject, deathByTime);
     }
 
+    public void SetDie()
+    {
+        Die();
+    }
+
     private void SwitchState(EnemyState newState)
     {
         if (currentState == newState)

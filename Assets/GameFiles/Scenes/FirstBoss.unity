@@ -258533,10 +258533,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KnightAnimator
   animator: {fileID: 6414531955471992627}
-  maxHP: 200
+  sword: {fileID: 2305406059553452559}
+  maxHP: 300
   minHP: 0
   currentHP: 0
-  sword: {fileID: 2305406059553452559}
   sliderHP: {fileID: 25897986}
   lungeCurve:
     serializedVersion: 2
@@ -258607,6 +258607,8 @@ MonoBehaviour:
   playerPortalDistance: 3
   delayBeforeTeleport: 0.3
   delayBeforeAttack: 0.2
+  pointLight: {fileID: 809562029}
+  magicKnightLight: {fileID: 809562030}
   shieldBuffDuration: 5
   shieldReducedDamage: 0.35
 --- !u!114 &3365356908298975829
@@ -270383,7 +270385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &3701498690882873592
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -475375,9 +475377,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MusicLibrary
   tracks:
   - trackName: Exploration
-    clip: {fileID: 8300000, guid: 901c6e04cc4ec4e788529e60fc50624f, type: 3}
+    clip: {fileID: 8300000, guid: 6c598ca8af00b4667b4f69068827f842, type: 3}
   - trackName: Combat
-    clip: {fileID: 8300000, guid: d28de280d51aaa746b2a21099e617bfe, type: 3}
+    clip: {fileID: 8300000, guid: 151b4ab168bb14aa8b23228e1b961d95, type: 3}
 --- !u!1 &6019850987224227010
 GameObject:
   m_ObjectHideFlags: 0
@@ -531961,7 +531963,7 @@ MonoBehaviour:
   magSize: 120
   autoFire: 0
   shotAudioSource: {fileID: 7384002260192486105}
-  shotClip: {fileID: 8300000, guid: e7edc69f752d96f42b7a7f9e585ba033, type: 3}
+  shotClip: {fileID: 8300000, guid: 2deeb375c96ad3c46a4009a750865f63, type: 3}
   pitchMin: 0.9
   pitchMax: 1.0291
   pelletCount: 24

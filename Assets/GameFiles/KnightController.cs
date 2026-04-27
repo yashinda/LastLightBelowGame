@@ -22,13 +22,13 @@ public class KnightController : MonoBehaviour
     [Header("References")]
     public Animator animator;
     private Transform player;
+    public GameObject sword;
 
     [Header("HealthSystem")]
     public float maxHP = 3500.0f;
     public float minHP = 0.0f;
     public float currentHP;
     private bool isDeath = false;
-    public GameObject sword;
 
     [Header("UI")]
     public Image sliderHP;
@@ -98,11 +98,17 @@ public class KnightController : MonoBehaviour
     [SerializeField] private float delayBeforeTeleport = 0.3f;
     [SerializeField] private float delayBeforeAttack = 0.2f;
 
+    [Header("Light")]
+    public Light pointLight;
+    public MagicLight magicKnightLight;
+
 
     [Header("Spell Parameters")]
     public float shieldBuffDuration = 5.0f;
     public float shieldReducedDamage = 0.35f;
     private bool shieldActive = false;
+
+    private bool isSecondPhase = false;
 
     private void Start()
     {
@@ -111,6 +117,7 @@ public class KnightController : MonoBehaviour
         agent.isStopped = true;
         currentHP = maxHP;
         InitAI();
+        MusicManager.Instance?.RegisterEnemy();
     }
 
     private void Update()
@@ -180,6 +187,11 @@ public class KnightController : MonoBehaviour
 
     private void ChooseNextAction()
     {
+        if (isSecondPhase)
+            animator.SetTrigger("Run");
+        else
+            animator.SetTrigger("Walk");
+
         List<AbilityType> available = GetAvailableAbilities();
 
         if (available.Count == 0)
@@ -455,13 +467,15 @@ public class KnightController : MonoBehaviour
 
     public void SpawnSlash1()
     {
-        return;
+        if (!isSecondPhase)
+            return;
         Quaternion rotation = Quaternion.Euler(180f, 0f, 0f);
         Instantiate(slash1, spawnSlash1.position, spawnSlash1.rotation);
     }
     public void SpawnSlash3()
     {
-        return;
+        if (!isSecondPhase)
+            return;
         Quaternion rotation = Quaternion.Euler(180f, 0f, 0f);
         Instantiate(slash3, spawnSlash1.position, spawnSlash1.rotation);
     }
@@ -555,6 +569,12 @@ public class KnightController : MonoBehaviour
             return;
         }
 
+        if (currentHP / maxHP < 0.3f)
+        {
+            if (!isSecondPhase)
+                SetSecondPhase();
+        }
+
         if (shieldActive)
             currentHP -= damage * shieldReducedDamage;
         else
@@ -562,12 +582,26 @@ public class KnightController : MonoBehaviour
         UpdateSlider();
     }
 
+    private void SetSecondPhase()
+    {
+        isSecondPhase = true;
+        agent.speed = 7.0f;
+        pointLight.color = Color.red;
+        magicKnightLight.enabled = false;
+    }
+
     private void Die()
     {
+        MusicManager.Instance?.UnregisterEnemy();
         isDeath = true;
         agent.isStopped = true;
         sliderHP.GetComponent<Transform>().parent.gameObject.SetActive(false);
         animator.SetTrigger("Death");
+        EnemyBase[] enemies = FindObjectsByType<EnemyBase>(FindObjectsSortMode.None);
+        foreach (EnemyBase enemy in enemies)
+        {
+            enemy.SetDie();
+        }
     }
 
     private void UpdateSlider()

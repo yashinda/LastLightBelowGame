@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameFiles/Scenes/SecondShop.unity
     guid: 068ba356c21123b4db40e7ffc55f622b
+  - enabled: 1
+    path: Assets/GameFiles/Scenes/ThirdLevel.unity
+    guid: 13f4d900762fe4e4da6bb7813029c8f7
+  - enabled: 1
+    path: Assets/GameFiles/Scenes/FirstBoss.unity
+    guid: 5066b104538b5004fac0f382c6b623d6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

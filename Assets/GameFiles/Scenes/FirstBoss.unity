@@ -286409,7 +286409,7 @@ MonoBehaviour:
   sword: {fileID: 2305406059553452559}
   finishCircle: {fileID: 3814587193642509661}
   svetlesContainer: {fileID: 6592760693497407292}
-  maxHP: 3500
+  maxHP: 300
   minHP: 0
   currentHP: 0
   svetlesOnDeath: 5000
@@ -286485,6 +286485,46 @@ MonoBehaviour:
   delayBeforeAttack: 0.2
   pointLight: {fileID: 809562029}
   magicKnightLight: {fileID: 809562030}
+  lightsOnScene:
+  - {fileID: 3398251665578951375}
+  - {fileID: 3398251666691562143}
+  - {fileID: 1412723726}
+  - {fileID: 1347339228}
+  - {fileID: 489826831}
+  - {fileID: 564219929}
+  - {fileID: 1221340375}
+  - {fileID: 1693584290}
+  - {fileID: 295740664}
+  - {fileID: 1177416588}
+  - {fileID: 1859980254}
+  - {fileID: 2030665877}
+  - {fileID: 2123147814}
+  - {fileID: 158498092}
+  - {fileID: 1796959978}
+  - {fileID: 1709105816}
+  - {fileID: 1151230529}
+  - {fileID: 1697224496}
+  - {fileID: 931957408}
+  - {fileID: 299975617}
+  - {fileID: 706403255}
+  - {fileID: 1780166805}
+  - {fileID: 68441696}
+  - {fileID: 1472666714}
+  - {fileID: 1943363566}
+  - {fileID: 315987520}
+  - {fileID: 475373358}
+  - {fileID: 1351417665}
+  - {fileID: 174776326}
+  - {fileID: 11414023}
+  - {fileID: 341840895}
+  - {fileID: 87095088}
+  - {fileID: 1393267130915229901}
+  - {fileID: 1393267131007699208}
+  - {fileID: 1393267130713359287}
+  - {fileID: 1393267131041630969}
+  - {fileID: 1393267131445400602}
+  - {fileID: 681555291}
+  - {fileID: 1886112762}
   shieldBuffDuration: 5
   shieldReducedDamage: 0.35
 --- !u!114 &3365356908298975829

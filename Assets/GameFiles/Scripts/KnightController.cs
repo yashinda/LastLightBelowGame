@@ -104,6 +104,7 @@ public class KnightController : MonoBehaviour
     [Header("Light")]
     public Light pointLight;
     public MagicLight magicKnightLight;
+    public Light[] lightsOnScene;
 
 
     [Header("Spell Parameters")]
@@ -591,9 +592,22 @@ public class KnightController : MonoBehaviour
     private void SetSecondPhase()
     {
         isSecondPhase = true;
+        StartCoroutine(SetAllLightIsRed());
         agent.speed = 7.0f;
         pointLight.color = Color.red;
-        magicKnightLight.enabled = false;
+        Destroy(magicKnightLight);
+    }
+
+    private IEnumerator SetAllLightIsRed()
+    {
+        int i = lightsOnScene.Length;
+
+        for (i = 0; i < lightsOnScene.Length; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+
+            lightsOnScene[i].color = Color.red;
+        }
     }
 
     private void Die()

@@ -6188,6 +6188,8 @@ MonoBehaviour:
   currentAmmo: 12
   nextTimeToFire: 0
   muzzleFlash: {fileID: 2416228785842544118}
+  impactHit: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
+  impactEnemy: {fileID: 447409866740539227, guid: da34d66431c8cd04aa98411a543a83bf, type: 3}
   animator: {fileID: 6680278252922042791}
   playerCamera: {fileID: 1265039161238433346}
   shootingRange: 100
@@ -11453,6 +11455,8 @@ MonoBehaviour:
   currentAmmo: 20
   nextTimeToFire: 0
   muzzleFlash: {fileID: 5780114430111457467}
+  impactHit: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b, type: 3}
+  impactEnemy: {fileID: 447409866740539227, guid: da34d66431c8cd04aa98411a543a83bf, type: 3}
   animator: {fileID: 749314140260642022}
   playerCamera: {fileID: 1265039161238433346}
   shootingRange: 50
@@ -76794,6 +76798,8 @@ MonoBehaviour:
   currentAmmo: 40
   nextTimeToFire: 0
   muzzleFlash: {fileID: 3969782949551344761}
+  impactHit: {fileID: 0}
+  impactEnemy: {fileID: 0}
   animator: {fileID: 2216547112621287447}
   playerCamera: {fileID: 1265039161238433346}
   shootingRange: 150

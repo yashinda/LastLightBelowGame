@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,8 +39,23 @@ public class Shotgun : Gun
 
             if (Physics.Raycast(spawnBulletTransform.position, pelletDir, out RaycastHit hit, shootingRange, ~ignoreMask))
             {
+                if (!hit.collider.CompareTag("Enemy"))
+                {
+                    Vector3 dirToPlayer = (spawnBulletTransform.transform.position - hit.point).normalized;
+                    Vector3 spawnPos = hit.point + dirToPlayer * 0.03f;
+
+                    Quaternion rot = Quaternion.LookRotation(hit.normal) * Quaternion.Euler(-90f, 0f, 0f);
+
+                    Instantiate(impactHit, spawnPos, rot);
+                }
+                else
+                {
+                    Quaternion rot = Quaternion.Euler(-90f, 0f, 0f);
+                    Instantiate(impactEnemy, hit.point, rot);
+                }
+
                 if (hit.collider.CompareTag("Enemy"))
-                { 
+                {
                     var enemyBase = hit.collider.GetComponentInParent<EnemyBase>();
                     if (enemyBase == null)
                         continue;
@@ -61,7 +75,7 @@ public class Shotgun : Gun
 
                     damageMap[enemyBase] += finalDamage;
 
-                    
+
                 }
 
                 if (hit.collider.CompareTag("Barrel"))

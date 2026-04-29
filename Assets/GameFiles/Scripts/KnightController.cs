@@ -535,33 +535,27 @@ public class KnightController : MonoBehaviour
 
     private IEnumerator PortalAttackRoutine()
     {
-        // --- 1. Портал перед боссом ---
         Vector3 bossPortalPos = transform.position + transform.forward * portalForwardDistance;
         GameObject portal1 = Instantiate(portalPrefab, bossPortalPos, Quaternion.identity);
 
-        // --- 2. Портал за игроком ---
-        Vector3 directionBehindPlayer = -player.forward; // за спиной
+        Vector3 directionBehindPlayer = -player.forward;
         Vector3 playerPortalPos = player.position + directionBehindPlayer * playerPortalDistance;
 
         GameObject portal2 = Instantiate(portalPrefab, playerPortalPos, Quaternion.identity);
 
         yield return new WaitForSeconds(delayBeforeTeleport);
 
-        // --- 3. Телепорт босса ---
         transform.position = portal2.transform.position;
 
-        // --- 4. Разворот к игроку ---
         Vector3 lookDir = (player.position - transform.position).normalized;
         lookDir.y = 0;
         transform.rotation = Quaternion.LookRotation(lookDir);
 
         yield return new WaitForSeconds(delayBeforeAttack);
 
-        // --- 5. Удаление порталов ---
         Destroy(portal1);
         Destroy(portal2);
 
-        // --- 6. Атака ---
         animator.SetTrigger("Attack1");
     }
 
@@ -600,13 +594,31 @@ public class KnightController : MonoBehaviour
 
     private IEnumerator SetAllLightIsRed()
     {
-        int i = lightsOnScene.Length;
+        Color startColor = new Color32(0xF3, 0xB6, 0x3A, 255);
+        Color targetColor = new Color32(0xC6, 0x09, 0x19, 255);
 
-        for (i = 0; i < lightsOnScene.Length; i++)
+        float duration = 0.3f;
+
+        for (int i = 0; i < lightsOnScene.Length; i++)
         {
-            yield return new WaitForSeconds(0.1f);
+            Light currentLight = lightsOnScene[i];
 
-            lightsOnScene[i].color = Color.red;
+            float time = 0f;
+
+            while (time < duration)
+            {
+                time += Time.deltaTime;
+
+                float t = time / duration;
+
+                currentLight.color = Color.Lerp(startColor, targetColor, t);
+
+                yield return null;
+            }
+
+            currentLight.color = targetColor;
+
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

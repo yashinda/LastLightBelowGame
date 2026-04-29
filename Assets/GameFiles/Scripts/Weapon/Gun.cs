@@ -26,6 +26,8 @@ public abstract class Gun : MonoBehaviour
     [SerializeField] private int currentAmmo;
     [SerializeField] private float nextTimeToFire;
     public ParticleSystem muzzleFlash;
+    public GameObject impactHit;
+    public GameObject impactEnemy;
     public Animator animator;
 
     [Header("Fire Config")]

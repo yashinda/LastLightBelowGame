@@ -23,7 +23,12 @@ public class Rifle : Gun
 
         if (Physics.Raycast(spawnBulletTransform.position, shootDirection, out hit, shootingRange, ~ignoreMask))
         {
-            if (!hit.collider.CompareTag("Enemy"))
+            if (hit.collider.CompareTag("Enemy") || hit.collider.CompareTag("Knight"))
+            {
+                Quaternion rot = Quaternion.Euler(-90f, 0f, 0f);
+                Instantiate(impactEnemy, hit.point, rot);
+            }
+            else
             {
                 Vector3 dirToPlayer = (spawnBulletTransform.transform.position - hit.point).normalized;
                 Vector3 spawnPos = hit.point + dirToPlayer * 0.03f;
@@ -31,11 +36,6 @@ public class Rifle : Gun
                 Quaternion rot = Quaternion.LookRotation(hit.normal) * Quaternion.Euler(-90f, 0f, 0f);
 
                 Instantiate(impactHit, spawnPos, rot);
-            }
-            else
-            {
-                Quaternion rot = Quaternion.Euler(-90f, 0f, 0f);
-                Instantiate(impactEnemy, hit.point, rot);
             }
 
             if (hit.collider.CompareTag("Enemy"))

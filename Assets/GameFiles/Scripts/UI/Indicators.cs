@@ -14,6 +14,8 @@ public class Indicators : MonoBehaviour
     public TMP_Text psyAmountText;
     public TMP_Text armorAmountText;
 
+    public GameObject imageMadness;
+
     private void Update()
     {
         if (!playerHealth.PlayerDead)
@@ -22,6 +24,11 @@ public class Indicators : MonoBehaviour
             healthAmountText.text = Mathf.FloorToInt(playerHealth.CurrentHealth).ToString();
             psyAmountText.text = Mathf.FloorToInt(psySystem.psyAmount).ToString();
             armorAmountText.text = playerHealth.Armor.ToString();
+
+            if (psySystem.madnessActive)
+                imageMadness.SetActive(true);
+            else
+                imageMadness.SetActive(false);
         }
     }
 }

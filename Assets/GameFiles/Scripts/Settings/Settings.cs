@@ -10,19 +10,31 @@ public class Settings : MonoBehaviour
     public TMP_Dropdown dropdownResolution;
     public Slider sliderMusic;
     public Slider sliderSounds;
+    public TMP_Text textValueMusic;
+    public TMP_Text textValueSounds;
+    public AudioSource musicSource;
 
     private List<Vector2Int> allowedResol = new List<Vector2Int>()
     {
         new Vector2Int(1280, 720),
         new Vector2Int(1650, 1050),
         new Vector2Int(1920, 1080),
-        new Vector2Int(2560, 1440)
+        new Vector2Int(2560, 1440),
+        new Vector2Int(3840, 2160)
     };
 
     public float maxMusicValue = 1.0f;
     public float minMusicValue = 0.0f;
     public float maxSoundValue = 1.0f;
     public float minSoundValue = 0.0f;
+
+    private void Update()
+    {
+        float valueMusic = sliderMusic.value * 100f;
+        float valueSounds = sliderSounds.value * 100f;
+        textValueMusic.text = Mathf.FloorToInt(valueMusic).ToString();
+        textValueSounds.text = Mathf.FloorToInt(valueSounds).ToString();
+    }
 
     private void Start()
     {
@@ -37,13 +49,18 @@ public class Settings : MonoBehaviour
         OnResolutionChanged(savedIndex);
     }
 
-    private void OnResolutionChanged(int index)
+    public void OnResolutionChanged(int index)
     {
         Vector2Int selectedRes = allowedResol[index];
         Screen.SetResolution(selectedRes.x, selectedRes.y, Screen.fullScreen);
 
         PlayerPrefs.SetInt("ResolutionIndex", index);
         PlayerPrefs.Save();
+    }
+
+    public void ChangeMusicValue()
+    {
+        musicSource.volume = sliderMusic.value;
     }
 
     public void SetGraphicLevel(int index)

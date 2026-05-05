@@ -722,7 +722,7 @@ AudioSource:
   m_GameObject: {fileID: 125068543}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8209906971482193311, guid: fba6b84703276694390ac0843c7ddbcf, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -1049,7 +1049,7 @@ GameObject:
   - component: {fileID: 142505875}
   - component: {fileID: 142505874}
   m_Layer: 5
-  m_Name: TextSoundValue (1)
+  m_Name: TextSensitivity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 389165959}
   - component: {fileID: 389165960}
   m_Layer: 5
-  m_Name: SliderMusic (1)
+  m_Name: SliderSensitivity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7463,13 +7463,18 @@ MonoBehaviour:
   dropdownResolution: {fileID: 1516928687}
   sliderMusic: {fileID: 2083139955}
   sliderSounds: {fileID: 1765361486}
+  sliderSensitivity: {fileID: 389165960}
   textValueMusic: {fileID: 1441719172}
   textValueSounds: {fileID: 1064250966}
-  musicSource: {fileID: 1660578058}
-  maxMusicValue: 1
-  minMusicValue: 0
-  maxSoundValue: 1
-  minSoundValue: 0
+  textSensitivity: {fileID: 142505874}
+  mixerSettings: {fileID: 24100000, guid: fba6b84703276694390ac0843c7ddbcf, type: 2}
+  minMusicValue: -47
+  maxMusicValue: 0
+  minSoundValue: -57
+  maxSoundValue: 0
+  minSensitivity: 1
+  maxSensitivity: 6
+  sensitivity: 0
 --- !u!1 &1505690680
 GameObject:
   m_ObjectHideFlags: 0
@@ -8333,7 +8338,7 @@ AudioSource:
   m_GameObject: {fileID: 1660578057}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5003416226789173516, guid: fba6b84703276694390ac0843c7ddbcf, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: c46881d0134840a458c053c393e854fc, type: 3}
   m_PlayOnAwake: 1
@@ -9977,19 +9982,7 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1503403664}
-        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
-        m_MethodName: ChangeMusicValue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &2094725390
 GameObject:
   m_ObjectHideFlags: 0

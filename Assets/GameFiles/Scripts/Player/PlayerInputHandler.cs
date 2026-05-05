@@ -5,6 +5,7 @@ public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField] private PlayerController playerController;
     [SerializeField] private LevelStateController gameManager;
+    [SerializeField] private GameObject panelSettings;
     #region Input Handling
 
     void OnMove(InputValue value)
@@ -39,8 +40,10 @@ public class PlayerInputHandler : MonoBehaviour
 
     void OnPause(InputValue value)
     {
-        if (value.isPressed)
+        if (value.isPressed && !panelSettings.activeSelf)
             gameManager.TogglePause();
+        else
+            panelSettings.SetActive(false);
     }
 
     #endregion

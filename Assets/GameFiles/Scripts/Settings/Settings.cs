@@ -45,13 +45,18 @@ public class Settings : MonoBehaviour
         new Vector2Int(3840, 2160)
     };
 
-    private void Start()
+    private void Awake()
     {
         SetupResolution();
         SetupMusicSlider();
         SetupSoundSlider();
         SetupSensitivitySlider();
         LoadGraphicSettings();
+    }
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
     }
 
     private void SetupResolution()
@@ -105,7 +110,7 @@ public class Settings : MonoBehaviour
         sliderSensitivity.minValue = minSensitivity;
         sliderSensitivity.maxValue = maxSensitivity;
 
-        float savedSensitivity = PlayerPrefs.GetFloat("SensitivityValue", 3.0f);
+        float savedSensitivity = PlayerPrefs.GetFloat("SensitivityValue", 1.0f);
 
         sliderSensitivity.value = savedSensitivity;
 

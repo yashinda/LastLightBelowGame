@@ -107,7 +107,9 @@ public class PlayerController : MonoBehaviour
 
     private void LookUpdate()
     {
-        Vector2 input = new Vector2(lookInput.x * lookSensitivity.x, lookInput.y * lookSensitivity.y);
+        float sensitivity = PlayerPrefs.GetFloat("SensitivityValue", 1.0f);
+
+        Vector2 input = new Vector2(lookInput.x * (lookSensitivity.x * sensitivity), lookInput.y * (lookSensitivity.y * sensitivity));
         CurrentPitch -= input.y;
 
         cameraPlayer.transform.localRotation = Quaternion.Euler(CurrentPitch, 0, 0);

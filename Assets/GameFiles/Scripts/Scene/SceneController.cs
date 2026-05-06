@@ -36,6 +36,12 @@ public class SceneController : MonoBehaviour
         StartCoroutine(LoadSceneRoutine(0));
     }
 
+    public void LoadNewGame()
+    {
+        StartCoroutine(LoadSceneRoutine(1));
+        SaveLoadData.LoadNewGame();
+    }
+
     private IEnumerator LoadSceneRoutine(int index)
     {
         animatorBlackScreen.SetTrigger("End");

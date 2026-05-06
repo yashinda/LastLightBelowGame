@@ -74,9 +74,14 @@ public class LevelStateController : MonoBehaviour
         if (deathPanel != null)
             deathPanel.SetActive(true);
 
-        RestartLevel();
+        RestartGame();
 
         currentState = LevelState.PlayerDead; 
+    }
+
+    public void RestartGame()
+    {
+        SceneController.Instance.LoadNewGame();
     }
 
     public void CompleteLevel()

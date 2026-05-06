@@ -171,6 +171,12 @@ public class SkullMonster : EnemyBase
                 if (playerHealth != null)
                     playerHealth.TakeDamage(damage);
             }
+
+            if (collider.CompareTag("Barrel"))
+            {
+                var barrel = collider.GetComponent<ExplosiveBarrel>();
+                barrel.Explode();
+            }
         }
     }
 

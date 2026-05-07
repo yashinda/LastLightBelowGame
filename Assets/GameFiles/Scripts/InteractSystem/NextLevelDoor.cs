@@ -4,7 +4,7 @@ public class NextLevelDoor : MonoBehaviour, IInteractable
 {
     public void Interact()
     {
-        LevelStateController.Instance.LoadNextLevel();
+        LevelStateController.Instance.ConfirmNextLevel();
     }
 
     public InteractionType GetInteractionType() => InteractionType.Use;

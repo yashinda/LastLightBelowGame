@@ -1,4 +1,6 @@
 using System.Collections;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -42,6 +44,12 @@ public class SceneController : MonoBehaviour
         SaveLoadData.LoadNewGame();
     }
 
+    public void ContinueGame()
+    {
+        StartCoroutine(LoadSceneRoutine(GetIndexScene()));
+        Debug.Log(GetIndexScene());
+    }
+
     private IEnumerator LoadSceneRoutine(int index)
     {
         animatorBlackScreen.SetTrigger("End");
@@ -52,6 +60,23 @@ public class SceneController : MonoBehaviour
         yield return null;
 
         animatorBlackScreen.SetTrigger("Start");
+    }
+
+    public static int GetIndexScene()
+    {
+        string savePath = Application.persistentDataPath + "/save.b";
+
+        if (!File.Exists(savePath))
+            return 0;
+
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(savePath, FileMode.Open);
+
+        PlayerData data = formatter.Deserialize(stream) as PlayerData;
+
+        stream.Close();
+
+        return data.indexScene;
     }
 
     public void OnApplicationQuit()

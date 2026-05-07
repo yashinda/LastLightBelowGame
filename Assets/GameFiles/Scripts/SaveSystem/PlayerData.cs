@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class PlayerData
@@ -18,6 +18,7 @@ public class PlayerData
     public bool unlockLightAbil;
     public bool unlockInvincibilityAbil;
     public bool unlockMakeMagicLightAbil;
+    public int indexScene = 0;
 
     public PlayerData(
         SvetlesContainer svetlesContainer,
@@ -42,5 +43,9 @@ public class PlayerData
         unlockLightAbil = abilityManager.unlockLight;
         unlockInvincibilityAbil = abilityManager.unlockInvincible;
         unlockMakeMagicLightAbil = abilityManager.unlockMakeMagicLight;
+        if (LevelStateController.Instance.CurrentState == LevelState.ChooseUpgrade)
+            indexScene = SceneManager.GetActiveScene().buildIndex;
+        else
+            indexScene = SceneManager.GetActiveScene().buildIndex + 1;
     }
 }

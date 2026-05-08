@@ -43,9 +43,6 @@ public class PlayerData
         unlockLightAbil = abilityManager.unlockLight;
         unlockInvincibilityAbil = abilityManager.unlockInvincible;
         unlockMakeMagicLightAbil = abilityManager.unlockMakeMagicLight;
-        if (LevelStateController.Instance.CurrentState == LevelState.ChooseUpgrade)
-            indexScene = SceneManager.GetActiveScene().buildIndex;
-        else
-            indexScene = SceneManager.GetActiveScene().buildIndex + 1;
+        indexScene = SceneManager.GetActiveScene().buildIndex + 1;
     }
 }

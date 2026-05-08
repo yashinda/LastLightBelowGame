@@ -287047,7 +287047,7 @@ MonoBehaviour:
   finishCircle: {fileID: 3814587193642509661}
   svetlesContainer: {fileID: 6592760693497407292}
   bossMusicController: {fileID: 8119540216721241319}
-  maxHP: 300
+  maxHP: 3500
   minHP: 0
   currentHP: 0
   svetlesOnDeath: 5000
@@ -292511,7 +292511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -925.45245, y: -542.8999}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3421796562259337377

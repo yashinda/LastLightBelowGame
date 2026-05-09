@@ -4872,7 +4872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b74b906dbae13244a87b79be5799072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlashAttack
-  speed: 15
+  speed: 30
   damage: 10
   pauseTime: 0.16
 --- !u!1 &3058373165143430356

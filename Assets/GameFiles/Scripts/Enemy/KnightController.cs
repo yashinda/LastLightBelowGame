@@ -56,7 +56,8 @@ public class KnightController : MonoBehaviour
 
     private float fightTime;
 
-    private Dictionary<AbilityType, float> weights;
+    private Dictionary<AbilityType, float> firstPhaseWeights;
+    private Dictionary<AbilityType, float> secondPhaseWeights;
     private Dictionary<AbilityType, float> cooldowns;
 
     private AbilityType lastAbility;
@@ -105,8 +106,8 @@ public class KnightController : MonoBehaviour
     [Header("Light")]
     public Light pointLight;
     public MagicLight magicKnightLight;
-    public Light[] lightsOnScene;
-
+    public Light[] lightsOnSceneGroup1;
+    public Light[] lightsOnSceneGroup2;
 
     [Header("Spell Parameters")]
     public float shieldBuffDuration = 5.0f;
@@ -115,13 +116,20 @@ public class KnightController : MonoBehaviour
 
     private bool isSecondPhase = false;
 
+    private Dictionary<AbilityType, float> CurrentWeights =>
+        isSecondPhase ? secondPhaseWeights : firstPhaseWeights;
+
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<Transform>();
+
         agent = GetComponent<NavMeshAgent>();
         agent.isStopped = true;
+
         currentHP = maxHP;
+
         InitAI();
+
         MusicManager.Instance?.RegisterEnemy();
     }
 
@@ -131,11 +139,15 @@ public class KnightController : MonoBehaviour
             return;
 
         fightTime += Time.deltaTime;
+
         Debug.DrawRay(spawnSlash1.position, spawnSlash1.forward * 3, Color.red, 2f);
 
         RotateTowards(player.position);
+
         agent.SetDestination(player.position);
+
         float distance = Vector3.Distance(transform.position, player.position);
+
         agent.isStopped = distance < attackDistance || isLunging || isAttacking;
 
         if (isBusy)
@@ -156,6 +168,7 @@ public class KnightController : MonoBehaviour
             lungeTimer += Time.deltaTime;
 
             float t = lungeTimer / lungeDuration;
+
             float curveValue = lungeCurve.Evaluate(t);
 
             float move = curveValue * lungeDistance * Time.deltaTime;
@@ -163,30 +176,41 @@ public class KnightController : MonoBehaviour
             transform.position += lungeDirection * move;
 
             if (t >= 1f)
-            {
                 isLunging = false;
-            }
         }
     }
 
     private void InitAI()
     {
-        weights = new Dictionary<AbilityType, float>()
+        firstPhaseWeights = new Dictionary<AbilityType, float>()
         {
-            { AbilityType.Attack1, 25f },
-            { AbilityType.AttackCombo2, 23f },
-            { AbilityType.AttackCombo3, 20f },
-            { AbilityType.AttackCombo4, 15f },
-            { AbilityType.Lightning, 20f },
+            { AbilityType.Attack1, 10f },
+            { AbilityType.AttackCombo2, 8f },
+            { AbilityType.AttackCombo3, 7f },
+            { AbilityType.AttackCombo4, 6f },
+            { AbilityType.Lightning, 23f },
             { AbilityType.GroundSpikes, 25f },
-            { AbilityType.Shield, 17f },
-            { AbilityType.Summon, 15f },
-            { AbilityType.PortalAttack, 5f }
+            { AbilityType.Shield, 20f },
+            { AbilityType.Summon, 21f },
+            { AbilityType.PortalAttack, 15f }
+        };
+
+        secondPhaseWeights = new Dictionary<AbilityType, float>()
+        {
+            { AbilityType.Attack1, 18f },
+            { AbilityType.AttackCombo2, 20f },
+            { AbilityType.AttackCombo3, 24f },
+            { AbilityType.AttackCombo4, 25f },
+            { AbilityType.Lightning, 28f },
+            { AbilityType.GroundSpikes, 23f },
+            { AbilityType.Shield, 20f },
+            { AbilityType.Summon, 17f },
+            { AbilityType.PortalAttack, 20f }
         };
 
         cooldowns = new Dictionary<AbilityType, float>();
 
-        foreach (var key in weights.Keys)
+        foreach (AbilityType key in System.Enum.GetValues(typeof(AbilityType)))
             cooldowns[key] = 0f;
     }
 
@@ -218,7 +242,7 @@ public class KnightController : MonoBehaviour
     {
         List<AbilityType> list = new();
 
-        foreach (var ability in weights.Keys)
+        foreach (var ability in CurrentWeights.Keys)
         {
             if (Time.time < cooldowns[ability])
                 continue;
@@ -234,20 +258,23 @@ public class KnightController : MonoBehaviour
 
     private AbilityType GetWeightedRandom(List<AbilityType> abilities)
     {
+        Dictionary<AbilityType, float> currentWeights = CurrentWeights;
+
         float total = 0f;
 
-        foreach (var a in abilities)
-            total += weights[a];
+        foreach (var ability in abilities)
+            total += currentWeights[ability];
 
         float random = Random.Range(0, total);
 
         float current = 0f;
 
-        foreach (var a in abilities)
+        foreach (var ability in abilities)
         {
-            current += weights[a];
+            current += currentWeights[ability];
+
             if (random <= current)
-                return a;
+                return ability;
         }
 
         return abilities[0];
@@ -348,7 +375,9 @@ public class KnightController : MonoBehaviour
     public void StartLunge(float lunge)
     {
         lungeDistance = lunge;
+
         float distance = Vector3.Distance(transform.position, player.position);
+
         if (distance < lungeDistance)
             return;
 
@@ -373,13 +402,15 @@ public class KnightController : MonoBehaviour
         yield return new WaitForSeconds(1.1f);
 
         knightAudioSource.PlayOneShot(shieldBuffClip);
-        shieldBuff.SetActive(true);
-        shieldActive = true;
 
+        shieldBuff.SetActive(true);
+
+        shieldActive = true;
 
         yield return new WaitForSeconds(shieldBuffDuration);
 
         shieldBuff.SetActive(false);
+
         shieldActive = false;
     }
 
@@ -412,14 +443,20 @@ public class KnightController : MonoBehaviour
 
     public void RotateTowards(Vector3 targetPosition)
     {
-        Vector3 direction = (targetPosition - transform.position);
+        Vector3 direction = targetPosition - transform.position;
+
         direction.y = 0;
 
         if (direction.sqrMagnitude < 0.0001f)
             return;
 
         Quaternion targetRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5.0f);
+
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            targetRotation,
+            Time.deltaTime * 5.0f
+        );
     }
 
     public void SpawnEnemy()
@@ -444,9 +481,7 @@ public class KnightController : MonoBehaviour
         foreach (var hit in hits)
         {
             if (hit.collider != spawnZone)
-            {
                 return hit.point;
-            }
         }
 
         return randomPoint;
@@ -465,8 +500,11 @@ public class KnightController : MonoBehaviour
     public void ShowSlashAttack1()
     {
         slashAttack1.Play();
+
         SpawnSlash1();
+
         knightAudioSource.pitch = Random.Range(pitchMin, pitchMax);
+
         knightAudioSource.PlayOneShot(slashSwordClip);
     }
 
@@ -474,48 +512,58 @@ public class KnightController : MonoBehaviour
     {
         if (!isSecondPhase)
             return;
-        Quaternion rotation = Quaternion.Euler(180f, 0f, 0f);
+
         Instantiate(slash1, spawnSlash1.position, spawnSlash1.rotation);
     }
+
     public void SpawnSlash3()
     {
         if (!isSecondPhase)
             return;
-        Quaternion rotation = Quaternion.Euler(180f, 0f, 0f);
+
         Instantiate(slash3, spawnSlash1.position, spawnSlash1.rotation);
     }
 
     public void ShowSlashAttack2()
     {
         slashAttack2.Play();
+
         SpawnSlash1();
+
         knightAudioSource.pitch = Random.Range(pitchMin, pitchMax);
+
         knightAudioSource.PlayOneShot(slashSwordClip);
     }
 
     public void ShowSlashAttack3()
     {
         slashAttack3.Play();
+
         SpawnSlash3();
+
         knightAudioSource.pitch = Random.Range(pitchMin, pitchMax);
+
         knightAudioSource.PlayOneShot(slashSwordClip);
     }
 
     public void RandomCastDeathMagic()
     {
         float random = Random.value;
+
         Debug.Log(random);
 
         if (random >= chanceToAttack)
         {
             StartCoroutine(CastDeathMagic());
+
             chanceToAttack = firstChance;
         }
         else
         {
             chanceToAttack -= 0.05f;
+
             Debug.Log(chanceToAttack);
-        } 
+        }
     }
 
     private IEnumerator CastDeathMagic()
@@ -536,20 +584,28 @@ public class KnightController : MonoBehaviour
 
     private IEnumerator PortalAttackRoutine()
     {
-        Vector3 bossPortalPos = transform.position + transform.forward * portalForwardDistance;
-        GameObject portal1 = Instantiate(portalPrefab, bossPortalPos, Quaternion.identity);
+        Vector3 bossPortalPos =
+            transform.position + transform.forward * portalForwardDistance;
+
+        GameObject portal1 =
+            Instantiate(portalPrefab, bossPortalPos, Quaternion.identity);
 
         Vector3 directionBehindPlayer = -player.forward;
-        Vector3 playerPortalPos = player.position + directionBehindPlayer * playerPortalDistance;
 
-        GameObject portal2 = Instantiate(portalPrefab, playerPortalPos, Quaternion.identity);
+        Vector3 playerPortalPos =
+            player.position + directionBehindPlayer * playerPortalDistance;
+
+        GameObject portal2 =
+            Instantiate(portalPrefab, playerPortalPos, Quaternion.identity);
 
         yield return new WaitForSeconds(delayBeforeTeleport);
 
         transform.position = portal2.transform.position;
 
         Vector3 lookDir = (player.position - transform.position).normalized;
+
         lookDir.y = 0;
+
         transform.rotation = Quaternion.LookRotation(lookDir);
 
         yield return new WaitForSeconds(delayBeforeAttack);
@@ -571,7 +627,7 @@ public class KnightController : MonoBehaviour
             return;
         }
 
-        if (currentHP / maxHP < 0.3f)
+        if (currentHP / maxHP < 0.45f)
         {
             if (!isSecondPhase)
                 SetSecondPhase();
@@ -581,29 +637,37 @@ public class KnightController : MonoBehaviour
             currentHP -= damage * shieldReducedDamage;
         else
             currentHP -= damage * 0.65f;
+
         UpdateSlider();
     }
 
     private void SetSecondPhase()
     {
         bossMusicController.StartSecondPhase();
+
         isSecondPhase = true;
-        StartCoroutine(SetAllLightIsRed());
+
+        StartCoroutine(SetLightsColorRoutine(lightsOnSceneGroup1));
+        StartCoroutine(SetLightsColorRoutine(lightsOnSceneGroup2));
+
         agent.speed = 7.0f;
+
         pointLight.color = Color.red;
+
         Destroy(magicKnightLight);
     }
 
-    private IEnumerator SetAllLightIsRed()
+    private IEnumerator SetLightsColorRoutine(Light[] lights)
     {
-        Color startColor = new Color32(0xF3, 0xB6, 0x3A, 255);
         Color targetColor = new Color32(0xC6, 0x09, 0x19, 255);
 
         float duration = 0.3f;
 
-        for (int i = 0; i < lightsOnScene.Length; i++)
+        for (int i = 0; i < lights.Length; i++)
         {
-            Light currentLight = lightsOnScene[i];
+            Light currentLight = lights[i];
+
+            Color initialColor = currentLight.color;
 
             float time = 0f;
 
@@ -613,27 +677,37 @@ public class KnightController : MonoBehaviour
 
                 float t = time / duration;
 
-                currentLight.color = Color.Lerp(startColor, targetColor, t);
+                currentLight.color =
+                    Color.Lerp(initialColor, targetColor, t);
 
                 yield return null;
             }
 
             currentLight.color = targetColor;
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
 
     private void Die()
     {
         bossMusicController.EndBossFight();
+
         isDeath = true;
+
         agent.isStopped = true;
+
         sliderHP.GetComponent<Transform>().parent.gameObject.SetActive(false);
+
         animator.SetTrigger("Death");
+
         finishCircle.SetActive(true);
+
         svetlesContainer.AddSvetles(svetlesOnDeath);
-        EnemyBase[] enemies = FindObjectsByType<EnemyBase>(FindObjectsSortMode.None);
+
+        EnemyBase[] enemies =
+            FindObjectsByType<EnemyBase>(FindObjectsSortMode.None);
+
         foreach (EnemyBase enemy in enemies)
         {
             enemy.SetDie();

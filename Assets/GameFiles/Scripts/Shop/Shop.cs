@@ -16,7 +16,6 @@ public class Shop : MonoBehaviour
     [SerializeField] private int increaseShotgunDamage;
     [SerializeField] private int inreaseRevolverDamage;
     [SerializeField] private int increaseRifleDamage;
-    [SerializeField] private GameObject armorIndicator;
 
     private void Start()
     {
@@ -40,7 +39,6 @@ public class Shop : MonoBehaviour
     public void PurchaseArmor(int price)
     {
         svetlesContainer.SpendSvetles(price);
-        armorIndicator.SetActive(true);
         playerHealth.GetArmor(armorAmount);
         textSvetlesAmount.text = svetlesContainer.CurrentSvetles.ToString();
     }

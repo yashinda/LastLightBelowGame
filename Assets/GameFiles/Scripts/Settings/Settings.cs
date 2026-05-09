@@ -127,6 +127,7 @@ public class Settings : MonoBehaviour
         int graphicLevel = PlayerPrefs.GetInt("GraphicLevel", QualitySettings.GetQualityLevel());
 
         QualitySettings.SetQualityLevel(graphicLevel);
+        QualitySettings.vSyncCount = 1;
     }
 
     private void ApplyResolution(int index)

@@ -85,7 +85,7 @@ public class Settings : MonoBehaviour
         sliderMusic.minValue = minMusicValue;
         sliderMusic.maxValue = maxMusicValue;
 
-        float savedMusicVolume = PlayerPrefs.GetFloat("MusicVolume", 0.0f);
+        var savedMusicVolume = PlayerPrefs.GetFloat("MusicVolume", 0.0f);
 
         sliderMusic.value = savedMusicVolume;
 

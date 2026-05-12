@@ -57184,20 +57184,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerContoller
   playerHealth: {fileID: 1490858841384552666}
   gameManager: {fileID: 312365687669348835}
-  speed: 2
   usualSpeed: 6
   shiftSpeed: 8
-  sprintPressed: 0
+  groundAcceleration: 10
+  airAcceleration: 5
+  groundFriction: 5
+  airControl: 0.35
+  gravity: -20
+  jumpForce: 5
   stunSpeed: 0
   stunPanel: {fileID: 0}
-  gravity: -20
-  jumpHeight: 0.6
   lookSensitivity: {x: 0.1, y: 0.1}
   pitchLimit: 75
   currentPitch: 0
   moveInput: {x: 0, y: 0}
   lookInput: {x: 0, y: 0}
   jumpPressed: 0
+  sprintPressed: 0
   evasionPressed: 0
   characterController: {fileID: 1286407249450008090}
   cameraPlayer: {fileID: 5415941731642234659}

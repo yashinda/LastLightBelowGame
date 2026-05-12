@@ -8,6 +8,7 @@ public class EnemyEncounter : MonoBehaviour
     private int aliveEnemies;
     public GameObject nextEncounter;
     public bool wavesIsStarted = false;
+    public GameObject walls;
 
     public void StartEncounter()
     {
@@ -53,5 +54,8 @@ public class EnemyEncounter : MonoBehaviour
         if (nextEncounter != null)
             nextEncounter.SetActive(true);
         Destroy(gameObject);
+
+        if (walls != null)
+            Destroy(walls);
     }
 }

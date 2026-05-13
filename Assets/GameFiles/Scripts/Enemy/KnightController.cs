@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -661,7 +662,7 @@ public class KnightController : MonoBehaviour
     {
         Color targetColor = new Color32(0xC6, 0x09, 0x19, 255);
 
-        float duration = 0.3f;
+        float duration = 0.2f;
 
         for (int i = 0; i < lights.Length; i++)
         {
@@ -677,8 +678,38 @@ public class KnightController : MonoBehaviour
 
                 float t = time / duration;
 
-                currentLight.color =
-                    Color.Lerp(initialColor, targetColor, t);
+                currentLight.color = Color.Lerp(initialColor, targetColor, t);
+
+                yield return null;
+            }
+
+            currentLight.color = targetColor;
+
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    private IEnumerator SetLightsMagicRoutine(Light[] lights)
+    {
+        Color targetColor = Color.deepSkyBlue;
+        float duration = 0.1f;
+        
+        for (int i = 0; i < lights.Length; i++)
+        {
+            Light currentLight = lights[i];
+
+            Color initialColor = currentLight.color;
+
+            float time = 0f;
+
+            while (time < duration)
+            {
+                time += Time.deltaTime;
+
+                float t = time / duration;
+
+                currentLight.color = Color.Lerp(initialColor, targetColor, t);
+                currentLight.AddComponent<MagicLight>();
 
                 yield return null;
             }
@@ -691,6 +722,8 @@ public class KnightController : MonoBehaviour
 
     private void Die()
     {
+        StartCoroutine(SetLightsMagicRoutine(lightsOnSceneGroup1));
+        StartCoroutine(SetLightsMagicRoutine(lightsOnSceneGroup2));
         bossMusicController.EndBossFight();
 
         isDeath = true;
@@ -705,8 +738,7 @@ public class KnightController : MonoBehaviour
 
         svetlesContainer.AddSvetles(svetlesOnDeath);
 
-        EnemyBase[] enemies =
-            FindObjectsByType<EnemyBase>(FindObjectsSortMode.None);
+        EnemyBase[] enemies = FindObjectsByType<EnemyBase>(FindObjectsSortMode.None);
 
         foreach (EnemyBase enemy in enemies)
         {

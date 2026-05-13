@@ -26,9 +26,15 @@ public class Indicators : MonoBehaviour
             armorAmountText.text = playerHealth.Armor.ToString();
 
             if (psySystem.madnessActive)
+            {
                 imageMadness.SetActive(true);
+                psyAmountText.color = Color.orangeRed;
+            }
             else
+            {
                 imageMadness.SetActive(false);
+                psyAmountText.color = Color.white;
+            }
         }
     }
 }

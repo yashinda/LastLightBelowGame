@@ -16,6 +16,9 @@ public class Indicators : MonoBehaviour
 
     public GameObject imageMadness;
 
+    public GameObject panelEchoSvetles;
+    public TMP_Text echoSvetlesText;
+    
     private void Update()
     {
         if (!playerHealth.PlayerDead)
@@ -34,6 +37,12 @@ public class Indicators : MonoBehaviour
             {
                 imageMadness.SetActive(false);
                 psyAmountText.color = Color.white;
+            }
+
+            if (panelEchoSvetles != null && EchoSvetles.Amount > 0)
+            {
+                panelEchoSvetles.SetActive(true);
+                echoSvetlesText.text = EchoSvetles.Amount.ToString();
             }
         }
     }

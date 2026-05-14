@@ -31,6 +31,8 @@ public class LevelStateController : MonoBehaviour
     [Header("References")]
     [SerializeField] private StatisticsLevel statisticsLevel;
 
+    [SerializeField] private GameObject firstLevelShop;
+
     private LevelState currentState = LevelState.Playing;
 
     public LevelState CurrentState => currentState;
@@ -51,6 +53,9 @@ public class LevelStateController : MonoBehaviour
     {
         LoadProgress();
         EnterPlayingState();
+        
+        if (firstLevelShop != null &&  EchoSvetles.Amount > 0)
+            firstLevelShop.SetActive(true);
     }
 
     #region Public API
@@ -73,6 +78,9 @@ public class LevelStateController : MonoBehaviour
 
         if (deathPanel != null)
             deathPanel.SetActive(true);
+
+        int savedCurrency = svetlesContainer.CurrentSvetles / 4;
+        EchoSvetles.Add(savedCurrency);
 
         RestartGame();
 

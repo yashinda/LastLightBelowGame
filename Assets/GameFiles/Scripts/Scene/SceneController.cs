@@ -62,6 +62,16 @@ public class SceneController : MonoBehaviour
         animatorBlackScreen.SetTrigger("Start");
     }
 
+    public static bool GetSave()
+    {
+        string savePath = Application.persistentDataPath + "/save.b";
+
+        if (!File.Exists(savePath))
+            return false;
+        else
+            return true;
+    }
+
     public static int GetIndexScene()
     {
         string savePath = Application.persistentDataPath + "/save.b";

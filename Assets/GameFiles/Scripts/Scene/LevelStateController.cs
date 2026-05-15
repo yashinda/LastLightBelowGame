@@ -79,9 +79,6 @@ public class LevelStateController : MonoBehaviour
         if (deathPanel != null)
             deathPanel.SetActive(true);
 
-        int savedCurrency = svetlesContainer.CurrentSvetles / 4;
-        EchoSvetles.Add(savedCurrency);
-
         RestartGame();
 
         currentState = LevelState.PlayerDead; 
@@ -98,6 +95,22 @@ public class LevelStateController : MonoBehaviour
             return;
 
         currentState = LevelState.LevelCompleted;
+
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 1:
+                EchoSvetles.Add(250);
+                break;
+            case 3:
+                EchoSvetles.Add(350);
+                break;
+            case 5:
+                EchoSvetles.Add(400);
+                break;
+            case 6:
+                EchoSvetles.Add(600);
+                break;
+        }
 
         Time.timeScale = 0f;
         ShowCursor(true);

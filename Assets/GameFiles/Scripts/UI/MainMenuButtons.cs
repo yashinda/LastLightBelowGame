@@ -6,7 +6,7 @@ public class MainMenuButtons : MonoBehaviour
 
     private void Start()
     {
-        buttonContinue.SetActive(SceneController.GetIndexScene() != 0);
+        buttonContinue.SetActive(SceneController.GetSave());
     }
 
     public void OnNewGame()

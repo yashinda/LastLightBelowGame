@@ -20,6 +20,7 @@ public static class SaveLoadData
     public static void LoadNewGame()
     {
          File.Delete(savePath);
+         PlayerPrefs.DeleteAll();
     }
 
     public static void LoadGame(SvetlesContainer svetlesContainer, UpgradeManager upgradeManager, PlayerHealth playerHealth, PsySystem psySystem,

@@ -43,7 +43,11 @@ public class PlayerHealth : MonoBehaviour
         
         if (currentHealth <= minHealth)
         {
-            Die();
+            int reincarnationAmount = SkillsAfterDeath.ReincarnationAmount;
+            if (reincarnationAmount > 0)
+                currentHealth = maxHealth / 2.0f;
+            else
+                Die();
         }
     }
 

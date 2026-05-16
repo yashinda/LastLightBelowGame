@@ -4,17 +4,17 @@ public static class SkillsAfterDeath
 {
     public const string ReincartationKey = "Reincarnation";
     
-    public static int Amount => PlayerPrefs.GetInt(ReincartationKey, 0);
+    public static int ReincarnationAmount => PlayerPrefs.GetInt(ReincartationKey, 0);
 
-    public static void Add(int amount)
+    public static void AddReincarnation()
     {
-        PlayerPrefs.SetInt(ReincartationKey, Amount + amount);
+        PlayerPrefs.SetInt(ReincartationKey, ReincarnationAmount + 1);
         PlayerPrefs.Save();
     }
 
     public static void RemoveReincarnation()
     {
-        PlayerPrefs.SetInt(ReincartationKey, Amount - 1);
+        PlayerPrefs.SetInt(ReincartationKey, ReincarnationAmount - 1);
         PlayerPrefs.Save();
     }
 }

@@ -3,6 +3,11 @@ using UnityEngine.AI;
 using UnityEngine.Audio;
 public class MeleeEnemy : EnemyBase
 {
+    [SerializeField] private SkinnedMeshRenderer skin;
+    [SerializeField] private GameObject axe;
+    
+    private Rigidbody hitRigid;
+    private Vector3 hitDirection;
     protected override void Start()
     {
         base.Start();
@@ -77,6 +82,42 @@ public class MeleeEnemy : EnemyBase
         base.Die();
         animator.SetBool("Run", false);
         animator.SetTrigger("Death");
+        
+        var skins = GetComponentsInChildren<SkinnedMeshRenderer>();
+        foreach (var skin in skins)
+        {
+            skin.enabled = true;
+        }
+        
+        skin.enabled = false;
+        axe.SetActive(false);
+        
+        var rigidbodies = GetComponentsInChildren<Rigidbody>();
+
+        if (rigidbodies != null)
+        { 
+            foreach (var rb in rigidbodies)
+            {
+                rb.isKinematic = false;
+
+                Vector3 randomDirection = -hitDirection + Random.insideUnitSphere * 0.35f;
+
+                float randomForce = Random.Range(8f, 12f);
+
+                rb.AddForce(randomDirection.normalized * randomForce, ForceMode.Impulse);
+
+                Vector3 randomTorque = new Vector3(Random.Range(-20f, 20f), Random.Range(-20f, 20f),
+                    Random.Range(-20f, 20f));
+
+                rb.AddTorque(randomTorque, ForceMode.Impulse);
+            }
+        }
+    }
+    
+    public void SetHitData(Rigidbody rb, Vector3 dir)
+    {
+        hitRigid = rb;
+        hitDirection = dir;
     }
 
     public void DealDamage()

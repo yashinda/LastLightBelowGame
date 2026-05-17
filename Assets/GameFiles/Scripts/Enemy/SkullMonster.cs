@@ -33,7 +33,7 @@ public class SkullMonster : EnemyBase
     protected override void Start()
     {
         base.Start();
-        movementMode = MovementMode.NavMesh;
+        movementMode = MovementMode.Flying;
     }
 
     protected override void Update()

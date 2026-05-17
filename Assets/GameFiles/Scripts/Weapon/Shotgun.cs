@@ -60,6 +60,19 @@ public class Shotgun : Gun
                     if (enemyBase == null)
                         continue;
 
+                    /*if (hit.collider.GetComponentInChildren<Rigidbody>() != null &&
+                        !hit.collider.GetComponentInChildren<Rigidbody>().isKinematic)
+                    {
+                        var rigidBody = hit.collider.GetComponentInChildren<Rigidbody>();
+                        rigidBody.AddForce(-Vector3.forward * 20f, ForceMode.Impulse);
+                    }*/
+
+                    var enemy = hit.collider.GetComponentInParent<MeleeEnemy>();
+                    if (enemy != null)
+                    {
+                        enemy.SetHitData(hit.collider.attachedRigidbody, transform.forward);
+                    }
+                    
                     int finalDamage = Damage;
 
                     if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Head"))

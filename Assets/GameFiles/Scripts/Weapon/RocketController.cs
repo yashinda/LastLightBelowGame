@@ -10,10 +10,6 @@ public class RocketController : Gun
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private GameObject projectileToDisableOnFire;
 
-    [Header("Optional Rotation")]
-    [SerializeField] private bool rotate = false;
-    [SerializeField] private float rotationSpeed = 0.25f;
-
     protected override void Shoot()
     {
         Ray cameraRay = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
@@ -28,14 +24,11 @@ public class RocketController : Gun
         {
             targetPoint = cameraRay.origin + cameraRay.direction * shootingRange;
         }
-
-        // Направление от дула к точке
+        
         Vector3 shootDirection = (targetPoint - muzzlePosition.position).normalized;
-
-        // Поворот ракеты в нужное направление
+        
         Quaternion rotation = Quaternion.LookRotation(shootDirection);
-
-        // Спавн ракеты
+        
         if (projectilePrefab != null && muzzlePosition != null)
         {
             Instantiate(

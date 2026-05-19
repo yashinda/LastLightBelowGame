@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using UnityEngine;
+using Random = System.Random;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -12,13 +12,19 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float minHealth = 0f;
     [SerializeField] private int armor = 0;
 
+    [Header("Reincarnation")] 
+    [SerializeField] private GameObject invincibleEffect;
+
     [Header("Damage Feedback")] 
     [SerializeField] private Material bloodEffect;
     [SerializeField] private float maxIntencity = 4.0f;
     [SerializeField] private float fadeInSpeed = 12.0f;
     [SerializeField] private float fadeOutSpeed = 3.0f;
     [SerializeField] private AudioSource playerAudioSource;
-    [SerializeField] private AudioClip damageClip;
+    [SerializeField] private AudioClip damageClipFirst;
+    [SerializeField] private AudioClip damageClipSecond;
+    [Range(0.9f, 1.1f)] [SerializeField] private float pitchMin; 
+    [Range(0.9f, 1.1f)] [SerializeField] private float pitchMax; 
     private Coroutine bloodEffectCoroutine;
 
     private bool isDead;
@@ -43,6 +49,7 @@ public class PlayerHealth : MonoBehaviour
             return;
 
         ShowBloodEffect();
+        PlayAudioHit();
         
         if (armor > 0)
         {
@@ -59,7 +66,11 @@ public class PlayerHealth : MonoBehaviour
         {
             int reincarnationAmount = SkillsAfterDeath.ReincarnationAmount;
             if (reincarnationAmount > 0)
+            {
                 currentHealth = maxHealth / 2.0f;
+                StartCoroutine(ReincarnationCoroutine());
+                SkillsAfterDeath.RemoveReincarnation();
+            }
             else
                 Die();
         }
@@ -108,6 +119,26 @@ public class PlayerHealth : MonoBehaviour
     public void SetArmor(int amount)
     {
         armor = amount;
+    }
+
+    private void PlayAudioHit()
+    {
+        playerAudioSource.pitch = UnityEngine.Random.Range(pitchMin, pitchMax);
+        float randomValue = UnityEngine.Random.value;
+        if (randomValue > 0.5f)
+            playerAudioSource.PlayOneShot(damageClipFirst);
+        else
+            playerAudioSource.PlayOneShot(damageClipSecond);
+    }
+
+    private IEnumerator ReincarnationCoroutine()
+    {
+        invincible = true;
+        invincibleEffect.SetActive(true);
+
+        yield return new WaitForSeconds(2.0f);
+        invincible = false;
+        invincibleEffect.SetActive(false);
     }
 
     private void Die()

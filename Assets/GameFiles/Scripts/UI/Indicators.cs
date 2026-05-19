@@ -27,6 +27,11 @@ public class Indicators : MonoBehaviour
             healthAmountText.text = Mathf.FloorToInt(playerHealth.CurrentHealth).ToString();
             psyAmountText.text = Mathf.FloorToInt(psySystem.psyAmount).ToString();
             armorAmountText.text = playerHealth.Armor.ToString();
+            
+            if (playerHealth.CurrentHealth > 30)
+                healthAmountText.color = Color.white;
+            else
+                healthAmountText.color = Color.red;
 
             if (psySystem.madnessActive)
             {

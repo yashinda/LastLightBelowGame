@@ -75,7 +75,7 @@ public abstract class Gun : MonoBehaviour
     private void TryShoot()
     {
         if (currentAmmo <= 0)
-            Debug.Log($"В {gunName} нет патронов");
+            return;
 
         if (Time.time >= nextTimeToFire && currentAmmo > 0)
         {

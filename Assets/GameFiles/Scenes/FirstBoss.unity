@@ -595995,6 +595995,10 @@ MonoBehaviour:
   maxHealth: 100
   minHealth: 0
   armor: 0
+  bloodEffect: {fileID: 2100000, guid: 47820f1bf56e4cb4fb0902309830e67e, type: 2}
+  maxIntencity: 6
+  fadeInSpeed: 12
+  fadeOutSpeed: 3
   playerAudioSource: {fileID: 0}
   damageClip: {fileID: 0}
 --- !u!23 &7229434851641655189

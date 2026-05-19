@@ -232,13 +232,7 @@ public class PlayerController : MonoBehaviour
                 1.0f
             );
 
-        Vector2 input = new Vector2(
-            lookInput.x *
-            (lookSensitivity.x * sensitivity),
-
-            lookInput.y *
-            (lookSensitivity.y * sensitivity)
-        );
+        Vector2 input = new Vector2(lookInput.x * (lookSensitivity.x * sensitivity), lookInput.y * (lookSensitivity.y * sensitivity));
 
         CurrentPitch -= input.y;
 

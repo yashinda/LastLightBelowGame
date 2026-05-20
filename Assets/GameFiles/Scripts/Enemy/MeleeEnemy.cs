@@ -87,7 +87,9 @@ public class MeleeEnemy : EnemyBase
         foreach (var skin in skins)
         {
             skin.enabled = true;
-            skin.GetComponent<Collider>().enabled = true;
+            var col = skin.GetComponent<Collider>();
+            if (col != null)
+                col.enabled = true;
         }
         
         skin.enabled = false;

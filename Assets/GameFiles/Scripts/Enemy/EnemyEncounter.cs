@@ -28,14 +28,14 @@ public class EnemyEncounter : MonoBehaviour
 
         GameObject wave = waves[currentWaveIndex];
         wave.SetActive(true);
+        aliveEnemies = 0;
+    }
+    
+    public void RegisterEnemy(EnemyBase enemy)
+    {
+        aliveEnemies++;
 
-        EnemyBase[] enemies = wave.GetComponentsInChildren<EnemyBase>();
-        aliveEnemies = enemies.Length;
-
-        foreach (var enemy in enemies)
-        {
-            enemy.OnEnemyDied += HandleEnemyDeath;
-        }
+        enemy.OnEnemyDied += HandleEnemyDeath;
     }
 
     private void HandleEnemyDeath(EnemyBase enemy)

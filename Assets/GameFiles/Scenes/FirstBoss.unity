@@ -582229,10 +582229,10 @@ AudioSource:
   m_GameObject: {fileID: 8507631326089882098}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8209906971482193311, guid: fba6b84703276694390ac0843c7ddbcf, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -595995,12 +595995,16 @@ MonoBehaviour:
   maxHealth: 100
   minHealth: 0
   armor: 0
+  invincibleEffect: {fileID: 1993537753440281401}
   bloodEffect: {fileID: 2100000, guid: 47820f1bf56e4cb4fb0902309830e67e, type: 2}
   maxIntencity: 6
   fadeInSpeed: 12
   fadeOutSpeed: 3
-  playerAudioSource: {fileID: 0}
-  damageClip: {fileID: 0}
+  playerAudioSource: {fileID: 6619134804497378209}
+  damageClipFirst: {fileID: 8300000, guid: 8aedb40def1ad794882f236301768aef, type: 3}
+  damageClipSecond: {fileID: 8300000, guid: 16f5408e246c7ee4e9d3f8ec801e1f73, type: 3}
+  pitchMin: 0.93
+  pitchMax: 1.0534
 --- !u!23 &7229434851641655189
 MeshRenderer:
   m_ObjectHideFlags: 0

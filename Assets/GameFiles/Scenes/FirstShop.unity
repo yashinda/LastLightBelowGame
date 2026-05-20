@@ -13175,6 +13175,7 @@ MonoBehaviour:
   pausePanel: {fileID: 6434231230448417970}
   deathPanel: {fileID: 0}
   statisticsLevel: {fileID: 1477701611677466336}
+  firstLevelShop: {fileID: 0}
 --- !u!114 &326430853716296466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49465,8 +49466,16 @@ MonoBehaviour:
   maxHealth: 100
   minHealth: 0
   armor: 0
-  playerAudioSource: {fileID: 0}
-  damageClip: {fileID: 0}
+  invincibleEffect: {fileID: 5583910355392813419}
+  bloodEffect: {fileID: 2100000, guid: 47820f1bf56e4cb4fb0902309830e67e, type: 2}
+  maxIntencity: 4
+  fadeInSpeed: 12
+  fadeOutSpeed: 3
+  playerAudioSource: {fileID: 6967423161754714887}
+  damageClipFirst: {fileID: 8300000, guid: 8aedb40def1ad794882f236301768aef, type: 3}
+  damageClipSecond: {fileID: 8300000, guid: 16f5408e246c7ee4e9d3f8ec801e1f73, type: 3}
+  pitchMin: 0.9213
+  pitchMax: 1.0715
 --- !u!1 &1496035347280603741
 GameObject:
   m_ObjectHideFlags: 0
@@ -101159,6 +101168,8 @@ MonoBehaviour:
   psyAmountText: {fileID: 8154174645033215101}
   armorAmountText: {fileID: 8814389489146677071}
   imageMadness: {fileID: 1272037248506703215}
+  panelEchoSvetles: {fileID: 0}
+  echoSvetlesText: {fileID: 0}
 --- !u!4 &4269366972541182536
 Transform:
   m_ObjectHideFlags: 0
@@ -118490,103 +118501,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AmmoCounter
   ammoCountText: {fileID: 6805270492927742236}
   weaponHolder: {fileID: 5667175816293427650}
---- !u!82 &5224736802172636612
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6904167231743338770}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!33 &5242727752336800853
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -152092,7 +152006,6 @@ GameObject:
   - component: {fileID: 1490858841384552666}
   - component: {fileID: 4461178305061648120}
   - component: {fileID: 1877187784188620913}
-  - component: {fileID: 5224736802172636612}
   - component: {fileID: 8101235175304786990}
   m_Layer: 0
   m_Name: Player

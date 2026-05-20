@@ -42079,8 +42079,16 @@ MonoBehaviour:
   maxHealth: 100
   minHealth: 0
   armor: 0
-  playerAudioSource: {fileID: 0}
-  damageClip: {fileID: 0}
+  invincibleEffect: {fileID: 5583910355510274919}
+  bloodEffect: {fileID: 2100000, guid: 47820f1bf56e4cb4fb0902309830e67e, type: 2}
+  maxIntencity: 4
+  fadeInSpeed: 12
+  fadeOutSpeed: 3
+  playerAudioSource: {fileID: 5937150797476473984}
+  damageClipFirst: {fileID: 8300000, guid: 8aedb40def1ad794882f236301768aef, type: 3}
+  damageClipSecond: {fileID: 8300000, guid: 16f5408e246c7ee4e9d3f8ec801e1f73, type: 3}
+  pitchMin: 0.9126
+  pitchMax: 1.0771
 --- !u!1 &1201161279262865124
 GameObject:
   m_ObjectHideFlags: 0
@@ -141038,6 +141046,7 @@ MonoBehaviour:
   pausePanel: {fileID: 3592206516308658187}
   deathPanel: {fileID: 0}
   statisticsLevel: {fileID: 721356235219046976}
+  firstLevelShop: {fileID: 0}
 --- !u!4 &5365752807330118649
 Transform:
   m_ObjectHideFlags: 0
@@ -233896,6 +233905,8 @@ MonoBehaviour:
   psyAmountText: {fileID: 2615712296293805679}
   armorAmountText: {fileID: 3402067443806588253}
   imageMadness: {fileID: 1272037247790806254}
+  panelEchoSvetles: {fileID: 0}
+  echoSvetlesText: {fileID: 0}
 --- !u!114 &8136263735710306604
 MonoBehaviour:
   m_ObjectHideFlags: 0

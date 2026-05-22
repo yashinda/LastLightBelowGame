@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using Random = System.Random;
@@ -36,6 +37,11 @@ public class PlayerHealth : MonoBehaviour
 
     public int Armor => armor;
     public bool IsInvincible => invincible;
+
+    private void Start()
+    {
+        bloodEffect.SetFloat("_ScreenIntencity", 0.0f);
+    }
 
     private void Update()
     {

@@ -81,15 +81,11 @@ public class PlayerController : MonoBehaviour
 
         bool grounded = characterController.isGrounded;
 
-        Vector3 wishDir =
-            transform.forward * moveInput.y +
-            transform.right * moveInput.x;
+        Vector3 wishDir = transform.forward * moveInput.y + transform.right * moveInput.x;
 
         wishDir.Normalize();
 
-        float targetSpeed = sprintPressed
-            ? shiftSpeed
-            : usualSpeed;
+        float targetSpeed = sprintPressed ? shiftSpeed : usualSpeed;
 
         if (grounded)
         {
@@ -114,12 +110,10 @@ public class PlayerController : MonoBehaviour
     private void GroundMove(Vector3 wishDir, float targetSpeed)
     {
         ApplyFriction();
+        
+        var boostMoveSpeed = PlayerPrefs.GetFloat("BoostMoveSpeed", 1.0f);
 
-        Accelerate(
-            wishDir,
-            targetSpeed,
-            groundAcceleration
-        );
+        Accelerate(wishDir, targetSpeed * boostMoveSpeed, groundAcceleration);
 
         if (velocity.y < 0)
             velocity.y = -2f;
@@ -136,24 +130,16 @@ public class PlayerController : MonoBehaviour
         AirControlMovement(wishDir);
     }
 
-    private void Accelerate(
-        Vector3 wishDir,
-        float wishSpeed,
-        float acceleration)
+    private void Accelerate(Vector3 wishDir, float wishSpeed, float acceleration)
     {
-        float currentSpeed =
-            Vector3.Dot(velocity, wishDir);
+        float currentSpeed = Vector3.Dot(velocity, wishDir);
 
-        float addSpeed =
-            wishSpeed - currentSpeed;
+        float addSpeed = wishSpeed - currentSpeed;
 
         if (addSpeed <= 0)
             return;
 
-        float accelSpeed =
-            acceleration *
-            Time.deltaTime *
-            wishSpeed;
+        float accelSpeed = acceleration * Time.deltaTime * wishSpeed;
 
         if (accelSpeed > addSpeed)
             accelSpeed = addSpeed;
@@ -202,8 +188,7 @@ public class PlayerController : MonoBehaviour
 
         velocity.Normalize();
 
-        float dot =
-            Vector3.Dot(velocity, wishDir);
+        float dot = Vector3.Dot(velocity, wishDir);
 
         float control = 32f * airControl * dot * dot * Time.deltaTime;
 

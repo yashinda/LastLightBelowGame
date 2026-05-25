@@ -1,0 +1,59 @@
+{
+  "English": {
+    "entries": [
+      {
+        "key": "dash_ability_title",
+        "value": "Dash"
+      },
+      {
+        "key": "dash_ability_description",
+        "value": "The ability grants you the ability to cover a certain distance in a short period of time.\nPress Z to use."
+      },
+      {
+        "key": "dash_ability_param1",
+        "value": "Distance:"
+      },
+      {
+        "key": "dash_ability_param2",
+        "value": "Cooldown:"
+      },
+      {
+        "key": "dash_ability_characteristic1",
+        "value": "10 m."
+      },
+      {
+        "key": "dash_ability_characteristic2",
+        "value": "7 sec."
+      }
+    ]
+  },
+
+  "Russian": {
+    "entries": [
+      {
+        "key": "dash_ability_title",
+        "value": "Рывок"
+      },
+      {
+        "key": "dash_ability_description",
+        "value": "Способность дает Вам возможность преодолеть некоторое расстояние за короткий промежуток времени.\nНажмите Z, чтобы использовать."
+      },
+      {
+        "key": "dash_ability_param1",
+        "value": "Дистанция:"
+      },
+      {
+        "key": "dash_ability_param2",
+        "value": "Перезарядка:"
+      },
+      {
+        "key": "dash_ability_characteristic1",
+        "value": "10 м."
+      },
+      {
+        "key": "dash_ability_characteristic2",
+        "value": "7 сек."
+      }
+    ]
+  }
+}

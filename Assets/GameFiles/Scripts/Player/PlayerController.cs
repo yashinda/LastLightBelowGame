@@ -61,9 +61,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!playerHealth.PlayerDead &&
-            !gameManager.IsPaused &&
-            gameManager.CurrentState != LevelState.ChooseUpgrade)
+        if (!playerHealth.PlayerDead && !gameManager.IsPaused && gameManager.CurrentState != LevelState.ChooseUpgrade)
         {
             MoveUpdate();
             LookUpdate();
@@ -110,8 +108,8 @@ public class PlayerController : MonoBehaviour
     private void GroundMove(Vector3 wishDir, float targetSpeed)
     {
         ApplyFriction();
-        
-        var boostMoveSpeed = PlayerPrefs.GetFloat("BoostMoveSpeed", 1.0f);
+
+        var boostMoveSpeed = SkillsAfterDeath.BoostMoveSpeed;
 
         Accelerate(wishDir, targetSpeed * boostMoveSpeed, groundAcceleration);
 

@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Settings_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 05de0e996347bdf4885a690487fa6666, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5708324864
+    m_Localized: SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 229474443264
+    m_Localized: SOUND SETTIGNS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 323938557952
+    m_Localized: music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 454519824384
+    m_Localized: sounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 601781837824
+    m_Localized: GRAPHIC SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 710795993088
+    m_Localized: quality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 803028738048
+    m_Localized: low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 848100728832
+    m_Localized: medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 885069324288
+    m_Localized: high
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1031035297792
+    m_Localized: resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1157426454528
+    m_Localized: OTHER SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1243925585920
+    m_Localized: sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1363563913216
+    m_Localized: language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1569462296576
+    m_Localized: english
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1653621006336
+    m_Localized: russian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55154350891008
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

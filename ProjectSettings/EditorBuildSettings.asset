@@ -27,5 +27,7 @@ EditorBuildSettings:
     path: Assets/GameFiles/Scenes/FirstBoss.unity
     guid: 5066b104538b5004fac0f382c6b623d6
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: eca67b4234bc842488f67d694797012f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.localization.settings: {fileID: 11400000, guid: 76b3bbed443d75c4fa7a42f295ea0d7f, type: 2}
   m_UseUCBPForAssetBundles: 0

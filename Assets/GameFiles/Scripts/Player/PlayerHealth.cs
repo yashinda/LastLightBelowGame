@@ -40,7 +40,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void Start()
     {
+        var boostHP = SkillsAfterDeath.BoostMaxHp;
+        var boostArmor = SkillsAfterDeath.BoostArmor;
         bloodEffect.SetFloat("_ScreenIntencity", 0.0f);
+        currentHealth = maxHealth + boostHP;
+        armor += boostArmor;
     }
 
     private void Update()

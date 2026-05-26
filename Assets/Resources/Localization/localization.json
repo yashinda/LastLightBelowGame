@@ -24,6 +24,102 @@
       {
         "key": "dash_ability_characteristic2",
         "value": "7 sec."
+      },
+      {
+        "key": "heal_ability_title",
+        "value": "Heal"
+      },
+      {
+        "key": "heal_ability_description",
+        "value": "The ability grants you the restore some HP immediately.\nPress X to use."
+      },
+      {
+        "key": "heal_ability_param1",
+        "value": "Restore HP:"
+      },
+      {
+        "key": "heal_ability_param2",
+        "value": "Cooldown:"
+      },
+      {
+        "key": "heal_ability_characteristic1",
+        "value": "25"
+      },
+      {
+        "key": "heal_ability_characteristic2",
+        "value": "15 sec."
+      },
+      {
+        "key": "invincible_ability_title",
+        "value": "Invincible"
+      },
+      {
+        "key": "invincible_ability_description",
+        "value": "The ability grants you the invincible for short time.\nPress C to use."
+      },
+      {
+        "key": "invincible_ability_param1",
+        "value": "Duration:"
+      },
+      {
+        "key": "invincible_ability_param2",
+        "value": "Cooldown:"
+      },
+      {
+        "key": "invincible_ability_characteristic1",
+        "value": "3 sec."
+      },
+      {
+        "key": "invincible_ability_characteristic2",
+        "value": "18 sec."
+      },
+      {
+        "key": "createLight_ability_title",
+        "value": "Create Light"
+      },
+      {
+        "key": "createLight_ability_description",
+        "value": "The ability grants you the ability create magic light around yourself for short time.\nPress V to use."
+      },
+      {
+        "key": "createLight_ability_param1",
+        "value": "Duration:"
+      },
+      {
+        "key": "createLight_ability_param2",
+        "value": "Cooldown:"
+      },
+      {
+        "key": "createLight_ability_characteristic1",
+        "value": "3 sec."
+      },
+      {
+        "key": "createLight_ability_characteristic2",
+        "value": "15 sec."
+      },
+      {
+        "key": "magicLight_ability_title",
+        "value": "Change Torch Light"
+      },
+      {
+        "key": "magicLight_ability_description",
+        "value": "The ability grants you the ability change type of torch light to magical.\nPress E to use."
+      },
+      {
+        "key": "magicLight_ability_param1",
+        "value": "Distance:"
+      },
+      {
+        "key": "magicLight_ability_param2",
+        "value": "Amount:"
+      },
+      {
+        "key": "magicLight_ability_characteristic1",
+        "value": "3 m."
+      },
+      {
+        "key": "magicLight_ability_characteristic2",
+        "value": "2 torches"
       }
     ]
   },
@@ -53,6 +149,102 @@
       {
         "key": "dash_ability_characteristic2",
         "value": "7 сек."
+      },
+      {
+        "key": "heal_ability_title",
+        "value": "Исцеление"
+      },
+      {
+        "key": "heal_ability_description",
+        "value": "Способность дает Вам возможность немедленно восстановить часть здоровья.\nНажмите X, чтобы использовать."
+      },
+      {
+        "key": "heal_ability_param1",
+        "value": "Здоровье:"
+      },
+      {
+        "key": "heal_ability_param2",
+        "value": "Перезарядка:"
+      },
+      {
+        "key": "heal_ability_characteristic1",
+        "value": "25"
+      },
+      {
+        "key": "heal_ability_characteristic2",
+        "value": "15 сек."
+      },
+      {
+        "key": "invincible_ability_title",
+        "value": "Неуязвимость"
+      },
+      {
+        "key": "invincible_ability_description",
+        "value": "Способность дарует Вам неуязвимость на короткое время.\nНажмите C, чтобы использовать."
+      },
+      {
+        "key": "invincible_ability_param1",
+        "value": "Длительность:"
+      },
+      {
+        "key": "invincible_ability_param2",
+        "value": "Перезарядка:"
+      },
+      {
+        "key": "invincible_ability_characteristic1",
+        "value": "3 сек."
+      },
+      {
+        "key": "invincible_ability_characteristic2",
+        "value": "18 сек."
+      },
+      {
+        "key": "createLight_ability_title",
+        "value": "Магический свет"
+      },
+      {
+        "key": "createLight_ability_description",
+        "value": "Способность дарует Вам возможность создать магический свет вокруг себя.\nНажмите V, чтобы использовать."
+      },
+      {
+        "key": "createLight_ability_param1",
+        "value": "Длительность:"
+      },
+      {
+        "key": "createLight_ability_param2",
+        "value": "Перезарядка:"
+      },
+      {
+        "key": "createLight_ability_characteristic1",
+        "value": "3 сек."
+      },
+      {
+        "key": "createLight_ability_characteristic2",
+        "value": "15 сек."
+      },
+      {
+        "key": "magicLight_ability_title",
+        "value": "Смена света"
+      },
+      {
+        "key": "magicLight_ability_description",
+        "value": "Способность дарует Вам возможность поменять тип света факелов на магический.\nНажмите E, чтобы использовать."
+      },
+      {
+        "key": "magicLight_ability_param1",
+        "value": "Дистанция применения:"
+      },
+      {
+        "key": "magicLight_ability_param2",
+        "value": "Количество факелов:"
+      },
+      {
+        "key": "magicLight_ability_characteristic1",
+        "value": "3 м."
+      },
+      {
+        "key": "magicLight_ability_characteristic2",
+        "value": "2"
       }
     ]
   }

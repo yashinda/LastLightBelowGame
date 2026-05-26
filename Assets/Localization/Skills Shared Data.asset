@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Skills Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Skills
+  m_TableCollectionNameGuidString: 17781d5fb1596ad4f812d8dd4e9a95d1
+  m_Entries:
+  - m_Id: 6004051968
+    m_Key: skills.dash_ability_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 432485076992
+    m_Key: skills.dash_ability_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1006341361664
+    m_Key: skills.dash_ability_param1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1115112247296
+    m_Key: skills.dash_ability_param2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1217105137664
+    m_Key: skills.dash_ability_characteristic1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1298281697280
+    m_Key: skills.dash_ability_characteristic2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1401155391488
+    m_Key: skills.heal_ability_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3080948977664
+    m_Key: skills.heal_ability_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3322670911488
+    m_Key: skills.heal_ability_param1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5214213935104
+    m_Key: skills.heal_ability_param2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5297273737216
+    m_Key: skills.heal_ability_characteristic1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5356069490688
+    m_Key: skills.heal_ability_characteristic2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5408724783104
+    m_Key: skills.invincible_ability_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14705533816832
+    m_Key: skills.invincible_ability_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14986732539904
+    m_Key: skills.invincible_ability_param1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15070014640128
+    m_Key: skills.invincible_ability_param2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15126184759296
+    m_Key: skills.invincible_ability_characteristic1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15192362487808
+    m_Key: skills.invincible_ability_characteristic2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15298776174592
+    m_Key: skills.createLight_ability_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19819220865024
+    m_Key: skills.createLight_ability_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20157575368704
+    m_Key: skills.createLight_ability_param1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20230841470976
+    m_Key: skills.createLight_ability_param2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20321895616512
+    m_Key: skills.createLight_ability_characteristic1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20368502722560
+    m_Key: skills.createLight_ability_characteristic2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20439495512064
+    m_Key: skills.magicLight_ability_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20571532201984
+    m_Key: skills.magicLight_ability_description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20741787389952
+    m_Key: skills.magicLight_ability_param1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20842375188480
+    m_Key: skills.magicLight_ability_param2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20946536534016
+    m_Key: skills.magicLight_ability_characteristic1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21006791905280
+    m_Key: skills.magicLight_ability_characteristic2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28286996353024
+    m_Key: skills.title
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4537466282486530160
+  references:
+    version: 2
+    RefIds:
+    - rid: 4537466282486530160
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1779788984978

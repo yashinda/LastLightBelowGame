@@ -14,10 +14,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeId: dash_ability
   singleUse: 1
-  titleKey: dash_ability_title
-  descriptionKey: dash_ability_description
-  parameter1Key: dash_ability_param1
-  parameter2Key: dash_ability_param2
-  characteristic1Key: dash_ability_characteristic1
-  characteristic2Key: dash_ability_characteristic2
+  titleKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:17781d5fb1596ad4f812d8dd4e9a95d1
+    m_TableEntryReference:
+      m_KeyId: 6004051968
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:17781d5fb1596ad4f812d8dd4e9a95d1
+    m_TableEntryReference:
+      m_KeyId: 432485076992
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  parameter1Key:
+    m_TableReference:
+      m_TableCollectionName: GUID:17781d5fb1596ad4f812d8dd4e9a95d1
+    m_TableEntryReference:
+      m_KeyId: 1006341361664
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  parameter2Key:
+    m_TableReference:
+      m_TableCollectionName: GUID:17781d5fb1596ad4f812d8dd4e9a95d1
+    m_TableEntryReference:
+      m_KeyId: 1115112247296
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  characteristic1Key:
+    m_TableReference:
+      m_TableCollectionName: GUID:17781d5fb1596ad4f812d8dd4e9a95d1
+    m_TableEntryReference:
+      m_KeyId: 1217105137664
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  characteristic2Key:
+    m_TableReference:
+      m_TableCollectionName: GUID:17781d5fb1596ad4f812d8dd4e9a95d1
+    m_TableEntryReference:
+      m_KeyId: 1298281697280
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   effect: 0
+  references:
+    version: 2
+    RefIds: []

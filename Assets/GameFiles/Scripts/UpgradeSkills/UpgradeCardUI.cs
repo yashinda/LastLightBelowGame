@@ -22,7 +22,7 @@ public class UpgradeCardUI : MonoBehaviour
         currentUpgrade = data;
         manager = upgradeManager;
 
-        title.text = LocalizationManager.Instance.GetText(data.titleKey);
+        /*title.text = LocalizationManager.Instance.GetText(data.titleKey);
 
         description.text = LocalizationManager.Instance.GetText(data.descriptionKey);
 
@@ -32,7 +32,21 @@ public class UpgradeCardUI : MonoBehaviour
 
         char1.text = LocalizationManager.Instance.GetText(data.characteristic1Key);
 
-        char2.text = LocalizationManager.Instance.GetText(data.characteristic2Key);
+        char2.text = LocalizationManager.Instance.GetText(data.characteristic2Key);*/
+
+        /*title.text = data.titleKey.ToString();
+        description.text = data.descriptionKey.ToString();
+        param1.text = data.parameter1Key.ToString();
+        param2.text = data.parameter2Key.ToString();
+        char1.text = data.characteristic1Key.ToString();
+        char2.text = data.characteristic2Key.ToString();*/
+
+        title.text = data.titleKey.GetLocalizedString();
+        description.text = data.descriptionKey.GetLocalizedString();
+        param1.text = data.parameter1Key.GetLocalizedString();
+        param2.text = data.parameter2Key.GetLocalizedString();
+        char1.text = data.characteristic1Key.GetLocalizedString();
+        char2.text = data.characteristic2Key.GetLocalizedString();
 
         button = gameObject.GetComponent<Button>();
         button.onClick.AddListener(OnClick);

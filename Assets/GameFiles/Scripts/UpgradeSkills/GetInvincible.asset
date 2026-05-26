@@ -14,15 +14,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
   upgradeId: invincible_ability
   singleUse: 1
-  title: "\u041D\u0435\u0443\u044F\u0437\u0432\u0438\u043C\u043E\u0441\u0442\u044C"
-  description: "\u0421\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u044C
-    \u0434\u0430\u0440\u0443\u0435\u0442 \u0412\u0430\u043C \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u044C
-    \u0438\u0437\u0431\u0435\u0433\u0430\u0442\u044C \u043B\u044E\u0431\u043E\u0433\u043E
-    \u0443\u0440\u043E\u043D\u0430 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
-    \u043D\u0435\u0441\u043A\u043E\u043B\u044C\u043A\u0438\u0445 \u0441\u0435\u043A\u0443\u043D\u0434.\n\u041D\u0430\u0436\u043C\u0438\u0442\u0435
-    C, \u0447\u0442\u043E\u0431\u044B \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C."
-  textParameter1: "\u0414\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C:"
-  textParameter2: "\u041F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0430:"
-  characteristic1: "3 \u0441\u0435\u043A."
-  characteristic2: "18 \u0441\u0435\u043A."
+  titleKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:17781d5fb1596ad4f812d8dd4e9a95d1
+    m_TableEntryReference:
+      m_KeyId: 5408724783104
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  descriptionKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:17781d5fb1596ad4f812d8dd4e9a95d1
+    m_TableEntryReference:
+      m_KeyId: 14705533816832
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  parameter1Key:
+    m_TableReference:
+      m_TableCollectionName: GUID:17781d5fb1596ad4f812d8dd4e9a95d1
+    m_TableEntryReference:
+      m_KeyId: 14986732539904
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  parameter2Key:
+    m_TableReference:
+      m_TableCollectionName: GUID:17781d5fb1596ad4f812d8dd4e9a95d1
+    m_TableEntryReference:
+      m_KeyId: 15070014640128
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  characteristic1Key:
+    m_TableReference:
+      m_TableCollectionName: GUID:17781d5fb1596ad4f812d8dd4e9a95d1
+    m_TableEntryReference:
+      m_KeyId: 15126184759296
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  characteristic2Key:
+    m_TableReference:
+      m_TableCollectionName: GUID:17781d5fb1596ad4f812d8dd4e9a95d1
+    m_TableEntryReference:
+      m_KeyId: 15192362487808
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   effect: 3
+  references:
+    version: 2
+    RefIds: []

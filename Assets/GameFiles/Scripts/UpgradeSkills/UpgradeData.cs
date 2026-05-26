@@ -18,14 +18,14 @@ public class UpgradeData : ScriptableObject
     public bool singleUse = true;
 
     [Header("Localization Keys")]
-    public string titleKey;
-    public string descriptionKey;
+    public LocalizedString titleKey;
+    public LocalizedString descriptionKey;
 
-    public string parameter1Key;
-    public string parameter2Key;
+    public LocalizedString parameter1Key;
+    public LocalizedString parameter2Key;
 
-    public string characteristic1Key;
-    public string characteristic2Key;
+    public LocalizedString characteristic1Key;
+    public LocalizedString characteristic2Key;
 
     [Header("Effect")]
     public UpgradeEffect effect;

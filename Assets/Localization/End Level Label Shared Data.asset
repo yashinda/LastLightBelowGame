@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: End Level Label Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: End Level Label
+  m_TableCollectionNameGuidString: d51bc24606f97b7419ec774e2e555b07
+  m_Entries:
+  - m_Id: 4536045568
+    m_Key: endLevel.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 86887010304
+    m_Key: endLevel.time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 405972881408
+    m_Key: endLevel.secrets
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496666316800
+    m_Key: endLevel.svetles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 771770716160
+    m_Key: endLevel.restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 867589591040
+    m_Key: endLevel.continue
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4537466308018831362
+  references:
+    version: 2
+    RefIds:
+    - rid: 4537466308018831362
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1779885534049

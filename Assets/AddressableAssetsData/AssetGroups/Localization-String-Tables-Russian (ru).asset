@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Russian (ru)
   m_GUID: b6700e097de4d48499227f519fd98c30
   m_SerializeEntries:
+  - m_GUID: 1a4965a51a391304b86d62feab5dcc55
+    m_Address: ShopAfterDeath_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 33babb942d60ae24183b4208b4bdf2ba
     m_Address: Settings_ru
     m_ReadOnly: 1
@@ -29,6 +35,12 @@ MonoBehaviour:
     - Locale-ru
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e92df8107c8df94c838944d5840c779
+    m_Address: Interaction Labels_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a1b1001c10413454a883eacaad7218c8
     m_Address: Pause_ru
     m_ReadOnly: 1
@@ -42,6 +54,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ru
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e81f13ff11f8bd34d84d11225ea20ef7
+    m_Address: End Level Label_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ffdbf0eb2378a8444be7ac6452e4d96d
+    m_Address: UI HUD_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 68d5e7afea835e2438829f61a8d421e0, type: 2}

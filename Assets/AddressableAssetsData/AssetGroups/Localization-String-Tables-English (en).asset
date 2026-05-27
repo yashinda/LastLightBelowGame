@@ -29,6 +29,18 @@ MonoBehaviour:
     - Locale-en
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4a24c1d7e071d814da90ad801e951425
+    m_Address: Interaction Labels_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67ead7d9340412b45a1c2469648a6d73
+    m_Address: ShopAfterDeath_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a79311a4d0ca1fd439c1546c7a020275
     m_Address: Pause_en
     m_ReadOnly: 1
@@ -36,12 +48,24 @@ MonoBehaviour:
     - Locale-en
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: adcc7b2c1ff50fe408bd9d6bde01102f
+    m_Address: UI HUD_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f0d53d23a871dee4b90ab8caa0ac2988
     m_Address: Skills_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5f87095d4b08734f87a9f7c55c60f3f
+    m_Address: End Level Label_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 68d5e7afea835e2438829f61a8d421e0, type: 2}

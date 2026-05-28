@@ -7,6 +7,7 @@ public class ChestInteract : MonoBehaviour, IInteractable
     public GameObject loot;
     public AudioSource audioSource;
     public AudioClip clip;
+    public InteractionData interactionOpenChest;
 
     private bool isOpened = false;
     public void Interact()
@@ -39,6 +40,6 @@ public class ChestInteract : MonoBehaviour, IInteractable
 
     public string GetInteractionDescription()
     {
-        return isOpened ? string.Empty : "открыть сундук";
+        return isOpened ? string.Empty : interactionOpenChest.description.GetLocalizedString();
     }
 }

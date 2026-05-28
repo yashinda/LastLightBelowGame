@@ -16,7 +16,19 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: 0849de946e638e1489186c0c8cc8e3c1
   m_Entries:
   - m_Id: 7379783680
-    m_Key: interaction.open_chest
+    m_Key: interaction.open
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346018933542912
+    m_Key: interaction.take
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346331514048512
+    m_Key: interaction.next_level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 350316622942208
+    m_Key: interaction.use
     m_Metadata:
       m_Items: []
   m_Metadata:

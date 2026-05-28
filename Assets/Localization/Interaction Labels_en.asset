@@ -19,7 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 7379783680
-    m_Localized: Press E to open chest
+    m_Localized: Press E to open
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346018933542912
+    m_Localized: Press E to take
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346331514048512
+    m_Localized: Press E to start next level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 350316622942208
+    m_Localized: Press E to use
     m_Metadata:
       m_Items: []
   references:

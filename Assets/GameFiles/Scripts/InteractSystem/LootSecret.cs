@@ -24,6 +24,7 @@ public class LootSecret : MonoBehaviour, IInteractable
     [SerializeField] private BuffCharacteristic characteristic;
     [SerializeField] private int buffCount;
     [SerializeField] private GameObject imageSecret;
+    [SerializeField] private InteractionData interactionTake;
 
     public void Interact()
     {
@@ -56,7 +57,7 @@ public class LootSecret : MonoBehaviour, IInteractable
                 break;
         }
     }
-    public string GetInteractionDescription() => "взять секрет";
+    public string GetInteractionDescription() => interactionTake.description.GetLocalizedString();
 
     public InteractionType GetInteractionType() => InteractionType.Take;
 }

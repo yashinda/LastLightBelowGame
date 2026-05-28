@@ -5,7 +5,8 @@ public enum InteractionType
     None,
     Open,
     Take,
-    Use
+    Use,
+    NextLevel
 }
 
 public interface IInteractable

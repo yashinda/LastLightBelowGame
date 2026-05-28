@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Shop Labels_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 2f5e4fbf4f3649044bdf84c6e82ee8fe, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 4888367104
+    m_Localized: MAKE A PURCHASE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 144483192832
+    m_Localized: 'SVETLES:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 212531580928
+    m_Localized: CHARACTERISTICS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 293808803840
+    m_Localized: WEAPON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351056859136
+    m_Localized: Increase max HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 601758797824
+    m_Localized: Increase max psi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 678602641408
+    m_Localized: Get Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776900349952
+    m_Localized: svetles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 970727526400
+    m_Localized: 'Max HP: +10'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1086544842752
+    m_Localized: 'Max psi: +10'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1197018615808
+    m_Localized: 'Armor: +30'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1292665524224
+    m_Localized: Increase shotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1424236646400
+    m_Localized: Increase revolver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1529962467328
+    m_Localized: Inrcrease rifle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2316025368576
+    m_Localized: Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2385940221952
+    m_Localized: Purchased
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2463467737088
+    m_Localized: 'Armor: +45'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2587333922816
+    m_Localized: 'Pellet damage: +1'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2749955477504
+    m_Localized: 'Revolver damage: +5'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2965408485376
+    m_Localized: 'Revolver damage: +4'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3004855914496
+    m_Localized: 'Rifle damage: +4'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -4,6 +4,7 @@ public class OpenShop : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject panelShop;
     [SerializeField] private LevelStateController gameManager;
+    [SerializeField] private InteractionData interactionShop;
     public void Interact()
     {
         panelShop.SetActive(true);
@@ -12,5 +13,5 @@ public class OpenShop : MonoBehaviour, IInteractable
 
     public InteractionType GetInteractionType() => InteractionType.Use;
 
-    public string GetInteractionDescription() => "открыть магазин";
+    public string GetInteractionDescription() => interactionShop.description.GetLocalizedString();
 }

@@ -40,6 +40,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2f5e4fbf4f3649044bdf84c6e82ee8fe
+    m_Address: Assets/Localization/Shop Labels Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 68b01092326dfda45bb7b31dccc75fcd
     m_Address: Assets/Localization/ShopAfterDeath Shared Data.asset
     m_ReadOnly: 1
@@ -47,6 +52,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6a617fe04324afb438ae51e75327e605
     m_Address: Assets/Menu Labels Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 844f5e28d06cd2c478502c7d5cada4f6
+    m_Address: Assets/Localization/Secrets Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

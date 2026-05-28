@@ -6,6 +6,7 @@ public class LootSvetles : MonoBehaviour, IInteractable
     [SerializeField] private int amount;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip clip;
+    [SerializeField] private InteractionData interactionTake;
 
     public void Interact()
     {
@@ -15,5 +16,5 @@ public class LootSvetles : MonoBehaviour, IInteractable
     }
 
     public InteractionType GetInteractionType() => InteractionType.Take;
-    public string GetInteractionDescription() => "подобрать светлы";
+    public string GetInteractionDescription() => interactionTake.description.GetLocalizedString();
 }

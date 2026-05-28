@@ -43,7 +43,6 @@ public class PlayerInteraction : MonoBehaviour
         if (IsLookingAtInteractable())
         {
             currentInteractable.Interact();
-            Debug.Log("Взаимодействие");
         }
     }
 

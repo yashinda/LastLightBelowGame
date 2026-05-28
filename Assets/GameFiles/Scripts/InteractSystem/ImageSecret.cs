@@ -36,35 +36,31 @@ public class UIFadeController : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-
-        // Гарантируем точное конечное значение
+        
         SetAlpha(endAlpha);
     }
 
     void SetAlpha(float alpha)
     {
-        // Image
         if (image != null)
         {
-            Color c = image.color;
-            c.a = alpha;
-            image.color = c;
+            Color colorImage = image.color;
+            colorImage.a = alpha;
+            image.color = colorImage;
         }
-
-        // Text1
+        
         if (text1 != null)
         {
-            Color c = text1.color;
-            c.a = alpha;
-            text1.color = c;
+            Color colorText1 = text1.color;
+            colorText1.a = alpha;
+            text1.color = colorText1;
         }
-
-        // Text2
+        
         if (text2 != null)
         {
-            Color c = text2.color;
-            c.a = alpha;
-            text2.color = c;
+            Color colorText2 = text2.color;
+            colorText2.a = alpha;
+            text2.color = colorText2;
         }
     }
 }

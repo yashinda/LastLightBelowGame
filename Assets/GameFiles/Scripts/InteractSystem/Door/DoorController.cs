@@ -5,12 +5,13 @@ public class DoorController : MonoBehaviour, IInteractable
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip clip;
+    [SerializeField] private InteractionData interactionOpen;
 
     private bool isOpen = false;
 
     public InteractionType GetInteractionType() => InteractionType.Open;
 
-    public string GetInteractionDescription() => "открыть дверь";
+    public string GetInteractionDescription() => interactionOpen.description.GetLocalizedString();
 
     public void Interact()
     {

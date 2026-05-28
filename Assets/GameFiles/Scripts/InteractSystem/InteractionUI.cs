@@ -15,7 +15,8 @@ public class InteractionUI : MonoBehaviour
         }
 
         root.SetActive(true);
-        text.text = $"ֽאזלטעו <b>E</b>, קעמבû <b>{description}</b>";
+
+        text.text = $"{description}";
     }
 
     public void Hide()

@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Shop Labels Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Shop Labels
+  m_TableCollectionNameGuidString: 2f5e4fbf4f3649044bdf84c6e82ee8fe
+  m_Entries:
+  - m_Id: 4888367104
+    m_Key: shop.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 144483192832
+    m_Key: shop.svetles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 212531580928
+    m_Key: shop.char
+    m_Metadata:
+      m_Items: []
+  - m_Id: 293808803840
+    m_Key: shop.weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351056859136
+    m_Key: shop.health_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 601758797824
+    m_Key: shop.psi_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 678602641408
+    m_Key: shop.armor_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776900349952
+    m_Key: shop.need_svetles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 970727526400
+    m_Key: shop.boostHP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1086544842752
+    m_Key: shop.boostPsi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1197018615808
+    m_Key: shop.boostArmor1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1292665524224
+    m_Key: shop.shotgun_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1424236646400
+    m_Key: shop.revolver_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1529962467328
+    m_Key: shop.rifle_title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2316025368576
+    m_Key: shop.buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2385940221952
+    m_Key: shop.purchased
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2463467737088
+    m_Key: shop.boostArmor2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2587333922816
+    m_Key: shop.boostShotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2749955477504
+    m_Key: shop.boostRevolver1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2965408485376
+    m_Key: shop.boostRevolver2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3004855914496
+    m_Key: shop.boostRifle
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4537466330372112516
+  references:
+    version: 2
+    RefIds:
+    - rid: 4537466330372112516
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1779971938462

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3fbb852e86d08c4aba3c069c2cc7374, type: 3}
+  m_Name: NextLevel
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionData
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:0849de946e638e1489186c0c8cc8e3c1
+    m_TableEntryReference:
+      m_KeyId: 346331514048512
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

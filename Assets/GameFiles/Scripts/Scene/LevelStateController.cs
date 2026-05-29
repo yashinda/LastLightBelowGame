@@ -49,12 +49,6 @@ public class LevelStateController : MonoBehaviour
         Instance = this;
     }
 
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.P))
-            EchoSvetles.Add(1200);
-    }
-
     private void Start()
     {
         LoadProgress();

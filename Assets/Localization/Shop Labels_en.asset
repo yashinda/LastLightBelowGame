@@ -91,7 +91,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2749955477504
-    m_Localized: 'Revolver damage: +5'
+    m_Localized: 'Damage: +5'
     m_Metadata:
       m_Items: []
   - m_Id: 2965408485376

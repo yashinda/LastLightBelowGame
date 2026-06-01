@@ -27,6 +27,14 @@ MonoBehaviour:
     m_Key: hud.death_title
     m_Metadata:
       m_Items: []
+  - m_Id: 1500010176716800
+    m_Key: hud.stun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1713782938017792
+    m_Key: hud.boss_name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

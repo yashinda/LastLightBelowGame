@@ -32,6 +32,14 @@ MonoBehaviour:
     m_Localized: YOU ARE DEAD
     m_Metadata:
       m_Items: []
+  - m_Id: 1500010176716800
+    m_Localized: STUN!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1713782938017792
+    m_Localized: Guardian of the Dark Catacombs
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

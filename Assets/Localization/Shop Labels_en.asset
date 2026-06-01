@@ -95,11 +95,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2965408485376
-    m_Localized: 'Revolver damage: +4'
+    m_Localized: 'Damage: +4'
     m_Metadata:
       m_Items: []
   - m_Id: 3004855914496
-    m_Localized: 'Rifle damage: +4'
+    m_Localized: 'Damage: +4'
     m_Metadata:
       m_Items: []
   references:

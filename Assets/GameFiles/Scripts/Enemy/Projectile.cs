@@ -12,6 +12,9 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ignore Raycast"))
+            return;
+        
         if (!other.CompareTag("Player"))
         {
             Destroy(gameObject);

@@ -103,6 +103,7 @@ public class KnightController : MonoBehaviour
     [SerializeField] private float playerPortalDistance = 2f;
     [SerializeField] private float delayBeforeTeleport = 0.3f;
     [SerializeField] private float delayBeforeAttack = 0.2f;
+    [SerializeField] private LayerMask waterLayer;
 
     [Header("Light")]
     public Light pointLight;
@@ -310,35 +311,35 @@ public class KnightController : MonoBehaviour
             case AbilityType.Lightning:
                 animator.SetTrigger("CastLightning");
                 CastLightningSound();
-                cooldowns[ability] = Time.time + 5f;
+                cooldowns[ability] = Time.time + 3f;
                 StartCoroutine(WaitAction(0.2f));
                 break;
 
             case AbilityType.GroundSpikes:
                 animator.SetTrigger("SpellGround");
                 SetSpellGround();
-                cooldowns[ability] = Time.time + 6f;
-                StartCoroutine(WaitAction(1.5f));
+                cooldowns[ability] = Time.time + 3f;
+                StartCoroutine(WaitAction(0.2f));
                 break;
 
             case AbilityType.Shield:
                 animator.SetTrigger("Shield");
                 SetShield();
                 cooldowns[ability] = Time.time + 10f;
-                StartCoroutine(WaitAction(1.5f));
+                StartCoroutine(WaitAction(0.5f));
                 break;
 
             case AbilityType.Summon:
                 animator.SetTrigger("Enemies");
                 SpawnEnemy();
                 cooldowns[ability] = Time.time + 15f;
-                StartCoroutine(WaitAction(2.5f));
+                StartCoroutine(WaitAction(1.0f));
                 break;
 
             case AbilityType.PortalAttack:
                 ActivateAbility();
                 cooldowns[ability] = Time.time + 20f;
-                StartCoroutine(WaitAction(2.0f));
+                StartCoroutine(WaitAction(1.0f));
                 break;
         }
     }
@@ -585,16 +586,33 @@ public class KnightController : MonoBehaviour
 
     private IEnumerator PortalAttackRoutine()
     {
+        Vector3 directionBehindPlayer = -player.forward;
+
+        Vector3 playerPortalPos =
+            player.position + directionBehindPlayer * playerPortalDistance;
+
+        Collider[] waterColliders =
+            Physics.OverlapSphere(playerPortalPos, 0.5f, waterLayer);
+
+        if (waterColliders.Length > 0)
+        {
+            List<AbilityType> available = GetAvailableAbilities();
+            available.Remove(AbilityType.PortalAttack);
+
+            if (available.Count > 0)
+            {
+                AbilityType newAbility = GetWeightedRandom(available);
+                ExecuteAbility(newAbility);
+            }
+
+            yield break;
+        }
+
         Vector3 bossPortalPos =
             transform.position + transform.forward * portalForwardDistance;
 
         GameObject portal1 =
             Instantiate(portalPrefab, bossPortalPos, Quaternion.identity);
-
-        Vector3 directionBehindPlayer = -player.forward;
-
-        Vector3 playerPortalPos =
-            player.position + directionBehindPlayer * playerPortalDistance;
 
         GameObject portal2 =
             Instantiate(portalPrefab, playerPortalPos, Quaternion.identity);
@@ -604,7 +622,6 @@ public class KnightController : MonoBehaviour
         transform.position = portal2.transform.position;
 
         Vector3 lookDir = (player.position - transform.position).normalized;
-
         lookDir.y = 0;
 
         transform.rotation = Quaternion.LookRotation(lookDir);

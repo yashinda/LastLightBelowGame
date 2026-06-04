@@ -1,65 +1,64 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ExplosiveBarrel : MonoBehaviour
 {
     [SerializeField] private ParticleSystem explosivePartycle;
-    [SerializeField] private float explosionDamage;
-    [SerializeField] private float explosionRadius;
+    [SerializeField] private float explosionDamage = 100f;
+    [SerializeField] private float explosionRadius = 4f;
     [SerializeField] private AudioSource explosionSource;
     [SerializeField] private AudioClip explosionClip;
+
     private bool hasExplode = false;
     private float delayExplosion = 0.5f;
-    private Light explosiveLight;
-
-    private void Start()
-    {
-        explosiveLight = GetComponentInChildren<Light>(true);
-    }
 
     public void Explode(float delay = 0.5f)
     {
         if (hasExplode)
             return;
 
-        if (!hasExplode)
-        {
-            StartCoroutine(StartExplode(delay));
-        }  
+        StartCoroutine(StartExplode(delay));
     }
 
     private IEnumerator StartExplode(float delay)
     {
-        explosiveLight.gameObject.SetActive(true);
-        yield return new WaitForSeconds(delayExplosion);
-        
+        yield return new WaitForSeconds(delay);
+
         hasExplode = true;
+
         explosivePartycle.Play();
         explosionSource.PlayOneShot(explosionClip);
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
+
+        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        if (meshRenderer != null)
+            meshRenderer.enabled = false;
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+
         foreach (Collider collider in colliders)
         {
-            var playerHealth = collider.GetComponent<PlayerHealth>();
+            float distance = Vector3.Distance(transform.position, collider.transform.position);
+
+            float damage = Mathf.Lerp(explosionDamage * 0.3f, explosionDamage,1f - Mathf.Clamp01(distance / explosionRadius));
+
+            var playerHealth = collider.GetComponentInParent<PlayerHealth>();
             var enemyBase = collider.GetComponentInParent<EnemyBase>();
             var barrel = collider.GetComponent<ExplosiveBarrel>();
 
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(explosionDamage);
+                playerHealth.TakeDamage(damage);
+                Debug.Log(collider.gameObject.name);
+                Debug.Log(damage);
             }
-
+            
             if (enemyBase != null)
-            {
-                enemyBase.TakeDamage(explosionDamage);
-            }
+                enemyBase.TakeDamage(damage);
 
-            if (barrel != null)
-            {
-                barrel.Explode(delay + delayExplosion);
-            }
+            if (barrel != null && barrel != this)
+                barrel.Explode(delayExplosion);
         }
+
         Destroy(gameObject, explosivePartycle.duration);
     }
 }

@@ -84,16 +84,19 @@ public class MeleeEnemy : EnemyBase
         animator.SetTrigger("Death");
         
         var skins = GetComponentsInChildren<SkinnedMeshRenderer>();
-        foreach (var skin in skins)
+        if (skins != null)
         {
-            skin.enabled = true;
-            var col = skin.GetComponent<Collider>();
-            if (col != null)
-                col.enabled = true;
+            foreach (var skin in skins)
+            {
+                skin.enabled = true;
+                var col = skin.GetComponent<Collider>();
+                if (col != null)
+                    col.enabled = true;
+            }
+            
+            skin.enabled = false;
+            axe.SetActive(false);
         }
-        
-        skin.enabled = false;
-        axe.SetActive(false);
         
         var rigidbodies = GetComponentsInChildren<Rigidbody>();
 

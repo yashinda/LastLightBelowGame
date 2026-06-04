@@ -9,19 +9,13 @@ public class EnemyWithProjectile : EnemyBase
     private float nextFireTime;
     protected override void Update()
     {
-        if (!isDeath)
-        {
-            base.Update();
-            if (currentState == EnemyState.Attack)
-            {
-                RotateTowards(player.position);
-            }    
-        }
+        if (isDeath)
+            return;
         else
         {
-            animator.SetTrigger("Death");
+            base.Update();
+            RotateTowards(player.position);
         }
-        
     }
 
     protected override void Patrol()

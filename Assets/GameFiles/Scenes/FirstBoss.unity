@@ -3820,6 +3820,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7570724240501944875}
     m_Modifications:
+    - target: {fileID: 1978931572917211187, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: uiAudioSource
+      value: 
+      objectReference: {fileID: 3993822826711299513}
+    - target: {fileID: 2522590683359220020, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: uiAudioSource
+      value: 
+      objectReference: {fileID: 3993822826711299513}
     - target: {fileID: 3260257809323653621, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3900,6 +3908,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4138588253578929906, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6953522059796408195}
+    - target: {fileID: 4138588253578929906, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRestart
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420637671718624409, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6953522059796408195}
+    - target: {fileID: 4420637671718624409, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnResume
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458714187165332589, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: uiAudioSource
+      value: 
+      objectReference: {fileID: 3993822826711299513}
     - target: {fileID: 5945351627860275017, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
       propertyPath: m_Name
       value: PanelPause
@@ -3908,6 +3936,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6080472344112548646, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6953522059796408195}
+    - target: {fileID: 6080472344112548646, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnExitToDesktop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545867696862729245, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: uiAudioSource
+      value: 
+      objectReference: {fileID: 3993822826711299513}
+    - target: {fileID: 6712575156396706276, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: uiAudioSource
+      value: 
+      objectReference: {fileID: 3993822826711299513}
+    - target: {fileID: 7244405606498338540, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6953522059796408195}
+    - target: {fileID: 7244405606498338540, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnExitToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308498302149225570, guid: c29bf824dcd403d4b8c936c41d3e539d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1817096763}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -297394,6 +297450,9 @@ MonoBehaviour:
   playerPortalDistance: 3
   delayBeforeTeleport: 0.3
   delayBeforeAttack: 0.2
+  waterLayer:
+    serializedVersion: 2
+    m_Bits: 16
   pointLight: {fileID: 809562029}
   magicKnightLight: {fileID: 809562030}
   lightsOnSceneGroup1:
@@ -318620,7 +318679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &3701498690882873592
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -495843,7 +495902,6 @@ MonoBehaviour:
   svetlesText: {fileID: 1580877829}
   panelStatictics: {fileID: 1580877828}
   secretsCountOnLevel: 0
-  svetlesCountOnLevel: 5000
 --- !u!1 &5701853973911543273
 GameObject:
   m_ObjectHideFlags: 0

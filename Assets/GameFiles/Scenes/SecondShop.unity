@@ -24514,7 +24514,6 @@ MonoBehaviour:
   svetlesText: {fileID: 2181617217033761420}
   panelStatictics: {fileID: 3999481009826841851}
   secretsCountOnLevel: 1
-  svetlesCountOnLevel: 1660
 --- !u!224 &726218479783434853
 RectTransform:
   m_ObjectHideFlags: 0
@@ -215922,7 +215921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &7866868387281467251
 CanvasRenderer:
   m_ObjectHideFlags: 0

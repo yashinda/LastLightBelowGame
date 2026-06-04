@@ -12,7 +12,6 @@ public class StatisticsLevel : MonoBehaviour
 
     [Header("CountStatisticOnLevel")]
     [SerializeField] private int secretsCountOnLevel;
-    [SerializeField] private int svetlesCountOnLevel;
 
     private float currentTime;
     private int secretsFound;
@@ -54,6 +53,6 @@ public class StatisticsLevel : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         secretsText.text = $"{secretsFound} / {secretsCountOnLevel}";
-        svetlesText.text = $"{svetlesFound} / {svetlesCountOnLevel}";
+        svetlesText.text = $"{svetlesFound}";
     }
 }

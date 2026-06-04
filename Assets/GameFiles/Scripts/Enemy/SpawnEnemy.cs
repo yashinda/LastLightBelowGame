@@ -6,6 +6,7 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] private List<GameObject> enemies = new List<GameObject>();
     [SerializeField] private int enemyCount = 3;
     [SerializeField] private EnemyEncounter encounter;
+    [SerializeField] private LayerMask spawnMask;
     private BoxCollider spawnZone;
     private Transform parent;
 
@@ -47,7 +48,7 @@ public class SpawnEnemy : MonoBehaviour
             Random.Range(bounds.min.z, bounds.max.z)
         );
 
-        RaycastHit[] hits = Physics.RaycastAll(randomPoint, Vector3.down, 50f);
+        RaycastHit[] hits = Physics.RaycastAll(randomPoint, Vector3.down, 25f, spawnMask);
 
         foreach (var hit in hits)
         {

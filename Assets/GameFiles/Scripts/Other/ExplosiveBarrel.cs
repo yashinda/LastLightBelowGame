@@ -11,8 +11,9 @@ public class ExplosiveBarrel : MonoBehaviour
 
     private bool hasExplode = false;
     private float delayExplosion = 0.5f;
+    private bool giveDamage = false;
 
-    public void Explode(float delay = 0.5f)
+    public void Explode(float delay = 0.0f)
     {
         if (hasExplode)
             return;
@@ -34,7 +35,7 @@ public class ExplosiveBarrel : MonoBehaviour
             meshRenderer.enabled = false;
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
-
+        
         foreach (Collider collider in colliders)
         {
             float distance = Vector3.Distance(transform.position, collider.transform.position);
@@ -45,9 +46,10 @@ public class ExplosiveBarrel : MonoBehaviour
             var enemyBase = collider.GetComponentInParent<EnemyBase>();
             var barrel = collider.GetComponent<ExplosiveBarrel>();
 
-            if (playerHealth != null)
+            if (playerHealth != null && !giveDamage)
             {
                 playerHealth.TakeDamage(damage);
+                giveDamage = true;
                 Debug.Log(collider.gameObject.name);
                 Debug.Log(damage);
             }

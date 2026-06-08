@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PsySystem : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class PsySystem : MonoBehaviour
     public float psyAmount = 100.0f;
     public float maxPsyAmount = 100.0f;
     public float minPsyAmount = 0.0f;
-    public float psyChangeRate = 1.0f;
+    public float psyChangeRateToMin = 1.0f;
+    public float psyChangeRateToMax = 10.0f;
     public bool madnessActive = false;
     public float psyAmountForMadness = 50.0f;
     public float damage = 1.0f;
@@ -30,9 +32,9 @@ public class PsySystem : MonoBehaviour
             return;
 
         if (IsInAnyLight(player.position))
-            psyAmount = Mathf.MoveTowards(psyAmount, maxPsyAmount, psyChangeRate * Time.deltaTime);
+            psyAmount = Mathf.MoveTowards(psyAmount, maxPsyAmount, psyChangeRateToMax * Time.deltaTime);
         else
-            psyAmount = Mathf.MoveTowards(psyAmount, minPsyAmount, psyChangeRate * Time.deltaTime);
+            psyAmount = Mathf.MoveTowards(psyAmount, minPsyAmount, psyChangeRateToMin * Time.deltaTime);
     }
 
     private void CheckMadness()

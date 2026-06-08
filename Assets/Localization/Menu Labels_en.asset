@@ -38,6 +38,21 @@ MonoBehaviour:
     m_Localized: EXIT
     m_Metadata:
       m_Items: []
+  - m_Id: 5374213341831168
+    m_Localized: "Last Light Below is a first-person 3D shooter where the player
+      must battle the undead lurking deep within underground dungeons. The main objective
+      is to venture as far as possible toward the source of the dark forces.\r\nThe
+      dungeons are shrouded in darkness, causing the hero's sanity to gradually fade.
+      However, magical stone slabs emitting a blue glow can provide protection. While
+      standing near them, sanity does not decrease. If sanity drops too low, the
+      player will begin to lose health\u2014or something even worse may happen.\r\nIn
+      summary, here are the key things to remember:\r\n1. Keep an eye on your Health,
+      Sanity, and Ammo in the bottom-right corner of the screen.\r\n2. Defeat enemies
+      to earn **Lights** (displayed in the top-left corner).\r\n3. Some enemies take
+      increased damage from headshots.\r\n4. The arrow at the top of the screen points
+      toward the correct path.\r\n5. Push forward and see how far you can make it.\r\n"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

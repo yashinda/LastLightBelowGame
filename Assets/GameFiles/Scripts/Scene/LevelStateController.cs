@@ -128,12 +128,28 @@ public class LevelStateController : MonoBehaviour
     private void LoadProgress()
     {
         SaveLoadData.LoadGame(svetlesContainer, upgradeManager, playerHealth, psySystem, shotgun, revolver, rifle, abilityManager);
+        Debug.Log($"{EchoSvetles.Amount}");
     }
 
     public void ConfirmNextLevel()
     {
         SaveProgress();
         LoadNextLevel();
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 1:
+                EchoSvetles.Add(250);
+                break;
+            case 3:
+                EchoSvetles.Add(400);
+                break;
+            case 5:
+                EchoSvetles.Add(450);
+                break;
+            case 6:
+                EchoSvetles.Add(500);
+                break;
+        }
     }
 
     public void RestartLevel()

@@ -35,6 +35,10 @@ MonoBehaviour:
     m_Key: mainMenu.exit
     m_Metadata:
       m_Items: []
+  - m_Id: 5374213341831168
+    m_Key: mainMenu.textTutorial
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

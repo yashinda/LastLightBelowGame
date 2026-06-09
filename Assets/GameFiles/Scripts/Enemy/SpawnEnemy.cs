@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] private int enemyCount = 3;
     [SerializeField] private EnemyEncounter encounter;
     [SerializeField] private LayerMask spawnMask;
+    [SerializeField] private GameObject spawnEffect;
+    [SerializeField] private float spawnDelay = 2f;
     private BoxCollider spawnZone;
     private Transform parent;
 
@@ -23,18 +26,13 @@ public class SpawnEnemy : MonoBehaviour
 
     public void SpawnEnemyToPosition()
     {
-        int i;
-        
-        for (i = 0; i < enemyCount; i++)
+        for (int i = 0; i < enemyCount; i++)
         {
             Vector3 spawnPoint = GetSpawnPoint();
-            
+
             int randomEnemyIndex = Random.Range(0, enemies.Count);
-            
-            var enemyObj = Instantiate(enemies[randomEnemyIndex], spawnPoint, Quaternion.identity, transform);
-            
-            EnemyBase enemy = enemyObj.GetComponent<EnemyBase>();
-            encounter.RegisterEnemy(enemy);
+
+            StartCoroutine(SpawnEnemyWithEffect(enemies[randomEnemyIndex], spawnPoint));
         }
     }
     
@@ -57,5 +55,19 @@ public class SpawnEnemy : MonoBehaviour
         }
 
         return randomPoint;
+    }
+    
+    private IEnumerator SpawnEnemyWithEffect(GameObject enemyPrefab, Vector3 spawnPoint)
+    {
+        GameObject effect = null;
+
+        effect = Instantiate(spawnEffect, spawnPoint, Quaternion.identity, transform);
+
+        yield return new WaitForSeconds(spawnDelay);
+
+        var enemyObj = Instantiate(enemyPrefab, spawnPoint, Quaternion.identity, transform);
+
+        EnemyBase enemy = enemyObj.GetComponent<EnemyBase>();
+        encounter.RegisterEnemy(enemy);
     }
 }

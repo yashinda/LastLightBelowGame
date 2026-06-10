@@ -12,13 +12,13 @@ public class ChestInteract : MonoBehaviour, IInteractable
     private bool isOpened = false;
     public void Interact()
     {
-        if (!isOpened)
+        if (isOpened)
         {
-            OpenChest();
+            return;
         }
         else
         {
-            return;
+            OpenChest();
         }
     }
 

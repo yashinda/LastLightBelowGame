@@ -69,5 +69,9 @@ public class SpawnEnemy : MonoBehaviour
 
         EnemyBase enemy = enemyObj.GetComponent<EnemyBase>();
         encounter.RegisterEnemy(enemy);
+
+        yield return new WaitForSeconds(1.0f);
+        
+        Destroy(effect);
     }
 }

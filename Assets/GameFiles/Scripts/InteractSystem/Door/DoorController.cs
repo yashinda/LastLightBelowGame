@@ -9,7 +9,10 @@ public class DoorController : MonoBehaviour, IInteractable
 
     private bool isOpen = false;
 
-    public InteractionType GetInteractionType() => InteractionType.Open;
+    public InteractionType GetInteractionType()
+    {
+        return isOpen ? InteractionType.None : InteractionType.Open;
+    }
 
     public string GetInteractionDescription() => interactionOpen.description.GetLocalizedString();
 

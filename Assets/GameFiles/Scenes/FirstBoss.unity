@@ -13070,6 +13070,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7570724240501944875}
     m_Modifications:
+    - target: {fileID: 2697647589625677061, guid: 9bc068632efd0d54f8648338b793297f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6953522059796408195}
+    - target: {fileID: 2697647589625677061, guid: 9bc068632efd0d54f8648338b793297f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRestart
+      objectReference: {fileID: 0}
     - target: {fileID: 6536568665947274016, guid: 9bc068632efd0d54f8648338b793297f, type: 3}
       propertyPath: m_Name
       value: PanelEndLevel
@@ -13077,6 +13085,18 @@ PrefabInstance:
     - target: {fileID: 6536568665947274016, guid: 9bc068632efd0d54f8648338b793297f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824160743323216720, guid: 9bc068632efd0d54f8648338b793297f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6953522059796408195}
+    - target: {fileID: 8824160743323216720, guid: 9bc068632efd0d54f8648338b793297f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnExitToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824160743323216720, guid: 9bc068632efd0d54f8648338b793297f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuButtons, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8983497054670298541, guid: 9bc068632efd0d54f8648338b793297f, type: 3}
       propertyPath: m_Pivot.x
@@ -571944,7 +571964,8 @@ MonoBehaviour:
   psyAmount: 100
   maxPsyAmount: 100
   minPsyAmount: 0
-  psyChangeRate: 1
+  psyChangeRateToMin: 1
+  psyChangeRateToMax: 10
   madnessActive: 0
   psyAmountForMadness: 75
   damage: 1

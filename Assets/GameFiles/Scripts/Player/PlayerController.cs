@@ -119,11 +119,7 @@ public class PlayerController : MonoBehaviour
 
     private void AirMove(Vector3 wishDir, float targetSpeed)
     {
-        Accelerate(
-            wishDir,
-            targetSpeed,
-            airAcceleration
-        );
+        Accelerate(wishDir, targetSpeed, airAcceleration);
 
         AirControlMovement(wishDir);
     }
@@ -152,7 +148,7 @@ public class PlayerController : MonoBehaviour
 
         float speed = horizontalVelocity.magnitude;
 
-        if (speed < 0.1f)
+        if (speed <= 0f)
             return;
 
         float drop = speed * groundFriction * Time.deltaTime;

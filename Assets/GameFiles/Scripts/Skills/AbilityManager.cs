@@ -29,7 +29,6 @@ public class AbilityManager : MonoBehaviour
 
     public void UnlockDash()
     {
-        Debug.Log("Dash unlocked");
         if (dash != null) return;
         dash = player.AddComponent<Dash>();
 
@@ -40,7 +39,6 @@ public class AbilityManager : MonoBehaviour
 
     public void UnlockHeal()
     {
-        Debug.Log("Heal unlocked");
         if (heal != null) return;
         heal = player.AddComponent<PlayerHealingAbility>();
         

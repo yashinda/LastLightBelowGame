@@ -14,6 +14,9 @@ public class Indicators : MonoBehaviour
     public TMP_Text psyAmountText;
     public TMP_Text armorAmountText;
 
+    public Image healthBar;
+    public Image psiBar;
+
     public GameObject imageMadness;
 
     public GameObject panelEchoSvetles;
@@ -24,9 +27,15 @@ public class Indicators : MonoBehaviour
         if (!playerHealth.PlayerDead)
         {
             svetlesCount.text = svetlesContainer.CurrentSvetles.ToString();
-            healthAmountText.text = Mathf.FloorToInt(playerHealth.CurrentHealth).ToString();
-            psyAmountText.text = Mathf.FloorToInt(psySystem.psyAmount).ToString();
+            healthAmountText.text = $"{Mathf.FloorToInt(playerHealth.CurrentHealth)}/{Mathf.FloorToInt(playerHealth.MaxHealth)}".ToString();
+            psyAmountText.text = $"{Mathf.FloorToInt(psySystem.psyAmount)}/{Mathf.FloorToInt(psySystem.maxPsyAmount)}".ToString();
             armorAmountText.text = playerHealth.Armor.ToString();
+            
+            var healthBarAmount = playerHealth.CurrentHealth / playerHealth.MaxHealth;
+            var psiBarAmount = psySystem.psyAmount / psySystem.maxPsyAmount;
+            
+            healthBar.fillAmount = healthBarAmount;
+            psiBar.fillAmount = psiBarAmount;
             
             if (playerHealth.CurrentHealth > 30)
                 healthAmountText.color = Color.white;

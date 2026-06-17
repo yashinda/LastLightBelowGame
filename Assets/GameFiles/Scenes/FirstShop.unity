@@ -4503,6 +4503,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &482378705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 350024370137411004, guid: ae37b0267cb7e614e812c17b37777049, type: 3}
+  m_PrefabInstance: {fileID: 482378702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &482378706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3890335742120017740, guid: ae37b0267cb7e614e812c17b37777049, type: 3}
+  m_PrefabInstance: {fileID: 482378702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &487960624
 GameObject:
   m_ObjectHideFlags: 0
@@ -104442,8 +104452,8 @@ MonoBehaviour:
   - {fileID: 6388977689576424457}
   - {fileID: 4289374020779402232}
   iconsWeapons:
-  - {fileID: 9165660967933230376}
-  - {fileID: 2959833067380663581}
+  - {fileID: 482378706}
+  - {fileID: 482378705}
   weaponAnimator: {fileID: 8101235175304786990}
 --- !u!1 &4462141901465122330
 GameObject:

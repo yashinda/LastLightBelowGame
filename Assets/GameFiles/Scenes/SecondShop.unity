@@ -5883,7 +5883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OpenShop
   panelShop: {fileID: 9082058084501497137}
   gameManager: {fileID: 5364944319485795267}
-  interactionShop: {fileID: 0}
+  interactionShop: {fileID: 11400000, guid: 76ddd987ace6b4a41b185de5aa4f6bc0, type: 2}
 --- !u!1001 &1597819899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6251,6 +6251,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &1701634709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7135258162190942087, guid: ae37b0267cb7e614e812c17b37777049, type: 3}
+  m_PrefabInstance: {fileID: 1701634706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1701634710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 350024370137411004, guid: ae37b0267cb7e614e812c17b37777049, type: 3}
+  m_PrefabInstance: {fileID: 1701634706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1701634711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3890335742120017740, guid: ae37b0267cb7e614e812c17b37777049, type: 3}
+  m_PrefabInstance: {fileID: 1701634706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1749972031
 GameObject:
   m_ObjectHideFlags: 0
@@ -12890,9 +12905,9 @@ MonoBehaviour:
   - {fileID: 2485855628496161653}
   - {fileID: 7930475045108147963}
   iconsWeapons:
-  - {fileID: 3051024697842448186}
-  - {fileID: 8968604904929685263}
-  - {fileID: 5293589156854585641}
+  - {fileID: 1701634711}
+  - {fileID: 1701634710}
+  - {fileID: 1701634709}
   weaponAnimator: {fileID: 8676440308884763292}
 --- !u!23 &220048889423693940
 MeshRenderer:

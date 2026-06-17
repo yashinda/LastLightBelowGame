@@ -19,7 +19,8 @@ public static class SaveLoadData
 
     public static void LoadNewGame()
     {
-         File.Delete(savePath);
+        if (File.Exists(savePath))
+            File.Delete(savePath);
     }
 
     public static void LoadGame(SvetlesContainer svetlesContainer, UpgradeManager upgradeManager, PlayerHealth playerHealth, PsySystem psySystem,

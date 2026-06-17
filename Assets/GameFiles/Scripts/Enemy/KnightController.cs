@@ -551,9 +551,7 @@ public class KnightController : MonoBehaviour
     public void RandomCastDeathMagic()
     {
         float random = Random.value;
-
-        Debug.Log(random);
-
+        
         if (random >= chanceToAttack)
         {
             StartCoroutine(CastDeathMagic());
@@ -561,11 +559,7 @@ public class KnightController : MonoBehaviour
             chanceToAttack = firstChance;
         }
         else
-        {
             chanceToAttack -= 0.05f;
-
-            Debug.Log(chanceToAttack);
-        }
     }
 
     private IEnumerator CastDeathMagic()

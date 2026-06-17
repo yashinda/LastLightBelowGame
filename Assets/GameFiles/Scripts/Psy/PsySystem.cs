@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -19,6 +20,13 @@ public class PsySystem : MonoBehaviour
     public bool madnessActive = false;
     public float psyAmountForMadness = 50.0f;
     public float damage = 1.0f;
+
+    private Camera cameraPlayer;
+
+    private void Start()
+    {
+        cameraPlayer = Camera.main;
+    }
 
     private void Update()
     {

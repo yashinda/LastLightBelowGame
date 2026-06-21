@@ -145,7 +145,7 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Density: 1
+    - _Density: 0.431
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -194,9 +194,9 @@ Material:
     - _Height_Mask_Offset: 0.5
     - _Height_Mask_Remap_Max: 1
     - _Height_Mask_Remap_Min: 0
-    - _Height_Mask_Texture_Amplitude: 1
-    - _Height_Mask_Texture_Frequency: 0.05
-    - _Height_Mask_Texture_Power: 1
+    - _Height_Mask_Texture_Amplitude: 1.53
+    - _Height_Mask_Texture_Frequency: -0.01
+    - _Height_Mask_Texture_Power: 4
     - _Height_Mask_Texture_Scale: 0.05
     - _INTERNAL_ADDITIONAL_LIGHT_SHADOWS: 1
     - _INTERNAL_MAIN_LIGHT_SHADOWS: 1

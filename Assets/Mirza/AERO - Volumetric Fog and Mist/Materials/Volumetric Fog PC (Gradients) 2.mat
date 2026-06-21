@@ -12,6 +12,8 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _ENABLE_ADDITIONAL_LIGHTS
+  - _ENABLE_ADDITIONAL_LIGHT_SHADOWS
   - _ENABLE_MAIN_LIGHT
   - _ENABLE_MAIN_LIGHT_SHADOWS
   - _OUTPUT_COMPOSITE
@@ -136,25 +138,25 @@ Material:
     - _AlphaToMask: 0
     - _Ambient_Light: 2
     - _Ambient_Light_Scale: 0.5
-    - _Anisotropy: 0.453
-    - _Anisotropy_Blend: 0.347
+    - _Anisotropy: 0.284
+    - _Anisotropy_Blend: 0.343
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _Blur_Texture_Blend: 0
     - _Blur_Texture_Remap_Max: 0
-    - _Blur_Texture_Remap_Min: 0
+    - _Blur_Texture_Remap_Min: 0.066
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Density: 0.01
+    - _Density: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _ENABLE_ADDITIONAL_LIGHTS: 0
-    - _ENABLE_ADDITIONAL_LIGHT_SHADOWS: 0
+    - _ENABLE_ADDITIONAL_LIGHTS: 1
+    - _ENABLE_ADDITIONAL_LIGHT_SHADOWS: 1
     - _ENABLE_AMBIENT_LIGHT: 0
     - _ENABLE_MAIN_LIGHT: 1
     - _ENABLE_MAIN_LIGHT_SHADOWS: 1
@@ -162,13 +164,13 @@ Material:
     - _Enable_Additional_Light_Self_Shadow: 0
     - _Enable_Additional_Lights_Self_Shadow: 0
     - _Enable_Anisotropy: 1
-    - _Enable_Blur_Texture: 0
+    - _Enable_Blur_Texture: 1
     - _Enable_Height_Fog: 1
     - _Enable_Height_Gradient: 1
     - _Enable_Height_Gradient_LUT: 0
     - _Enable_Height_Gradient_Texture: 1
     - _Enable_Height_Mask: 0
-    - _Enable_Height_Mask_Texture: 1
+    - _Enable_Height_Mask_Texture: 0
     - _Enable_Main_Light_Self_Shadow: 0
     - _Enable_Scattering: 1
     - _Enable_Self_Shadow: 1
@@ -213,7 +215,7 @@ Material:
     - _Main_Light_Self_Shadow_Remap_Max: 0.8
     - _Main_Light_Self_Shadow_Remap_Min: 0.2
     - _Main_Light_Self_Shadow_Steps: 1
-    - _Max_Distance: 24.43
+    - _Max_Distance: 198.87
     - _Metallic: 0
     - _OUTPUT: 0
     - _OcclusionStrength: 1
@@ -237,7 +239,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
-    - _Steps: 40
+    - _Steps: 22
     - _Surface: 0
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
@@ -246,7 +248,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Bottom_Colour: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Colour: {r: 1, g: 1, b: 1, a: 1}
+    - _Colour: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Height_Gradient_Bottom_Colour_Tint: {r: 1, g: 1, b: 1, a: 1}
     - _Height_Gradient_Colour_Bottom: {r: 0, g: 0.73634624, b: 1, a: 1}
@@ -257,7 +259,7 @@ Material:
     - _Height_Mask_Texture_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Height_Mask_Texture_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Self_Shadow_Colour: {r: 0, g: 0, b: 0, a: 1}
-    - _Shadow_Colour: {r: 0, g: 0.38491836, b: 0.42767277, a: 1}
+    - _Shadow_Colour: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Top_Colour: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

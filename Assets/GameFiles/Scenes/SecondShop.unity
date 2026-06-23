@@ -5221,6 +5221,134 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189173358}
   m_Mesh: {fileID: -3284616452175187011, guid: 8aa0dc08f6bdc5a4b9bf8912c7963126, type: 3}
+--- !u!1 &1241352234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1241352235}
+  - component: {fileID: 1241352238}
+  - component: {fileID: 1241352237}
+  m_Layer: 0
+  m_Name: Camera (1)
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1241352235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241352234}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3588406605999600713}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1241352237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241352234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 1
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
+--- !u!20 &1241352238
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241352234}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 4
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 3
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1265102255
 GameObject:
   m_ObjectHideFlags: 0
@@ -7372,7 +7500,7 @@ GameObject:
   - component: {fileID: 2152270209144411293}
   - component: {fileID: 5705061735288016478}
   - component: {fileID: 501524331338257485}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0427\u0430\u0441\u0442\u044C \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u044F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13112,7 +13240,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 800
+  m_text: 850
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ed254a12d2eebc4484cdb2df2a9996c, type: 2}
   m_sharedMaterial: {fileID: 2025133968523026991, guid: 4ed254a12d2eebc4484cdb2df2a9996c, type: 2}
@@ -13292,7 +13420,7 @@ GameObject:
   - component: {fileID: 937251274692660226}
   - component: {fileID: 5780114430111457467}
   - component: {fileID: 2692765746435629586}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: vfx_MuzzleFlash_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13397,7 +13525,7 @@ GameObject:
   - component: {fileID: 547915342138039815}
   - component: {fileID: 5155667043319303639}
   - component: {fileID: 8914506634975451664}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041C\u0443\u0448\u043A\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18663,7 +18791,7 @@ GameObject:
   - component: {fileID: 9159556869524288993}
   - component: {fileID: 796948487515110230}
   - component: {fileID: 6532295399537671756}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041F\u0440\u0438\u0446\u0435\u043B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18989,7 +19117,7 @@ GameObject:
   - component: {fileID: 4080098367037318047}
   - component: {fileID: 1624991656115179806}
   - component: {fileID: 8883896037940489543}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041F\u0440\u0435\u0434\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C/\u0441\u043F\u0443\u0441\u043A.\u043A\u0440\u044E\u0447\u043E\u043A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24744,7 +24872,7 @@ GameObject:
   - component: {fileID: 8702476816790023760}
   - component: {fileID: 5711087310641556152}
   - component: {fileID: 5955710429189178100}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0421\u0442\u0432\u043E\u043B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25051,7 +25179,7 @@ GameObject:
   - component: {fileID: 4776664072915415849}
   - component: {fileID: 6437497821328586568}
   - component: {fileID: 5871078466564139253}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39671,7 +39799,7 @@ GameObject:
   - component: {fileID: 4380198729852341121}
   - component: {fileID: 6847035451791175511}
   - component: {fileID: 3310922717410759645}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041A\u0443\u0440\u043A\u0438"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39787,7 +39915,7 @@ GameObject:
   - component: {fileID: 3382169286234264848}
   - component: {fileID: 9011383010302862628}
   - component: {fileID: 5823831268214245115}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0421\u0442\u0432\u043E\u043B.001"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40013,7 +40141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 800
+  m_text: 1000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ed254a12d2eebc4484cdb2df2a9996c, type: 2}
   m_sharedMaterial: {fileID: 2025133968523026991, guid: 4ed254a12d2eebc4484cdb2df2a9996c, type: 2}
@@ -40630,7 +40758,7 @@ GameObject:
   - component: {fileID: 7238625961329146619}
   - component: {fileID: 4413584200150117437}
   - component: {fileID: 7450049027099660385}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u0435"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41392,7 +41520,7 @@ GameObject:
   - component: {fileID: 4514072923978391952}
   - component: {fileID: 1483630244032823030}
   - component: {fileID: 4607425282894981863}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041A\u0443\u0440\u043A\u0438.001"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41586,7 +41714,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 127
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -46541,7 +46669,7 @@ MonoBehaviour:
   textSvetles: {fileID: 1914190827422663843}
   textCountSvetles: {fileID: 3430009341007840360}
   textPurchased: {fileID: 4045402588178531074}
-  price: 400
+  price: 600
   svetlesContainer: {fileID: 8901592279061904558}
   purchaseType: 3
   shop: {fileID: 3560708811974954784}
@@ -52182,7 +52310,7 @@ GameObject:
   - component: {fileID: 4154741309224824383}
   - component: {fileID: 3898801146698062094}
   - component: {fileID: 733270799586914254}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041A\u0443\u0440\u043A\u0438.002"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57245,7 +57373,7 @@ MonoBehaviour:
   textSvetles: {fileID: 8539136161176431139}
   textCountSvetles: {fileID: 1284475914114683620}
   textPurchased: {fileID: 50726024084343543}
-  price: 800
+  price: 900
   svetlesContainer: {fileID: 8901592279061904558}
   purchaseType: 1
   shop: {fileID: 3560708811974954784}
@@ -57264,7 +57392,7 @@ GameObject:
   - component: {fileID: 4435051000716671911}
   - component: {fileID: 8993117493441300708}
   - component: {fileID: 3238460521986474143}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0420\u0443\u0447\u043A\u0430 \u0441\u043F\u0443\u0441\u043A. \u043A\u0440\u044E\u0447\u043A\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57305,7 +57433,7 @@ GameObject:
   - component: {fileID: 3566403760563925992}
   - component: {fileID: 3764509575130961056}
   - component: {fileID: 2934535373679055449}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57876,7 +58004,7 @@ GameObject:
   - component: {fileID: 2541294625097999823}
   - component: {fileID: 5611595245434090305}
   - component: {fileID: 7639807470920343026}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0420\u0443\u043A\u043E\u044F\u0442\u043A\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58039,7 +58167,7 @@ GameObject:
   - component: {fileID: 4199184539712596853}
   - component: {fileID: 74796066558113754}
   - component: {fileID: 6805238063569441092}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58382,7 +58510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 400
+  m_text: 600
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ed254a12d2eebc4484cdb2df2a9996c, type: 2}
   m_sharedMaterial: {fileID: 2025133968523026991, guid: 4ed254a12d2eebc4484cdb2df2a9996c, type: 2}
@@ -59219,7 +59347,7 @@ GameObject:
   - component: {fileID: 7086242092103363587}
   - component: {fileID: 8501080047737090256}
   - component: {fileID: 2046610751023612883}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75177,7 +75305,7 @@ GameObject:
   - component: {fileID: 6680278252922042791}
   - component: {fileID: 15330198374028560}
   - component: {fileID: 122769816937575845}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75332,7 +75460,7 @@ MonoBehaviour:
   textSvetles: {fileID: 6345794741164370843}
   textCountSvetles: {fileID: 9055528759905994212}
   textPurchased: {fileID: 7530864210768692960}
-  price: 800
+  price: 1000
   svetlesContainer: {fileID: 8901592279061904558}
   purchaseType: 0
   shop: {fileID: 3560708811974954784}
@@ -75704,7 +75832,7 @@ GameObject:
   - component: {fileID: 2556395254444226134}
   - component: {fileID: 3117683423531085447}
   - component: {fileID: 5104234622637934104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76137,7 +76265,7 @@ GameObject:
   - component: {fileID: 4773772996043626530}
   - component: {fileID: 6632594450511964990}
   - component: {fileID: 4379592470119111389}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041A\u0443\u0440\u043A\u0438.004"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76396,7 +76524,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 400
+  m_text: 600
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ed254a12d2eebc4484cdb2df2a9996c, type: 2}
   m_sharedMaterial: {fileID: 2025133968523026991, guid: 4ed254a12d2eebc4484cdb2df2a9996c, type: 2}
@@ -82209,7 +82337,7 @@ GameObject:
   - component: {fileID: 4418368964341105858}
   - component: {fileID: 733990283731925119}
   - component: {fileID: 568229099496859386}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0421\u0442\u0432\u043E\u043B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83275,7 +83403,7 @@ MonoBehaviour:
   textSvetles: {fileID: 5007012419787255812}
   textCountSvetles: {fileID: 4809656113349438587}
   textPurchased: {fileID: 3549604979677916737}
-  price: 800
+  price: 850
   svetlesContainer: {fileID: 8901592279061904558}
   purchaseType: 2
   shop: {fileID: 3560708811974954784}
@@ -83717,7 +83845,7 @@ GameObject:
   - component: {fileID: 2701881207847533567}
   - component: {fileID: 7696877352944237266}
   - component: {fileID: 7618323455755754448}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0421\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435 \u0441\u0442\u0432\u043E\u043B\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84183,7 +84311,7 @@ GameObject:
   - component: {fileID: 8345777591236265505}
   - component: {fileID: 2677627039710167697}
   - component: {fileID: 9070517791347434182}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041A\u0443\u0440\u043A\u0438.006"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84218,6 +84346,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1241352235}
   - {fileID: 2687625887843530171}
   m_Father: {fileID: 5365752807330118649}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -84340,7 +84469,7 @@ GameObject:
   - component: {fileID: 8750307686288347334}
   - component: {fileID: 5182863637762073058}
   - component: {fileID: 4806518550537829341}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110074,7 +110203,7 @@ GameObject:
   - component: {fileID: 7372006019998774704}
   - component: {fileID: 1051326674658790462}
   - component: {fileID: 5459267247139703444}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041F\u0440\u0438\u043A\u043B\u0430\u0434"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115610,7 +115739,7 @@ MonoBehaviour:
   textSvetles: {fileID: 8308226257288608911}
   textCountSvetles: {fileID: 1124380733968535174}
   textPurchased: {fileID: 359462674862007936}
-  price: 400
+  price: 600
   svetlesContainer: {fileID: 8901592279061904558}
   purchaseType: 4
   shop: {fileID: 3560708811974954784}
@@ -115807,7 +115936,7 @@ GameObject:
   - component: {fileID: 3669291538003696660}
   - component: {fileID: 9064926641422019380}
   - component: {fileID: 8364195392534280132}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120805,7 +120934,7 @@ GameObject:
   - component: {fileID: 863368409422459050}
   - component: {fileID: 602045262360647945}
   - component: {fileID: 2416228785842544118}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: vfx_MuzzleFlash_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121390,7 +121519,7 @@ GameObject:
   - component: {fileID: 3425003009594681289}
   - component: {fileID: 4099136975815630323}
   - component: {fileID: 8055830661056149464}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0421\u0442\u0432\u043E\u043B.002"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121599,7 +121728,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 800
+  m_text: 900
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ed254a12d2eebc4484cdb2df2a9996c, type: 2}
   m_sharedMaterial: {fileID: 2025133968523026991, guid: 4ed254a12d2eebc4484cdb2df2a9996c, type: 2}
@@ -121778,7 +121907,7 @@ GameObject:
   - component: {fileID: 8380096028844195175}
   - component: {fileID: 6347210226343251271}
   - component: {fileID: 8243402491535328640}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041A\u0443\u0440\u043A\u0438.007"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131554,7 +131683,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 400
+  m_text: 600
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4ed254a12d2eebc4484cdb2df2a9996c, type: 2}
   m_sharedMaterial: {fileID: 2025133968523026991, guid: 4ed254a12d2eebc4484cdb2df2a9996c, type: 2}
@@ -131877,7 +132006,7 @@ GameObject:
   - component: {fileID: 6606505603919653448}
   - component: {fileID: 1847704666475487972}
   - component: {fileID: 7299123471788374177}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041A\u0443\u0440\u043A\u0438.005"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131943,7 +132072,7 @@ GameObject:
   - component: {fileID: 8957436664885488582}
   - component: {fileID: 4656960759657764215}
   - component: {fileID: 2325350830568516765}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuzzleH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131998,7 +132127,7 @@ GameObject:
   - component: {fileID: 8097156481987220898}
   - component: {fileID: 8126439186152824695}
   - component: {fileID: 6186107985629376486}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132241,8 +132370,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 224.97, y: 19.15}
-  m_SizeDelta: {x: 43.0238, y: 26.2576}
+  m_AnchoredPosition: {x: 219.76047, y: 19.15}
+  m_SizeDelta: {x: 53.4428, y: 26.2576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4978868167745704786
 CanvasRenderer:
@@ -132267,7 +132396,7 @@ MonoBehaviour:
   textSvetles: {fileID: 3712953138256047444}
   textCountSvetles: {fileID: 6932538788492003103}
   textPurchased: {fileID: 1273239056}
-  price: 400
+  price: 600
   svetlesContainer: {fileID: 8901592279061904558}
   purchaseType: 5
   shop: {fileID: 3560708811974954784}
@@ -132791,7 +132920,7 @@ GameObject:
   - component: {fileID: 4928203023444299701}
   - component: {fileID: 2526778736379515174}
   - component: {fileID: 7596853790305627696}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132817,7 +132946,7 @@ GameObject:
   - component: {fileID: 8767118480019460112}
   - component: {fileID: 6385052040044783705}
   - component: {fileID: 2253921024301327576}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Flares
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138270,7 +138399,7 @@ GameObject:
   - component: {fileID: 357313611794369252}
   - component: {fileID: 8044368278607998621}
   - component: {fileID: 3892936041310622192}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuzzleV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138484,7 +138613,7 @@ GameObject:
   - component: {fileID: 1966023572024589338}
   - component: {fileID: 5555828220431990138}
   - component: {fileID: 5248377103382876941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0427\u0430\u0441\u0442\u0438 \u043E\u0441\u043D\u043E\u0432\u0430\u043D\u0438\u044F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139389,7 +139518,7 @@ GameObject:
   - component: {fileID: 3124178826669587918}
   - component: {fileID: 7656442341375229361}
   - component: {fileID: 15635506488425510}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144531,7 +144660,7 @@ GameObject:
   - component: {fileID: 4387337047556403851}
   - component: {fileID: 2499465392433512709}
   - component: {fileID: 3946738685482956639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041A\u0443\u0440\u043A\u0438.003"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144648,7 +144777,7 @@ GameObject:
   - component: {fileID: 2455940300330336012}
   - component: {fileID: 3698663905385012034}
   - component: {fileID: 5288104512241048636}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuzzleH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150015,7 +150144,7 @@ GameObject:
   - component: {fileID: 106802472365762451}
   - component: {fileID: 749314140260642022}
   - component: {fileID: 5240496482945016696}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150376,7 +150505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8632824063368400734}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpawnBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150583,7 +150712,7 @@ GameObject:
   - component: {fileID: 6317383107211221344}
   - component: {fileID: 7563129909976283891}
   - component: {fileID: 8234325681926300527}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165705,7 +165834,7 @@ GameObject:
   - component: {fileID: 5218582810944401305}
   - component: {fileID: 9209133592059766570}
   - component: {fileID: 1435357941130253240}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166120,7 +166249,7 @@ GameObject:
   - component: {fileID: 4434048544312967476}
   - component: {fileID: 547980305474080816}
   - component: {fileID: 4615566690378156333}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0421\u043F\u0443\u0441\u043A\u043E\u0432\u043E\u0439 \u043A\u0440\u044E\u0447\u043E\u043A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166383,7 +166512,7 @@ GameObject:
   - component: {fileID: 9043268450043674024}
   - component: {fileID: 7319101583545184167}
   - component: {fileID: 6277841589333172246}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0421\u0442\u0432\u043E\u043B\u044C\u043D\u0430\u044F \u043A\u043E\u0440\u043E\u0431\u043A\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166452,7 +166581,7 @@ GameObject:
   - component: {fileID: 7363929682930603659}
   - component: {fileID: 6983152913076742303}
   - component: {fileID: 1477028880103684400}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuzzleV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166578,7 +166707,7 @@ GameObject:
   - component: {fileID: 8798125279586682673}
   - component: {fileID: 1585538245322322164}
   - component: {fileID: 9079191835737546}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166596,7 +166725,7 @@ GameObject:
   - component: {fileID: 8210685520278098021}
   - component: {fileID: 6096343452785963609}
   - component: {fileID: 7909408353810372754}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167358,7 +167487,7 @@ GameObject:
   - component: {fileID: 3577421082812720610}
   - component: {fileID: 8746859614389485246}
   - component: {fileID: 7728951397070008429}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuzzleV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178382,7 +178511,7 @@ GameObject:
   - component: {fileID: 8715476116223079849}
   - component: {fileID: 3819527839327141366}
   - component: {fileID: 3247569028180981551}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183203,7 +183332,7 @@ GameObject:
   - component: {fileID: 8561110015812795367}
   - component: {fileID: 8484295065925588195}
   - component: {fileID: 2939309717346659370}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0414\u0443\u043B\u043E"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183242,7 +183371,7 @@ GameObject:
   - component: {fileID: 5769444155834029242}
   - component: {fileID: 682120508774840722}
   - component: {fileID: 4883201842046532607}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0426\u0435\u0432\u044C\u0435"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183828,7 +183957,7 @@ GameObject:
   - component: {fileID: 1294562812795996262}
   - component: {fileID: 8167711240329349930}
   - component: {fileID: 7698655605529458357}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041A\u0440\u044B\u043B\u044C\u044F \u043F\u0440\u0438\u0446\u0435\u043B\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194440,7 +194569,7 @@ GameObject:
   - component: {fileID: 4266619089659589938}
   - component: {fileID: 6262659121923797524}
   - component: {fileID: 6734335124370153070}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205438,7 +205567,7 @@ GameObject:
   - component: {fileID: 2426555490334078358}
   - component: {fileID: 4252052328946528868}
   - component: {fileID: 6915312543367912504}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Flares
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205984,7 +206113,7 @@ GameObject:
   - component: {fileID: 2776896095821263063}
   - component: {fileID: 2045285616126534859}
   - component: {fileID: 2216547112621287447}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211252,7 +211381,7 @@ GameObject:
   - component: {fileID: 856449623014560949}
   - component: {fileID: 5920858032727635266}
   - component: {fileID: 2410436540992072366}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Drum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221359,7 +221488,7 @@ GameObject:
   - component: {fileID: 8056302279892496327}
   - component: {fileID: 1620434434743231466}
   - component: {fileID: 8355190698174065480}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Flares
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221721,7 +221850,7 @@ GameObject:
   - component: {fileID: 3824011018913662828}
   - component: {fileID: 2525323965096301032}
   - component: {fileID: 210940028174946250}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u0426\u0435\u0432\u044C\u0435"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221739,7 +221868,7 @@ GameObject:
   - component: {fileID: 5748234356865086105}
   - component: {fileID: 7791456183507402833}
   - component: {fileID: 6091248345907432801}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222120,7 +222249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9044967716513329788}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpawnBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222138,7 +222267,7 @@ GameObject:
   - component: {fileID: 7456259872438907722}
   - component: {fileID: 956093040891851944}
   - component: {fileID: 3715636978450641716}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222382,7 +222511,7 @@ GameObject:
   - component: {fileID: 3121812099836716328}
   - component: {fileID: 7057694971073809103}
   - component: {fileID: 7947680712454234225}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041F\u0440\u0435\u0434\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u0435\u043B\u044C/\u0441\u043F\u0443\u0441\u043A.\u043A\u0440\u044E\u0447\u043E\u043A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222779,7 +222908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 950093361175851930}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpawnBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222848,7 +222977,7 @@ GameObject:
   - component: {fileID: 9148855469973904521}
   - component: {fileID: 8845059948000458911}
   - component: {fileID: 2073520457742794641}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuzzleH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228352,7 +228481,7 @@ GameObject:
   - component: {fileID: 7713367671740883817}
   - component: {fileID: 8081039645103153800}
   - component: {fileID: 5181453120825140252}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u041C\u0443\u0448\u043A\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228506,7 +228635,7 @@ GameObject:
   - component: {fileID: 1187835253684910280}
   - component: {fileID: 429709401078078627}
   - component: {fileID: 2222199046238520354}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239444,7 +239573,8 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 1241352238}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -240081,7 +240211,7 @@ GameObject:
   - component: {fileID: 2537722204176159268}
   - component: {fileID: 3969782949551344761}
   - component: {fileID: 6041338883895798354}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: vfx_MuzzleFlash_02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

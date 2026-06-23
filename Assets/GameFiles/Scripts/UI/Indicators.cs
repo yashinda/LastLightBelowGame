@@ -27,8 +27,8 @@ public class Indicators : MonoBehaviour
         if (!playerHealth.PlayerDead)
         {
             svetlesCount.text = svetlesContainer.CurrentSvetles.ToString();
-            healthAmountText.text = $"{Mathf.FloorToInt(playerHealth.CurrentHealth)}/{Mathf.FloorToInt(playerHealth.MaxHealth)}".ToString();
-            psyAmountText.text = $"{Mathf.FloorToInt(psySystem.psyAmount)}/{Mathf.FloorToInt(psySystem.maxPsyAmount)}".ToString();
+            healthAmountText.text = $"{Mathf.FloorToInt(playerHealth.CurrentHealth)}".ToString();
+            psyAmountText.text = $"{Mathf.FloorToInt(psySystem.psyAmount)}".ToString();
             armorAmountText.text = playerHealth.Armor.ToString();
             
             var healthBarAmount = playerHealth.CurrentHealth / playerHealth.MaxHealth;

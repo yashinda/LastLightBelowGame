@@ -12,9 +12,16 @@ public class ShopAfterDeath : MonoBehaviour
     
     public int reincarnationCost = 1200;
     public int moveSpeedCost = 600;
-    public int hpSpeedCost = 700;
+    public int hpCost = 700;
     public int armorCost = 900;
-    
+
+    private PlayerHealth playerHealth;
+
+    private void Start()
+    {
+        playerHealth = FindFirstObjectByType<PlayerHealth>();
+    }
+
 
     private void Update()
     {
@@ -56,10 +63,10 @@ public class ShopAfterDeath : MonoBehaviour
     {
         var levelBoostHP = SkillsAfterDeath.BoostMaxHp;
         
-        if (EchoSvetles.Amount < hpSpeedCost || levelBoostHP >= 25.0f)
+        if (EchoSvetles.Amount < hpCost || levelBoostHP >= 25.0f)
             return;
         
-        EchoSvetles.Spend(hpSpeedCost);
+        EchoSvetles.Spend(hpCost);
         SkillsAfterDeath.AddBoostMaxHP();
     }
 

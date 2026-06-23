@@ -733,6 +733,8 @@ public class KnightController : MonoBehaviour
 
     private void Die()
     {
+        DisableSwordCollider();
+        
         StartCoroutine(SetLightsMagicRoutine(lightsOnSceneGroup1));
         StartCoroutine(SetLightsMagicRoutine(lightsOnSceneGroup2));
         bossMusicController.EndBossFight();

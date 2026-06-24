@@ -136,8 +136,8 @@ public class LevelStateController : MonoBehaviour
         LoadNextLevel();
         switch (SceneManager.GetActiveScene().buildIndex)
         {
-            case 1:
-                EchoSvetles.Add(250);
+            case 2:
+                EchoSvetles.Add(350);
                 break;
             case 3:
                 EchoSvetles.Add(400);
@@ -145,7 +145,7 @@ public class LevelStateController : MonoBehaviour
             case 5:
                 EchoSvetles.Add(450);
                 break;
-            case 6:
+            case 7:
                 EchoSvetles.Add(500);
                 break;
         }

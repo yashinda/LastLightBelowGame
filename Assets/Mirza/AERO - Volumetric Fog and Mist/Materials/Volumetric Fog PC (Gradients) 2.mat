@@ -163,7 +163,7 @@ Material:
     - _Enable_Adaptive_Probe_Volumes: 1
     - _Enable_Additional_Light_Self_Shadow: 0
     - _Enable_Additional_Lights_Self_Shadow: 0
-    - _Enable_Anisotropy: 1
+    - _Enable_Anisotropy: 0
     - _Enable_Blur_Texture: 1
     - _Enable_Height_Fog: 1
     - _Enable_Height_Gradient: 1

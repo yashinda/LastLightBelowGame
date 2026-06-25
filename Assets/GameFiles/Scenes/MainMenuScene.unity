@@ -3688,6 +3688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PanelSettings
       objectReference: {fileID: 0}
+    - target: {fileID: 1128715830837447530, guid: 2ec12f05b99b57345b572fefd52e15fe, type: 3}
+      propertyPath: uiAudioSource
+      value: 
+      objectReference: {fileID: 125068544}
     - target: {fileID: 1487083340568078687, guid: 2ec12f05b99b57345b572fefd52e15fe, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3784,6 +3788,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 477937105}
+    - target: {fileID: 3918244784499577589, guid: 2ec12f05b99b57345b572fefd52e15fe, type: 3}
+      propertyPath: uiAudioSource
+      value: 
+      objectReference: {fileID: 125068544}
+    - target: {fileID: 4122457756445433701, guid: 2ec12f05b99b57345b572fefd52e15fe, type: 3}
+      propertyPath: uiAudioSource
+      value: 
+      objectReference: {fileID: 125068544}
     - target: {fileID: 4383655308173946991, guid: 2ec12f05b99b57345b572fefd52e15fe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3800,6 +3812,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7318763812022239075, guid: 2ec12f05b99b57345b572fefd52e15fe, type: 3}
+      propertyPath: uiAudioSource
+      value: 
+      objectReference: {fileID: 125068544}
     - target: {fileID: 7428029776953966162, guid: 2ec12f05b99b57345b572fefd52e15fe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3820,6 +3836,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8225390669419100786, guid: 2ec12f05b99b57345b572fefd52e15fe, type: 3}
+      propertyPath: uiAudioSource
+      value: 
+      objectReference: {fileID: 125068544}
+    - target: {fileID: 8598614328335599642, guid: 2ec12f05b99b57345b572fefd52e15fe, type: 3}
+      propertyPath: uiAudioSource
+      value: 
+      objectReference: {fileID: 125068544}
     - target: {fileID: 8649451334286451710, guid: 2ec12f05b99b57345b572fefd52e15fe, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

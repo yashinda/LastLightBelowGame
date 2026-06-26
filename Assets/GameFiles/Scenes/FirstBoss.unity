@@ -320150,7 +320150,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7464527404223433502}
   - component: {fileID: 6064469200055564231}
-  - component: {fileID: 7464527404223433503}
   m_Layer: 0
   m_Name: MainGamingFiles
   m_TagString: Untagged
@@ -596101,20 +596100,6 @@ Transform:
   - {fileID: 7743506353126266141}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7464527404223433503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3829304770582564920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b46e56ef766555c4a88cc8b2760b19f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FogController
-  rendererData: {fileID: 11400000, guid: 272ebd10152e657408900836e9f3b33b, type: 2}
-  enableFogOnStart: 0
 --- !u!1 &7469080471104223565
 GameObject:
   m_ObjectHideFlags: 0

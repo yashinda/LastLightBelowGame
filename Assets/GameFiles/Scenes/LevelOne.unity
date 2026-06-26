@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 1
-  m_FogDensity: 0.01
+  m_Fog: 1
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5372549}
+  m_FogMode: 2
+  m_FogDensity: 0.045
   m_LinearFogStart: 0
   m_LinearFogEnd: 88.1
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: f6dd82fbac827714b8311a21c7e39ca3, type: 2}
-  m_HaloStrength: 0.5
+  m_HaloStrength: 0.269
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -6451,7 +6451,6 @@ GameObject:
   - component: {fileID: 1436312867}
   - component: {fileID: 1436312866}
   - component: {fileID: 1436312868}
-  - component: {fileID: 1436312869}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -6568,20 +6567,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!114 &1436312869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436312865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b46e56ef766555c4a88cc8b2760b19f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FogController
-  rendererData: {fileID: 11400000, guid: 272ebd10152e657408900836e9f3b33b, type: 2}
-  enableFogOnStart: 1
 --- !u!1001 &1449118476
 PrefabInstance:
   m_ObjectHideFlags: 0

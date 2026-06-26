@@ -78,10 +78,11 @@ MonoBehaviour:
       - rid: 6852985685364965392
       - rid: 6852985685364965394
       - rid: 8712630790384254976
+      - rid: 1419684263431766017
+      - rid: 1419684263431766019
       - rid: 1419684263431766020
       - rid: 1419684263431766023
       - rid: 1419684263431766024
-      - rid: 7853163122437390337
       - rid: 7853163122437390339
   m_AssetVersion: 10
   m_ObsoleteDefaultVolumeProfile: {fileID: 0}
@@ -429,7 +430,7 @@ MonoBehaviour:
       type: {class: URPTerrainShaderSetting, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.Runtime}
       data:
         m_Version: 0
-        m_IncludeTerrainShaders: 1
+        m_IncludeTerrainShaders: 0
     - rid: 7853163122437390339
       type: {class: URPReflectionProbeSettings, ns: UnityEngine.Rendering, asm: Unity.RenderPipelines.Universal.Runtime}
       data:
